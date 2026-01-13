@@ -1,0 +1,14 @@
+{
+    "name": "Ashe",
+    "cost": 2,
+    "traits": [
+        "Freljord",
+        "Quickstriker"
+    ],
+    "items": [
+        "Giant Slayer",
+        "Red Buff",
+        "Kraken's Fury"
+    ],
+    "unlock": ""
+}

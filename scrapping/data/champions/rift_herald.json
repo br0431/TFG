@@ -1,0 +1,14 @@
+{
+    "name": "Rift Herald",
+    "cost": 4,
+    "traits": [
+        "Void",
+        "Bruiser"
+    ],
+    "items": [
+        "Bramble Vest",
+        "Spirit Visage",
+        "Warmog's Armor"
+    ],
+    "unlock": "Have  Void active for 8 player combats"
+}

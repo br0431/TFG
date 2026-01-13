@@ -1,0 +1,14 @@
+{
+    "name": "Garen",
+    "cost": 4,
+    "traits": [
+        "Demacia",
+        "Defender"
+    ],
+    "items": [
+        "Bramble Vest",
+        "Steadfast Heart",
+        "Spirit Visage"
+    ],
+    "unlock": ""
+}

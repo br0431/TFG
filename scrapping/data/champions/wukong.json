@@ -1,0 +1,14 @@
+{
+    "name": "Wukong",
+    "cost": 4,
+    "traits": [
+        "Ionia",
+        "Bruiser"
+    ],
+    "items": [
+        "Sunfire Cape",
+        "Spirit Visage",
+        "Evenshroud"
+    ],
+    "unlock": ""
+}

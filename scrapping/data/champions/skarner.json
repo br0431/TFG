@@ -1,0 +1,13 @@
+{
+    "name": "Skarner",
+    "cost": 4,
+    "traits": [
+        "Ixtal"
+    ],
+    "items": [
+        "Gargoyle Stoneplate",
+        "Sunfire Cape",
+        "Evenshroud"
+    ],
+    "unlock": "7 | A non-Tank with a Gargoyle's Stoneplate equipped"
+}

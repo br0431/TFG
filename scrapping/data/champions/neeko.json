@@ -1,0 +1,15 @@
+{
+    "name": "Neeko",
+    "cost": 2,
+    "traits": [
+        "Ixtal",
+        "Arcanist",
+        "Defender"
+    ],
+    "items": [
+        "Gargoyle Stoneplate",
+        "Sunfire Cape",
+        "Spirit Visage"
+    ],
+    "unlock": ""
+}

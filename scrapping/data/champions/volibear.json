@@ -1,0 +1,14 @@
+{
+    "name": "Volibear",
+    "cost": 5,
+    "traits": [
+        "Freljord",
+        "Bruiser"
+    ],
+    "items": [
+        "Hellfire Hatchet",
+        "Hellfire Hatchet",
+        "Titanic Hydra"
+    ],
+    "unlock": "8 | A unit that starts combat with 3800  Health"
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Draven",
+    "cost": 3,
+    "traits": [
+        "Noxus",
+        "Quickstriker"
+    ],
+    "items": [
+        "Guinsoo's Rageblade",
+        "Giant Slayer",
+        "Kraken's Fury"
+    ],
+    "unlock": ""
+}

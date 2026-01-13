@@ -1,0 +1,14 @@
+{
+    "name": "Yunara",
+    "cost": 4,
+    "traits": [
+        "Ionia",
+        "Quickstriker"
+    ],
+    "items": [
+        "Guinsoo's Rageblade",
+        "Infinity Edge",
+        "Kraken's Fury"
+    ],
+    "unlock": ""
+}

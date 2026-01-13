@@ -1,0 +1,14 @@
+{
+    "name": "Milio",
+    "cost": 3,
+    "traits": [
+        "Ixtal",
+        "Invoker"
+    ],
+    "items": [
+        "Morellonomicon",
+        "Spear of Shojin",
+        "Void Staff"
+    ],
+    "unlock": ""
+}

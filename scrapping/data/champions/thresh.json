@@ -1,0 +1,14 @@
+{
+    "name": "Thresh",
+    "cost": 5,
+    "traits": [
+        "Shadow Isles",
+        "Warden"
+    ],
+    "items": [
+        "Bloodthirster",
+        "Morellonomicon",
+        "Void Staff"
+    ],
+    "unlock": "Collect 175 Shadow Isles Souls"
+}

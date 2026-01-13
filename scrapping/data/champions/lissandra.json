@@ -1,0 +1,14 @@
+{
+    "name": "Lissandra",
+    "cost": 4,
+    "traits": [
+        "Freljord",
+        "Invoker"
+    ],
+    "items": [
+        "Adaptive Helm",
+        "Archangel's Staff",
+        "Spear of Shojin"
+    ],
+    "unlock": ""
+}

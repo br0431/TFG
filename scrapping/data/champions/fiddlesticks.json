@@ -1,0 +1,14 @@
+{
+    "name": "Fiddlesticks",
+    "cost": 5,
+    "traits": [
+        "Harvester",
+        "Vanquisher"
+    ],
+    "items": [
+        "Jeweled Gauntlet",
+        "Morellonomicon",
+        "Rabadon's Deathcap"
+    ],
+    "unlock": ""
+}

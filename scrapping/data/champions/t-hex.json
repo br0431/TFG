@@ -1,0 +1,15 @@
+{
+    "name": "T-Hex",
+    "cost": 5,
+    "traits": [
+        "HexMech",
+        "Piltover",
+        "Gunslinger"
+    ],
+    "items": [
+        "Deathblade",
+        "Infinity Edge",
+        "Striker's Flail"
+    ],
+    "unlock": "9 unique star levels of  Piltover"
+}

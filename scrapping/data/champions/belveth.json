@@ -1,0 +1,14 @@
+{
+    "name": "Bel'Veth",
+    "cost": 4,
+    "traits": [
+        "Void",
+        "Slayer"
+    ],
+    "items": [
+        "Giant Slayer",
+        "Quicksilver",
+        "Kraken's Fury"
+    ],
+    "unlock": ""
+}

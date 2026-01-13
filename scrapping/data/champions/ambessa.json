@@ -1,0 +1,14 @@
+{
+    "name": "Ambessa",
+    "cost": 4,
+    "traits": [
+        "Noxus",
+        "Vanquisher"
+    ],
+    "items": [
+        "Quicksilver",
+        "Sterak's Gage",
+        "Hand Of Justice"
+    ],
+    "unlock": ""
+}

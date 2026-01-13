@@ -1,0 +1,15 @@
+{
+    "name": "Tahm Kench",
+    "cost": 5,
+    "traits": [
+        "Bilgewater",
+        "Glutton",
+        "Bruiser"
+    ],
+    "items": [
+        "Pile O' Citrus",
+        "Bloodthirster",
+        "Protector's Vow"
+    ],
+    "unlock": "Spend 500  Bilgewater Silver Serpents"
+}

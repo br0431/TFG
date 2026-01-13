@@ -1,0 +1,14 @@
+{
+    "name": "Loris",
+    "cost": 3,
+    "traits": [
+        "Piltover",
+        "Warden"
+    ],
+    "items": [
+        "Gargoyle Stoneplate",
+        "Spirit Visage",
+        "Warmog's Armor"
+    ],
+    "unlock": ""
+}

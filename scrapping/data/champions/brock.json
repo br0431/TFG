@@ -1,0 +1,13 @@
+{
+    "name": "Brock",
+    "cost": 7,
+    "traits": [
+        "Ixtal"
+    ],
+    "items": [
+        "Radiant Hand of Justice",
+        "Radiant Infinity Edge",
+        "Radiant Sterak's Gage"
+    ],
+    "unlock": "Collect 500  Ixtal Sunshards over the course of the game"
+}

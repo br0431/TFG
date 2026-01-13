@@ -1,0 +1,14 @@
+{
+    "name": "Zilean",
+    "cost": 5,
+    "traits": [
+        "Chronokeeper",
+        "Invoker"
+    ],
+    "items": [
+        "Morellonomicon",
+        "Spear of Shojin",
+        "Void Staff"
+    ],
+    "unlock": ""
+}

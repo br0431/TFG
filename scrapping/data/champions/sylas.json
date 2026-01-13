@@ -1,0 +1,15 @@
+{
+    "name": "Sylas",
+    "cost": 7,
+    "traits": [
+        "Chainbreaker",
+        "Arcanist",
+        "Defender"
+    ],
+    "items": [
+        "Edge of Night",
+        "Jeweled Gauntlet",
+        "Hand Of Justice"
+    ],
+    "unlock": "Sell a 2-star Jarvan IV | Sell a 2-star Garen | Sell a 2-star Lux"
+}

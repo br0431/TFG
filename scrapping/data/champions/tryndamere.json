@@ -1,0 +1,14 @@
+{
+    "name": "Tryndamere",
+    "cost": 2,
+    "traits": [
+        "Freljord",
+        "Slayer"
+    ],
+    "items": [
+        "The Darkin Scythe",
+        "Infinity Edge",
+        "Quicksilver"
+    ],
+    "unlock": "Ashe with 2 items equipped"
+}

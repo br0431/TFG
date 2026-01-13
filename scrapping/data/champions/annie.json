@@ -1,0 +1,14 @@
+{
+    "name": "Annie",
+    "cost": 5,
+    "traits": [
+        "Dark Child",
+        "Arcanist"
+    ],
+    "items": [
+        "Blue Buff",
+        "Spear of Shojin",
+        "Void Staff"
+    ],
+    "unlock": ""
+}

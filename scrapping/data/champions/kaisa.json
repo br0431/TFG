@@ -1,0 +1,15 @@
+{
+    "name": "Kai'Sa",
+    "cost": 4,
+    "traits": [
+        "Assimilator",
+        "Void",
+        "Longshot"
+    ],
+    "items": [
+        "Archangel's Staff",
+        "Guinsoo's Rageblade",
+        "Hextech Gunblade"
+    ],
+    "unlock": "8 | a  Longshot unit with 3 items equipped"
+}

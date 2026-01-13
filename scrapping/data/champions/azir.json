@@ -1,0 +1,15 @@
+{
+    "name": "Azir",
+    "cost": 5,
+    "traits": [
+        "Shurima",
+        "Emperor",
+        "Disruptor"
+    ],
+    "items": [
+        "Guinsoo's Rageblade",
+        "Hextech Gunblade",
+        "Jeweled Gauntlet"
+    ],
+    "unlock": ""
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Ziggs",
+    "cost": 5,
+    "traits": [
+        "Zaun",
+        "Yordle",
+        "Longshot"
+    ],
+    "items": [
+        "Jeweled Gauntlet",
+        "Nashor's Tooth",
+        "Void Staff"
+    ],
+    "unlock": "9 | A  Yordle or a  Zaunite with 3 items equipped"
+}

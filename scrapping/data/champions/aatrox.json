@@ -1,0 +1,15 @@
+{
+    "name": "Aatrox",
+    "cost": 5,
+    "traits": [
+        "Darkin",
+        "World Ender",
+        "Slayer"
+    ],
+    "items": [
+        "Sterak's Gage",
+        "Titan's Resolve",
+        "Hand Of Justice"
+    ],
+    "unlock": "8 | A champion who starts combat with 40%  Omnivamp"
+}

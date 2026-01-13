@@ -1,0 +1,14 @@
+{
+    "name": "Sett",
+    "cost": 5,
+    "traits": [
+        "Ionia",
+        "The Boss"
+    ],
+    "items": [
+        "Jeweled Gauntlet",
+        "Striker's Flail",
+        "Hand Of Justice"
+    ],
+    "unlock": "8 | Only 1 unit in the two front rows of the battlefield"
+}

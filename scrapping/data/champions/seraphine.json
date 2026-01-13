@@ -1,0 +1,14 @@
+{
+    "name": "Seraphine",
+    "cost": 4,
+    "traits": [
+        "Piltover",
+        "Disruptor"
+    ],
+    "items": [
+        "Morellonomicon",
+        "Spear of Shojin",
+        "Void Staff"
+    ],
+    "unlock": ""
+}

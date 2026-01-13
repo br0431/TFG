@@ -1,0 +1,13 @@
+{
+    "name": "Diana",
+    "cost": 4,
+    "traits": [
+        "Targon"
+    ],
+    "items": [
+        "Bloodthirster",
+        "Guinsoo's Rageblade",
+        "Titan's Resolve"
+    ],
+    "unlock": "6 | 2-star Leona with 3 items equipped"
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Fizz",
+    "cost": 4,
+    "traits": [
+        "Bilgewater",
+        "Yordle"
+    ],
+    "items": [
+        "Jeweled Gauntlet",
+        "Rabadon's Deathcap",
+        "Hand Of Justice"
+    ],
+    "unlock": "7 | 5 unique  Yordles or  Bilgewater units"
+}

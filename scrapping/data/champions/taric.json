@@ -1,0 +1,13 @@
+{
+    "name": "Taric",
+    "cost": 4,
+    "traits": [
+        "Targon"
+    ],
+    "items": [
+        "Gargoyle Stoneplate",
+        "Spirit Visage",
+        "Warmog's Armor"
+    ],
+    "unlock": ""
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Ornn",
+    "cost": 5,
+    "traits": [
+        "Blacksmith",
+        "Warden"
+    ],
+    "items": [
+        "Gargoyle Stoneplate",
+        "Sunfire Cape",
+        "Evenshroud"
+    ],
+    "unlock": ""
+}

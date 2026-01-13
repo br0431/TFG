@@ -1,0 +1,14 @@
+{
+    "name": "Mel",
+    "cost": 5,
+    "traits": [
+        "Noxus",
+        "Disruptor"
+    ],
+    "items": [
+        "Adaptive Helm",
+        "Blue Buff",
+        "Jeweled Gauntlet"
+    ],
+    "unlock": "2-star Ambessa with an item dies in combat"
+}

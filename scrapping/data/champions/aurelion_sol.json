@@ -1,0 +1,14 @@
+{
+    "name": "Aurelion Sol",
+    "cost": 7,
+    "traits": [
+        "Star Forger",
+        "Targon"
+    ],
+    "items": [
+        "Guinsoo's Rageblade",
+        "Spear of Shojin",
+        "Spear of Shojin"
+    ],
+    "unlock": "5 unique  Targonians"
+}

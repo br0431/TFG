@@ -1,0 +1,14 @@
+{
+    "name": "Baron Nashor",
+    "cost": 7,
+    "traits": [
+        "Void",
+        "Riftscourge"
+    ],
+    "items": [
+        "Bloodthirster",
+        "Infinity Edge",
+        "Sterak's Gage"
+    ],
+    "unlock": "10 | Field 7 unique  Void units."
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Miss Fortune",
+    "cost": 4,
+    "traits": [
+        "Bilgewater",
+        "Gunslinger"
+    ],
+    "items": [
+        "Captain's Brew",
+        "Dead Man's Dagger",
+        "First Mate's Flintlock"
+    ],
+    "unlock": ""
+}

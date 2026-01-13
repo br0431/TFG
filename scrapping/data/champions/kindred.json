@@ -1,0 +1,14 @@
+{
+    "name": "Kindred",
+    "cost": 5,
+    "traits": [
+        "Eternal",
+        "Quickstriker"
+    ],
+    "items": [
+        "Guinsoo's Rageblade",
+        "Giant Slayer",
+        "Kraken's Fury"
+    ],
+    "unlock": ""
+}

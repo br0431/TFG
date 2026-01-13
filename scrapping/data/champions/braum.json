@@ -1,0 +1,14 @@
+{
+    "name": "Braum",
+    "cost": 4,
+    "traits": [
+        "Freljord",
+        "Warden"
+    ],
+    "items": [
+        "Bramble Vest",
+        "Dragon's Claw",
+        "Spirit Visage"
+    ],
+    "unlock": ""
+}

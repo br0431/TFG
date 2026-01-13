@@ -1,0 +1,14 @@
+{
+    "name": "Zaahen",
+    "cost": 7,
+    "traits": [
+        "Darkin",
+        "Immortal"
+    ],
+    "items": [
+        "Bloodthirster",
+        "Sterak's Gage",
+        "Titan's Resolve"
+    ],
+    "unlock": "Have the 'Trials of Twilight' Augment | Field a 3-star Xin Zhao for 5 combats."
+}

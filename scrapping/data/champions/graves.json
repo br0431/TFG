@@ -1,0 +1,14 @@
+{
+    "name": "Graves",
+    "cost": 2,
+    "traits": [
+        "Bilgewater",
+        "Gunslinger"
+    ],
+    "items": [
+        "Dead Man's Dagger",
+        "Giant Slayer",
+        "Quicksilver"
+    ],
+    "unlock": "Twisted Fate with 2 items equipped"
+}

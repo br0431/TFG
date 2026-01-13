@@ -1,0 +1,13 @@
+{
+    "name": "Renekton",
+    "cost": 4,
+    "traits": [
+        "Shurima"
+    ],
+    "items": [
+        "Bloodthirster",
+        "Sterak's Gage",
+        "Titan's Resolve"
+    ],
+    "unlock": "Win 2 combats in a row with Azir. (Gets harder each time you unlock a Shuriman!)"
+}

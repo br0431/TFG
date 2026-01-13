@@ -1,0 +1,13 @@
+{
+    "name": "Ryze",
+    "cost": 7,
+    "traits": [
+        "Rune Mage"
+    ],
+    "items": [
+        "Jeweled Gauntlet",
+        "Spear of Shojin",
+        "Void Staff"
+    ],
+    "unlock": "9 | 4 Region Traits together"
+}

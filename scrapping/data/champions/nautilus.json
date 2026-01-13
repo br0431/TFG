@@ -1,0 +1,15 @@
+{
+    "name": "Nautilus",
+    "cost": 3,
+    "traits": [
+        "Bilgewater",
+        "Juggernaut",
+        "Warden"
+    ],
+    "items": [
+        "Barknuckles",
+        "Gargoyle Stoneplate",
+        "Evenshroud"
+    ],
+    "unlock": ""
+}

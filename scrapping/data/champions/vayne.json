@@ -1,0 +1,14 @@
+{
+    "name": "Vayne",
+    "cost": 3,
+    "traits": [
+        "Demacia",
+        "Longshot"
+    ],
+    "items": [
+        "Hextech Gunblade",
+        "Kraken's Fury",
+        "Kraken's Fury"
+    ],
+    "unlock": ""
+}

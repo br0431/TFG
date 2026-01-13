@@ -1,0 +1,14 @@
+{
+    "name": "Galio",
+    "cost": 5,
+    "traits": [
+        "Demacia",
+        "Heroic"
+    ],
+    "items": [
+        "Dragon's Claw",
+        "Dragon's Claw",
+        "Dragon's Claw"
+    ],
+    "unlock": "12 unique star levels of  Demacia"
+}

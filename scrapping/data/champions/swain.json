@@ -1,0 +1,15 @@
+{
+    "name": "Swain",
+    "cost": 4,
+    "traits": [
+        "Noxus",
+        "Arcanist",
+        "Juggernaut"
+    ],
+    "items": [
+        "Protector's Vow",
+        "Sunfire Cape",
+        "Spirit Visage"
+    ],
+    "unlock": ""
+}

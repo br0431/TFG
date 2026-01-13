@@ -1,0 +1,13 @@
+{
+    "name": "Nasus",
+    "cost": 4,
+    "traits": [
+        "Shurima"
+    ],
+    "items": [
+        "Bramble Vest",
+        "Gargoyle Stoneplate",
+        "Spirit Visage"
+    ],
+    "unlock": "Lose 2 combats in a row with Azir. (Gets harder each time you unlock a Shuriman!)"
+}

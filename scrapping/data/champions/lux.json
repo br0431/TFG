@@ -1,0 +1,14 @@
+{
+    "name": "Lux",
+    "cost": 4,
+    "traits": [
+        "Demacia",
+        "Arcanist"
+    ],
+    "items": [
+        "Blue Buff",
+        "Jeweled Gauntlet",
+        "Rabadon's Deathcap"
+    ],
+    "unlock": ""
+}

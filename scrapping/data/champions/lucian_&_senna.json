@@ -1,0 +1,14 @@
+{
+    "name": "Lucian & Senna",
+    "cost": 5,
+    "traits": [
+        "Soulbound",
+        "Gunslinger"
+    ],
+    "items": [
+        "Last Whisper",
+        "Red Buff",
+        "Spear of Shojin"
+    ],
+    "unlock": ""
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Xerath",
+    "cost": 5,
+    "traits": [
+        "Shurima",
+        "Ascendant"
+    ],
+    "items": [
+        "Blue Buff",
+        "Jeweled Gauntlet",
+        "Spear of Shojin"
+    ],
+    "unlock": "Alternate between winning and losing for 3 combats with Azir. (Gets harder each time you unlock a Shuriman!)"
+}
