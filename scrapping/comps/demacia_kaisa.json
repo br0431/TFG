@@ -1,0 +1,21 @@
+{
+    "name": "Demacia Kaisa",
+    "variants": [
+        {
+            "level_8": {
+                "champions": [
+                    "Kaisa",
+                    "Garen",
+                    "Vayne",
+                    "Swain",
+                    "Galio",
+                    "Taric",
+                    "Poppy",
+                    "Jarvaniv",
+                    "Kogmaw"
+                ]
+            },
+            "level_9_addition": "Ziggs"
+        }
+    ]
+}

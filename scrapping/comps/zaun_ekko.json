@@ -1,0 +1,51 @@
+{
+    "name": "Zaun Ekko",
+    "variants": [
+        {
+            "level_8": {
+                "champions": [
+                    "Ekko",
+                    "Neeko",
+                    "Seraphine",
+                    "Vi",
+                    "Shyvana",
+                    "Ziggs",
+                    "Singed",
+                    "Swain",
+                    "Blitzcrank"
+                ]
+            },
+            "level_9_addition": "Fiddlesticks"
+        },
+        {
+            "level_8": {
+                "champions": [
+                    "Ekko",
+                    "Neeko",
+                    "Nidalee",
+                    "Seraphine",
+                    "Singed",
+                    "Swain",
+                    "Taric",
+                    "Vi"
+                ]
+            },
+            "level_9_addition": "Fiddlesticks"
+        },
+        {
+            "level_8": {
+                "champions": [
+                    "Ekko",
+                    "Singed",
+                    "Seraphine",
+                    "Vi",
+                    "Warwick",
+                    "Drmundo",
+                    "Jinx",
+                    "Blitzcrank"
+                ]
+            },
+            "level_9_addition": "Fiddlesticks"
+        }
+    ]
+}

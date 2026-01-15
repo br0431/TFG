@@ -1,0 +1,20 @@
+{
+    "name": "Bilgewater Missfortune",
+    "variants": [
+        {
+            "level_8": {
+                "champions": [
+                    "Missfortune",
+                    "Tahmkench",
+                    "Nautilus",
+                    "Lucian",
+                    "Ornn",
+                    "Shyvana",
+                    "Taric",
+                    "Wukong"
+                ]
+            },
+            "level_9_addition": "Fiddlesticks"
+        }
+    ]
+}

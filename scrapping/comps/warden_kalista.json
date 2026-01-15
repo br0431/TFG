@@ -1,0 +1,21 @@
+{
+    "name": "Warden Kalista",
+    "variants": [
+        {
+            "level_8": {
+                "champions": [
+                    "Kalista",
+                    "Thresh",
+                    "Braum",
+                    "Fiddlesticks",
+                    "Ornn",
+                    "Seraphine",
+                    "Gwen",
+                    "Loris",
+                    "Yorick"
+                ]
+            },
+            "level_9_addition": "Fiddlesticks"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Yordle Veigar",
+    "variants": [
+        {
+            "level_8": {
+                "champions": [
+                    "Veigar",
+                    "Ziggs",
+                    "Kennen",
+                    "Fizz",
+                    "Swain",
+                    "Kobuko",
+                    "Poppy",
+                    "Teemo",
+                    "Rumble"
+                ]
+            },
+            "level_9_addition": "Swain"
+        }
+    ]
+}

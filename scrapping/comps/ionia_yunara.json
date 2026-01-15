@@ -1,0 +1,21 @@
+{
+    "name": "Ionia Yunara",
+    "variants": [
+        {
+            "level_8": {
+                "champions": [
+                    "Yunara",
+                    "Wukong",
+                    "Sett",
+                    "Swain",
+                    "Kindred",
+                    "Lucian",
+                    "Shyvana",
+                    "Ahri",
+                    "Shen"
+                ]
+            },
+            "level_9_addition": "Shyvana"
+        }
+    ]
+}

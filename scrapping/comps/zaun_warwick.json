@@ -1,0 +1,20 @@
+{
+    "name": "Zaun Warwick",
+    "variants": [
+        {
+            "level_8": {
+                "champions": [
+                    "Warwick",
+                    "Singed",
+                    "Drmundo",
+                    "Kindred",
+                    "Seraphine",
+                    "Ekko",
+                    "Vi",
+                    "Blitzcrank"
+                ]
+            },
+            "level_9_addition": "Ziggs"
+        }
+    ]
+}

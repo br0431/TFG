@@ -1,0 +1,21 @@
+{
+    "name": "Demacia Lux",
+    "variants": [
+        {
+            "level_8": {
+                "champions": [
+                    "Lux",
+                    "Garen",
+                    "Lissandra",
+                    "Swain",
+                    "Galio",
+                    "Poppy",
+                    "Xinzhao",
+                    "Jarvaniv",
+                    "Sona"
+                ]
+            },
+            "level_9_addition": "Ornn"
+        }
+    ]
+}
