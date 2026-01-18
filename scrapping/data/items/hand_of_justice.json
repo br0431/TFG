@@ -1,0 +1,12 @@
+{
+    "name": "Hand Of Justice",
+    "components": [
+        "Tearofthegoddess",
+        "Sparringgloves"
+    ],
+    "bonuses": [
+        "CritChance +20",
+        "Manaregen +1"
+    ],
+    "description": "Gain 2 effects:\n15% Attack Damage and 15% Ability Power.\n12% Omnivamp.\n\nWhile above 50% health, double the Attack Damage and Ability Power. While below 50% Health, double the Omnivamp."
+}

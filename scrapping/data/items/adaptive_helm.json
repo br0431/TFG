@@ -1,0 +1,12 @@
+{
+    "name": "Adaptive Helm",
+    "components": [
+        "Negatroncloak",
+        "Tearofthegoddess"
+    ],
+    "bonuses": [
+        "MagicResist +20",
+        "Manaregen +3"
+    ],
+    "description": "Gain an additional 15% Mana from all sources. The holder gains an additional bonus based on their Role:\n\nTanks and Fighters: Gain 45 Armor and Magic Resistance.\n\nOther Roles: Gain 10% Attack Damage and Ability Power."
+}

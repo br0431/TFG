@@ -1,0 +1,12 @@
+{
+    "name": "Sunfire Cape",
+    "components": [
+        "Chainvest",
+        "Giantsbelt"
+    ],
+    "bonuses": [
+        "Armor +20",
+        "Health +150"
+    ],
+    "description": "Gain 8% max Health.\n\nEvery 2 seconds, deal 1% Burn and 33% Wound to an enemy within 2 hexes for 10 seconds.\n\nBurn: Deals a percent of the target�s max Health as true damage every second\nWound: Reduces healing received"
+}

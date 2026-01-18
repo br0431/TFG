@@ -1,0 +1,12 @@
+{
+    "name": "Titan's Resolve",
+    "components": [
+        "Chainvest",
+        "Recurvebow"
+    ],
+    "bonuses": [
+        "AS +10",
+        "Armor +20"
+    ],
+    "description": "Gain 2% Attack Damage and 2% Ability Power when attacking or taking damage, stacking up to 25 times.\n\nAt full stacks, gain 10% Damage Amp and gain immunity to crowd control."
+}

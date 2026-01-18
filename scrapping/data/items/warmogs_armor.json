@@ -1,0 +1,11 @@
+{
+    "name": "Warmog's Armor",
+    "components": [
+        "Giantsbelt",
+        "Giantsbelt"
+    ],
+    "bonuses": [
+        "Health +500"
+    ],
+    "description": "Gain 15% max Health."
+}

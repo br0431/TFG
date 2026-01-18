@@ -1,0 +1,14 @@
+{
+    "name": "Giant Slayer",
+    "components": [
+        "Bfsword",
+        "Recurvebow"
+    ],
+    "bonuses": [
+        "AD +15%",
+        "AP +15",
+        "AS +15",
+        "DamageAmp +15%"
+    ],
+    "description": "Gain 15% additional Damage Amp against Tanks."
+}

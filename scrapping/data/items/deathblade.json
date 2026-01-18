@@ -1,0 +1,12 @@
+{
+    "name": "Deathblade",
+    "components": [
+        "Bfsword",
+        "Bfsword"
+    ],
+    "bonuses": [
+        "AD +55%",
+        "DamageAmp +10%"
+    ],
+    "description": "Perfect peace and calm for the holder - and all who face it."
+}

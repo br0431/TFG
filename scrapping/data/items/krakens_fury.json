@@ -1,0 +1,13 @@
+{
+    "name": "Kraken's Fury",
+    "components": [
+        "Negatroncloak",
+        "Recurvebow"
+    ],
+    "bonuses": [
+        "AD +10%",
+        "AS +10",
+        "MagicResist +20"
+    ],
+    "description": "Attacks grant 3.5% stacking Attack Damage, up to 15 attacks. After 15 attacks, gain 30% Attack Speed."
+}

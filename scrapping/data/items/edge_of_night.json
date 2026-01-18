@@ -1,0 +1,14 @@
+{
+    "name": "Edge of Night",
+    "components": [
+        "Bfsword",
+        "Chainvest"
+    ],
+    "bonuses": [
+        "AD +10%",
+        "AP +10",
+        "AS +15",
+        "Armor +20"
+    ],
+    "description": "At 60% Health, briefly become untargetable and shed negative effects."
+}

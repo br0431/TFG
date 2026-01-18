@@ -1,0 +1,13 @@
+{
+    "name": "Morellonomicon",
+    "components": [
+        "Needlesslylargerod",
+        "Giantsbelt"
+    ],
+    "bonuses": [
+        "AP +20",
+        "Health +150",
+        "Manaregen +1"
+    ],
+    "description": "Attacks and Abilities deal 1% Burn and 33% Wound to enemies for 10 seconds.\n\nBurn: Deals a percent of the target's max Health as true damage every second\nWound: Reduces healing received"
+}

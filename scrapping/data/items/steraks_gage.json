@@ -1,0 +1,12 @@
+{
+    "name": "Sterak's Gage",
+    "components": [
+        "Bfsword",
+        "Giantsbelt"
+    ],
+    "bonuses": [
+        "AD +40%",
+        "Health +300"
+    ],
+    "description": "At 60% Health, gain a Shield equal to 50% of the wearer's maximum Health that rapidly decays over 4 seconds."
+}

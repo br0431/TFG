@@ -1,0 +1,12 @@
+{
+    "name": "Archangel's Staff",
+    "components": [
+        "Needlesslylargerod",
+        "Tearofthegoddess"
+    ],
+    "bonuses": [
+        "AP +30",
+        "Manaregen +1"
+    ],
+    "description": "Combat start: Gain 20% Ability Power every 5 seconds in combat."
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Spirit Visage",
+    "components": [
+        "Tearofthegoddess",
+        "Giantsbelt"
+    ],
+    "bonuses": [
+        "Health +300",
+        "Manaregen +2",
+        "DamageReduction +10%"
+    ],
+    "description": "Regenerate 2.5% of missing Health each second."
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Dragon's Claw",
+    "components": [
+        "Negatroncloak",
+        "Negatroncloak"
+    ],
+    "bonuses": [
+        "MagicResist +75"
+    ],
+    "description": "Gain 9% max health.\n\nEvery 2 seconds, heal 2.5% max Health."
+}

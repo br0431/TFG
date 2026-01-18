@@ -1,0 +1,12 @@
+{
+    "name": "Evenshroud",
+    "components": [
+        "Negatroncloak",
+        "Giantsbelt"
+    ],
+    "bonuses": [
+        "Health +250",
+        "MagicResist +20"
+    ],
+    "description": "30% Sunder enemies within 2 hexes. Gain 25 Armor and Magic Resist for the first 15 seconds of combat.\n\nSunder: Reduce Armor"
+}

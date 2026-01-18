@@ -1,0 +1,12 @@
+{
+    "name": "Rabadon's Deathcap",
+    "components": [
+        "Needlesslylargerod",
+        "Needlesslylargerod"
+    ],
+    "bonuses": [
+        "AP +50",
+        "DamageAmp +15%"
+    ],
+    "description": "This humble hat can help you make, or unmake, the world itself."
+}

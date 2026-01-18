@@ -1,0 +1,12 @@
+{
+    "name": "Jeweled Gauntlet",
+    "components": [
+        "Needlesslylargerod",
+        "Sparringgloves"
+    ],
+    "bonuses": [
+        "AP +35",
+        "CritChance +35"
+    ],
+    "description": "Abilities can critically strike.\n\nIf the holder's abilities can already critically strike, gain 10% Critical Strike Damage instead."
+}

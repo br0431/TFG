@@ -1,0 +1,12 @@
+{
+    "name": "Infinity Edge",
+    "components": [
+        "Bfsword",
+        "Sparringgloves"
+    ],
+    "bonuses": [
+        "AD +35%",
+        "CritChance +35"
+    ],
+    "description": "Abilities can critically strike.\n\nIf the holder's abilities can already critically strike, gain 10% Critical Strike Damage instead."
+}

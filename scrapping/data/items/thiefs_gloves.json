@@ -1,0 +1,12 @@
+{
+    "name": "Thief's Gloves",
+    "components": [
+        "Sparringgloves",
+        "Sparringgloves"
+    ],
+    "bonuses": [
+        "CritChance +20",
+        "Health +150"
+    ],
+    "description": "Each round: Equip 2 random items."
+}

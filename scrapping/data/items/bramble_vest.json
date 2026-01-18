@@ -1,0 +1,11 @@
+{
+    "name": "Bramble Vest",
+    "components": [
+        "Chainvest",
+        "Chainvest"
+    ],
+    "bonuses": [
+        "Armor +65"
+    ],
+    "description": "Gain 9% max health.\n\nTake 5% reduced damage from attacks. When struck by any attack, deal 100 magic damage to all adjacent enemies.\n\nCooldown: 2 seconds"
+}

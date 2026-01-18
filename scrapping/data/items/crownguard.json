@@ -1,0 +1,13 @@
+{
+    "name": "Crownguard",
+    "components": [
+        "Needlesslylargerod",
+        "Chainvest"
+    ],
+    "bonuses": [
+        "AP +20",
+        "Armor +20",
+        "Health +100"
+    ],
+    "description": "Combat Start: Gain a 25% max Health Shield for 8 seconds.\n\nWhen the Shield expires, gain 25% Ability Power."
+}

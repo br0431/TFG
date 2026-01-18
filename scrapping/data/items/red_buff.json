@@ -1,0 +1,12 @@
+{
+    "name": "Red Buff",
+    "components": [
+        "Recurvebow",
+        "Recurvebow"
+    ],
+    "bonuses": [
+        "AS +45",
+        "DamageAmp +6%"
+    ],
+    "description": "Attacks and Abilities 1% Burn and 33% Wound enemies for 5 seconds.\n\nBurn: Deals a percent of the target's max Health as true damage every second\nWound: Reduces healing received"
+}

@@ -1,0 +1,12 @@
+{
+    "name": "Guinsoo's Rageblade",
+    "components": [
+        "Recurvebow",
+        "Needlesslylargerod"
+    ],
+    "bonuses": [
+        "AP +10",
+        "AS +10"
+    ],
+    "description": "Gain 7% stacking Attack Speed every second."
+}

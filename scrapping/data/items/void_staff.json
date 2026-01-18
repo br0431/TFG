@@ -1,0 +1,13 @@
+{
+    "name": "Void Staff",
+    "components": [
+        "Recurvebow",
+        "Tearofthegoddess"
+    ],
+    "bonuses": [
+        "AP +35",
+        "AS +15",
+        "Manaregen +1"
+    ],
+    "description": "Damage from attacks and Abilities 30% Shred the target for 5 seconds. This effect does not stack.\n\nShred: Reduce Magic Resist"
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Spear of Shojin",
+    "components": [
+        "Bfsword",
+        "Tearofthegoddess"
+    ],
+    "bonuses": [
+        "AD +15%",
+        "AP +15",
+        "Manaregen +1"
+    ],
+    "description": "Attacks grant 5 bonus Mana."
+}

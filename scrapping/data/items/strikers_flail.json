@@ -1,0 +1,14 @@
+{
+    "name": "Striker's Flail",
+    "components": [
+        "Giantsbelt",
+        "Sparringgloves"
+    ],
+    "bonuses": [
+        "AS +10",
+        "DamageAmp +5%",
+        "CritChance +20",
+        "Health +150"
+    ],
+    "description": "Critical Strikes grant 5% Damage Amp for 5 seconds, stacking up to 4 times."
+}

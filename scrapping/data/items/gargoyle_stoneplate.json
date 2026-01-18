@@ -1,0 +1,13 @@
+{
+    "name": "Gargoyle Stoneplate",
+    "components": [
+        "Chainvest",
+        "Negatroncloak"
+    ],
+    "bonuses": [
+        "Armor +25",
+        "Health +100",
+        "MagicResist +25"
+    ],
+    "description": "Gain 10 Armor and 10 Magic Resist for each enemy targeting the holder."
+}

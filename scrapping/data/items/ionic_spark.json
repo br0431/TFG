@@ -1,0 +1,13 @@
+{
+    "name": "Ionic Spark",
+    "components": [
+        "Needlesslylargerod",
+        "Negatroncloak"
+    ],
+    "bonuses": [
+        "AP +15",
+        "Health +250",
+        "MagicResist +35"
+    ],
+    "description": "30% Shred enemies within 2 hexes. When enemies cast an Ability, deal magic damage equal to 150% of the Mana spent\n\nShred: Reduce Magic Resist"
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Steadfast Heart",
+    "components": [
+        "Chainvest",
+        "Sparringgloves"
+    ],
+    "bonuses": [
+        "Armor +20",
+        "CritChance +20",
+        "Health +250"
+    ],
+    "description": "Gain 10% Durability. While above 50% Health, instead gain 18% Durability."
+}

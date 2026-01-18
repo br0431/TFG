@@ -1,0 +1,14 @@
+{
+    "name": "Bloodthirster",
+    "components": [
+        "Bfsword",
+        "Negatroncloak"
+    ],
+    "bonuses": [
+        "AD +15%",
+        "AP +15",
+        "MagicResist +20",
+        "Lifesteal +20%"
+    ],
+    "description": "Once per combat at 40% Health, gain a 25% max Health Shield that lasts up to 5 seconds."
+}

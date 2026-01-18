@@ -1,0 +1,14 @@
+{
+    "name": "Hextech Gunblade",
+    "components": [
+        "Bfsword",
+        "Needlesslylargerod"
+    ],
+    "bonuses": [
+        "AD +20%",
+        "AP +20",
+        "Manaregen +1",
+        "Lifesteal +15%"
+    ],
+    "description": "Heal the lowest percent Health ally for 20% of damage dealt."
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Quicksilver",
+    "components": [
+        "Sparringgloves",
+        "Negatroncloak"
+    ],
+    "bonuses": [
+        "AS +15",
+        "CritChance +20",
+        "MagicResist +20"
+    ],
+    "description": "Combat Start: Gain immunity to crowd control for 18 seconds.\n\nGain 3% stacking Attack Speed every second."
+}

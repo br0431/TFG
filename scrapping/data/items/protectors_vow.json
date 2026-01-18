@@ -1,0 +1,13 @@
+{
+    "name": "Protector's Vow",
+    "components": [
+        "Tearofthegoddess",
+        "Chainvest"
+    ],
+    "bonuses": [
+        "Armor +25",
+        "MagicResist +25",
+        "Manaregen +1"
+    ],
+    "description": "Combat Start: Gain 20 Mana.\n\nAt 40% Health, gain 15 Mana and a Shield equal to 20% max Health."
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Blue Buff",
+    "components": [
+        "Tearofthegoddess",
+        "Tearofthegoddess"
+    ],
+    "bonuses": [
+        "AD +15%",
+        "AP +15",
+        "Manaregen +5"
+    ],
+    "description": "Gain 10% additional Attack Damage and Ability Power from all sources."
+}

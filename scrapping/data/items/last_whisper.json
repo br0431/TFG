@@ -1,0 +1,13 @@
+{
+    "name": "Last Whisper",
+    "components": [
+        "Recurvebow",
+        "Sparringgloves"
+    ],
+    "bonuses": [
+        "AD +15%",
+        "AS +20",
+        "CritChance +20"
+    ],
+    "description": "Damage from attacks and Abilities 30% Sunder the target for 3 seconds. This effect does not stack.\n\nSunder: Reduce Armor"
+}

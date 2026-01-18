@@ -1,0 +1,14 @@
+{
+    "name": "Nashor's Tooth",
+    "components": [
+        "Recurvebow",
+        "Giantsbelt"
+    ],
+    "bonuses": [
+        "AP +15",
+        "AS +10",
+        "CritChance +20",
+        "Health +150"
+    ],
+    "description": "Attacks grant 2 bonus Mana, increased to 4 if they critically strike."
+}
