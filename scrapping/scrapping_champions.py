@@ -26,7 +26,7 @@ def scrape_champion(url: str):
     trait_elements = driver.find_elements(By.CLASS_NAME, "NewSetUnitTrait")
     traits = [t.text.strip() for t in trait_elements if t.text.strip()]
 
-    # COST
+    # COSTS
     cost = int(
         driver.find_element(By.CLASS_NAME, "NewSetUnitCost").text.strip()
     )
@@ -69,7 +69,7 @@ def scrape_champion(url: str):
 
     driver.quit()
 
-    # Champion final
+    # CHAMPION JSON
     champion = {
         "name": name,
         "cost": cost,
@@ -102,6 +102,6 @@ def save_champion(champion: dict):
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(champion, f, indent=4, ensure_ascii=False)
 
-# EJECUCIÓN
+# MAIN
 if __name__ == "__main__":
     scrape_champion("https://www.metatft.com/units/Neeko")
