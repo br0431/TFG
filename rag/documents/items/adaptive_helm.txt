@@ -1,0 +1,8 @@
+Adaptive Helm is an item in Teamfight Tactics Set 16.
+It is built from the following components: Negatroncloak, Tearofthegoddess.
+It provides the following stats: MagicResist +20, Manaregen +3.
+Item effect: Gain an additional 15% Mana from all sources. The holder gains an additional bonus based on their Role:
+
+Tanks and Fighters: Gain 45 Armor and Magic Resistance.
+
+Other Roles: Gain 10% Attack Damage and Ability Power..

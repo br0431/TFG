@@ -1,0 +1,4 @@
+Archangel's Staff is an item in Teamfight Tactics Set 16.
+It is built from the following components: Needlesslylargerod, Tearofthegoddess.
+It provides the following stats: AP +30, Manaregen +1.
+Item effect: Combat start: Gain 20% Ability Power every 5 seconds in combat..
