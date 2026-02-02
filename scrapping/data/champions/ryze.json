@@ -1,6 +1,7 @@
 {
     "name": "Ryze",
     "cost": 7,
+    "role": "Magic Caster",
     "traits": [
         "Rune Mage"
     ],

@@ -1,6 +1,7 @@
 {
     "name": "Ziggs",
     "cost": 5,
+    "role": "Magic Marksman",
     "traits": [
         "Zaun",
         "Yordle",

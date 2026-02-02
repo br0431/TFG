@@ -1,6 +1,7 @@
 {
     "name": "Aatrox",
     "cost": 5,
+    "role": "Attack Fighter",
     "traits": [
         "Darkin",
         "World Ender",

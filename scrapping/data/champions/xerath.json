@@ -1,6 +1,7 @@
 {
     "name": "Xerath",
     "cost": 5,
+    "role": "Magic Caster",
     "traits": [
         "Shurima",
         "Ascendant"

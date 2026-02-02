@@ -1,6 +1,7 @@
 {
     "name": "Ashe",
     "cost": 2,
+    "role": "Attack Marksman",
     "traits": [
         "Freljord",
         "Quickstriker"

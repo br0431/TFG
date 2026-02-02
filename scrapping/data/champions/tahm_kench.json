@@ -1,6 +1,7 @@
 {
     "name": "Tahm Kench",
     "cost": 5,
+    "role": "Magic Tank",
     "traits": [
         "Bilgewater",
         "Glutton",

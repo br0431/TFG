@@ -1,6 +1,7 @@
 {
     "name": "Kindred",
     "cost": 5,
+    "role": "Attack Marksman",
     "traits": [
         "Eternal",
         "Quickstriker"

@@ -1,6 +1,7 @@
 {
     "name": "Volibear",
     "cost": 5,
+    "role": "Attack Fighter",
     "traits": [
         "Freljord",
         "Bruiser"

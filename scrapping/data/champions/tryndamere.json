@@ -1,6 +1,7 @@
 {
     "name": "Tryndamere",
     "cost": 2,
+    "role": "Attack Fighter",
     "traits": [
         "Freljord",
         "Slayer"

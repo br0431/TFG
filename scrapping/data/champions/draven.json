@@ -1,6 +1,7 @@
 {
     "name": "Draven",
     "cost": 3,
+    "role": "Attack Marksman",
     "traits": [
         "Noxus",
         "Quickstriker"

@@ -1,6 +1,7 @@
 {
     "name": "Fizz",
     "cost": 4,
+    "role": "Magic Assasin",
     "traits": [
         "Bilgewater",
         "Yordle"

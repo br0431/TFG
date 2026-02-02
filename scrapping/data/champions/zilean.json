@@ -1,6 +1,7 @@
 {
     "name": "Zilean",
     "cost": 5,
+    "role": "Magic Caster",
     "traits": [
         "Chronokeeper",
         "Invoker"

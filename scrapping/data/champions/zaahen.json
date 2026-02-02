@@ -1,6 +1,7 @@
 {
     "name": "Zaahen",
     "cost": 7,
+    "role": "Attack Fighter",
     "traits": [
         "Darkin",
         "Immortal"

@@ -1,6 +1,7 @@
 {
     "name": "Seraphine",
     "cost": 4,
+    "role": "Magic Caster",
     "traits": [
         "Piltover",
         "Disruptor"

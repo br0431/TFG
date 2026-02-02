@@ -1,6 +1,7 @@
 {
     "name": "Annie",
     "cost": 5,
+    "role": "Magic Caster",
     "traits": [
         "Dark Child",
         "Arcanist"

@@ -1,6 +1,7 @@
 {
     "name": "Sett",
     "cost": 5,
+    "role": "Magic Fighter",
     "traits": [
         "Ionia",
         "The Boss"

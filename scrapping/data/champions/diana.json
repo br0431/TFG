@@ -1,6 +1,7 @@
 {
     "name": "Diana",
     "cost": 4,
+    "role": "Magic Assasin",
     "traits": [
         "Targon"
     ],

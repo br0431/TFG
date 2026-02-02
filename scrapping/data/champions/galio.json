@@ -1,6 +1,7 @@
 {
     "name": "Galio",
     "cost": 5,
+    "role": "Magic Tank",
     "traits": [
         "Demacia",
         "Heroic"

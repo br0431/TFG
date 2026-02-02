@@ -1,6 +1,7 @@
 {
     "name": "T-Hex",
     "cost": 5,
+    "role": "Attack Fighter",
     "traits": [
         "HexMech",
         "Piltover",

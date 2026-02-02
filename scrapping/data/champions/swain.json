@@ -1,6 +1,7 @@
 {
     "name": "Swain",
     "cost": 4,
+    "role": "Magic Tank",
     "traits": [
         "Noxus",
         "Arcanist",

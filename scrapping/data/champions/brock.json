@@ -1,6 +1,7 @@
 {
     "name": "Brock",
     "cost": 7,
+    "role": "Attack Fighter",
     "traits": [
         "Ixtal"
     ],

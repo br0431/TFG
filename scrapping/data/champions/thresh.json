@@ -1,6 +1,7 @@
 {
     "name": "Thresh",
     "cost": 5,
+    "role": "Magic Fighter",
     "traits": [
         "Shadow Isles",
         "Warden"

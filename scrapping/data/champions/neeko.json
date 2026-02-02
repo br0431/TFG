@@ -1,6 +1,7 @@
 {
     "name": "Neeko",
     "cost": 2,
+    "role": "Magic Tank",
     "traits": [
         "Ixtal",
         "Arcanist",

@@ -1,6 +1,7 @@
 {
     "name": "Rift Herald",
     "cost": 4,
+    "role": "Magic Tank",
     "traits": [
         "Void",
         "Bruiser"

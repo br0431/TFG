@@ -1,6 +1,7 @@
 {
     "name": "Baron Nashor",
     "cost": 7,
+    "role": "Attack Fighter",
     "traits": [
         "Void",
         "Riftscourge"

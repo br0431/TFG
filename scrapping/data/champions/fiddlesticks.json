@@ -1,6 +1,7 @@
 {
     "name": "Fiddlesticks",
     "cost": 5,
+    "role": "Magic Assasin",
     "traits": [
         "Harvester",
         "Vanquisher"

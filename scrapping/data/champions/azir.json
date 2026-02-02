@@ -1,6 +1,7 @@
 {
     "name": "Azir",
     "cost": 5,
+    "role": "Magic Marksman",
     "traits": [
         "Shurima",
         "Emperor",

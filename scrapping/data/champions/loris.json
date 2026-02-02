@@ -1,6 +1,7 @@
 {
     "name": "Loris",
     "cost": 3,
+    "role": "Magic Tank",
     "traits": [
         "Piltover",
         "Warden"

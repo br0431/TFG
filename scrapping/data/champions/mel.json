@@ -1,6 +1,7 @@
 {
     "name": "Mel",
     "cost": 5,
+    "role": "Magic Caster",
     "traits": [
         "Noxus",
         "Disruptor"

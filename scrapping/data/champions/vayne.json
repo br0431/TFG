@@ -1,6 +1,7 @@
 {
     "name": "Vayne",
     "cost": 3,
+    "role": "Attack Marksman",
     "traits": [
         "Demacia",
         "Longshot"

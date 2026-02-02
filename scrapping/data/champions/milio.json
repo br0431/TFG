@@ -1,6 +1,7 @@
 {
     "name": "Milio",
     "cost": 3,
+    "role": "Magic Caster",
     "traits": [
         "Ixtal",
         "Invoker"

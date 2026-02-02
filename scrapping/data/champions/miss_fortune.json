@@ -1,6 +1,7 @@
 {
     "name": "Miss Fortune",
     "cost": 4,
+    "role": "Attack Caster",
     "traits": [
         "Bilgewater",
         "Gunslinger"

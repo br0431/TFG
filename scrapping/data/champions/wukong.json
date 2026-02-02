@@ -1,6 +1,7 @@
 {
     "name": "Wukong",
     "cost": 4,
+    "role": "Attack Tank",
     "traits": [
         "Ionia",
         "Bruiser"

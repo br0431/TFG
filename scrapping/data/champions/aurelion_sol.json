@@ -1,6 +1,7 @@
 {
     "name": "Aurelion Sol",
     "cost": 7,
+    "role": "Magic Caster",
     "traits": [
         "Star Forger",
         "Targon"

@@ -1,6 +1,7 @@
 {
     "name": "Ornn",
     "cost": 5,
+    "role": "Magic Tank",
     "traits": [
         "Blacksmith",
         "Warden"

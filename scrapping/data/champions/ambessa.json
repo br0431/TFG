@@ -1,6 +1,7 @@
 {
     "name": "Ambessa",
     "cost": 4,
+    "role": "Attack Fighter",
     "traits": [
         "Noxus",
         "Vanquisher"

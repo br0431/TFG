@@ -1,6 +1,7 @@
 {
     "name": "Lissandra",
     "cost": 4,
+    "role": "Magic Caster",
     "traits": [
         "Freljord",
         "Invoker"

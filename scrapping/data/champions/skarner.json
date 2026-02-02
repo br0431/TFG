@@ -1,6 +1,7 @@
 {
     "name": "Skarner",
     "cost": 4,
+    "role": "Attack Tank",
     "traits": [
         "Ixtal"
     ],

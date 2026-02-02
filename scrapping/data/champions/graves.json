@@ -1,6 +1,7 @@
 {
     "name": "Graves",
     "cost": 2,
+    "role": "Attack Fighter",
     "traits": [
         "Bilgewater",
         "Gunslinger"

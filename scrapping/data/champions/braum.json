@@ -1,6 +1,7 @@
 {
     "name": "Braum",
     "cost": 4,
+    "role": "Magic Tank",
     "traits": [
         "Freljord",
         "Warden"

@@ -1,6 +1,7 @@
 {
     "name": "Lux",
     "cost": 4,
+    "role": "Magic Caster",
     "traits": [
         "Demacia",
         "Arcanist"
