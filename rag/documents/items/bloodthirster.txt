@@ -1,4 +1,0 @@
-Bloodthirster is an item in Teamfight Tactics Set 16.
-It is built from the following components: Bfsword, Negatroncloak.
-It provides the following stats: AD +15%, AP +15, MagicResist +20, Lifesteal +20%.
-Item effect: Once per combat at 40% Health, gain a 25% max Health Shield that lasts up to 5 seconds..
