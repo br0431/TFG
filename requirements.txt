@@ -9,3 +9,6 @@ sentence-transformers>=2.2.0
 pydantic<3.0.0
 protobuf<5.0.0
 langchain-text-splitters~=1.0.0
+langchain-core~=1.2.14
+selenium~=4.39.0
+webdriver-manager~=4.0.2
