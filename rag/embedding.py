@@ -85,9 +85,13 @@ def main():
         encode_kwargs={"normalize_embeddings": True},
     )
     # Indexación de los items. El índice contiene el texto estable serializado, el embedding y los metadatos específicados).
+    # Lista para guardar los documentos.
     items_docs = []
+    # Bucle para leer todos los ficheros .json del directorio y leer el contenido.
     for fp in load_json_files(DATA_DIR / "items"):
+        # Conversión de todos los elementos del JSON a diccionario Python.
         obj = json.loads(fp.read_text(encoding="utf-8"))
+        # Conversión de cada JSON a un Document con dos partes, texto + metadata.
         items_docs.append(Document(
             page_content=stable_text_item(obj),
             metadata={
@@ -98,7 +102,7 @@ def main():
                 "raw_json": json.dumps(obj, ensure_ascii=False),
             }
         ))
-
+    # Se crea la colección en Chroma en caso de no existir y sino se abre.
     db_items = Chroma(
         collection_name="tft_items",
         persist_directory=str(CHROMA_DIR),
@@ -128,7 +132,6 @@ def main():
         embedding_function=embeddings,
     )
     if champs_docs:
-        # Usamos como ID el path del fichero al ser un parámetro estable y evitar duplicados.
         db_champs.add_documents(champs_docs, ids=[d.metadata["source"] for d in champs_docs])
 
     # Indexación de las composiciones. El índice contiene el texto estable serializado, el embedding y los metadatos específicados).
@@ -151,7 +154,6 @@ def main():
         embedding_function=embeddings,
     )
     if comps_docs:
-        # Usamos como ID el path del fichero al ser un parámetro estable y evitar duplicados.
         db_comps.add_documents(comps_docs, ids=[d.metadata["source"] for d in comps_docs])
 
     # Comprobación de que se han cargado todos los documentos que tenemos disponibles
