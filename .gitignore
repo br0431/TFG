@@ -1,0 +1,6 @@
+.claude/
+.venv311/
+.idea/
+__pycache__/
+*.pyc
+rag/chroma_db/
