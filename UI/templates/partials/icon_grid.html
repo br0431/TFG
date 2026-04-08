@@ -1,0 +1,54 @@
+<div class="icon-grid">
+{% for item in items %}
+  {% set is_selected = item.name in selected %}
+  <button class="icon-btn{% if is_selected %} selected{% endif %}"
+          hx-post="/select"
+          hx-vals="{{ {'name': item.name, 'type': tipo, 'image': item.image_path} | tojson }}"
+          hx-target="#selected-zone"
+          hx-swap="outerHTML">
+
+    <div class="icon-img-wrap">
+      <span class="icon-initial">{{ item.name[:2] | upper }}</span>
+      <img src="{{ item.image_path }}" alt="{{ item.name }}" class="icon-img">
+    </div>
+
+    <span class="icon-name">{{ item.name }}</span>
+
+    {% if tipo == 'champions' %}
+      <div class="cost-stars cost-{{ item.cost }}">
+        {% for _ in range(item.cost) %}★{% endfor %}
+      </div>
+      {% if item.traits %}
+      <div class="trait-list">
+        {% for trait in item.traits[:2] %}
+          <span class="trait-tag">{{ trait }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+    {% elif tipo == 'items' %}
+      {% if item.bonuses %}
+      <div class="item-bonuses">
+        {% for bonus in item.bonuses[:2] %}
+          <span class="bonus-tag">{{ bonus }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+    {% elif tipo == 'comps' %}
+      {% if item.variants and item.variants[0] %}
+        {% for key, val in item.variants[0].items() %}
+          {% if val is mapping and val.champions is defined %}
+            <span class="comp-count">{{ val.champions | length }} campeones</span>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+
+    {% if is_selected %}
+      <span class="qty-badge">{{ selected[item.name].qty }}</span>
+    {% endif %}
+
+  </button>
+{% endfor %}
+</div>

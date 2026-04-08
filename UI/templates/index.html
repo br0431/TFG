@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="layout">
+
+  <!-- PANEL IZQUIERDO -->
+  <aside class="panel panel-left">
+
+    <h1 class="main-title">TFT <span class="accent">Set 16</span></h1>
+
+    <div class="accordions">
+
+      <details class="accordion"
+               hx-get="/api/grid/champions"
+               hx-trigger="toggle once"
+               hx-target="#grid-champions"
+               hx-swap="innerHTML">
+        <summary class="accordion-summary">
+          <span class="summary-label">Campeones</span>
+          <span class="arrow">▼</span>
+        </summary>
+        <div id="grid-champions" class="grid-container">
+          <p class="loading-text">Cargando campeones…</p>
+        </div>
+      </details>
+
+      <details class="accordion"
+               hx-get="/api/grid/items"
+               hx-trigger="toggle once"
+               hx-target="#grid-items"
+               hx-swap="innerHTML">
+        <summary class="accordion-summary">
+          <span class="summary-label">Objetos</span>
+          <span class="arrow">▼</span>
+        </summary>
+        <div id="grid-items" class="grid-container">
+          <p class="loading-text">Cargando objetos…</p>
+        </div>
+      </details>
+
+      <details class="accordion"
+               hx-get="/api/grid/comps"
+               hx-trigger="toggle once"
+               hx-target="#grid-comps"
+               hx-swap="innerHTML">
+        <summary class="accordion-summary">
+          <span class="summary-label">Componentes</span>
+          <span class="arrow">▼</span>
+        </summary>
+        <div id="grid-comps" class="grid-container">
+          <p class="loading-text">Cargando componentes…</p>
+        </div>
+      </details>
+
+    </div>
+
+    {% with selected = {} %}
+      {% include 'partials/selected_zone.html' %}
+    {% endwith %}
+
+    <div class="action-buttons">
+      <button class="btn btn-primary"
+              hx-post="/chat"
+              hx-include="#selected-zone"
+              hx-target="#chat-messages"
+              hx-swap="beforeend scroll:#chat-messages:bottom">
+        ⚔ ENVIAR CONTEXTO AL CHAT
+      </button>
+      <button class="btn btn-secondary"
+              hx-post="/clear"
+              hx-target="#selected-zone"
+              hx-swap="outerHTML">
+        ✕ LIMPIAR
+      </button>
+    </div>
+
+  </aside>
+
+  <!-- PANEL DERECHO -->
+  <main class="panel panel-right">
+
+    <h2 class="panel-title">Asistente <span class="accent">TFT</span></h2>
+
+    <div id="chat-messages" class="chat-messages">
+      <div class="chat-bubble bot">
+        <div class="bubble-label">ASISTENTE</div>
+        <div class="bubble-content">
+          ¡Bienvenido al asistente TFT Set 16! Selecciona campeones, objetos o componentes
+          en el panel izquierdo y pulsa <strong>Enviar contexto al chat</strong>, o escribe
+          directamente tu pregunta abajo.
+        </div>
+      </div>
+    </div>
+
+    <form class="chat-form"
+          hx-post="/chat"
+          hx-target="#chat-messages"
+          hx-swap="beforeend scroll:#chat-messages:bottom"
+          hx-on::after-request="this.reset()">
+      <input type="text"
+             name="message"
+             class="chat-input"
+             placeholder="Pregunta sobre el Set 16…"
+             autocomplete="off"
+             required>
+      <button type="submit" class="btn btn-send">▶</button>
+    </form>
+
+  </main>
+
+</div>
+{% endblock %}

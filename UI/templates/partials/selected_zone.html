@@ -1,0 +1,33 @@
+<div id="selected-zone" class="selected-zone">
+
+  {% if selected %}
+    <div class="chips-container">
+      {% for name, info in selected.items() %}
+      <div class="chip"
+           hx-post="/deselect"
+           hx-vals="{{ {'name': name} | tojson }}"
+           hx-target="#selected-zone"
+           hx-swap="outerHTML">
+        <div class="chip-img-wrap">
+          <span class="chip-initial">{{ name[:2] | upper }}</span>
+          <img src="{{ info.image }}" alt="{{ name }}" class="chip-img">
+        </div>
+        <div class="chip-info">
+          <span class="chip-name">{{ name }}</span>
+          <span class="chip-type">{{ info.type }}</span>
+        </div>
+        {% if info.qty > 1 %}
+          <span class="chip-qty">×{{ info.qty }}</span>
+        {% endif %}
+        <span class="chip-remove">✕</span>
+      </div>
+      {% endfor %}
+    </div>
+    <input type="hidden" name="context" value="{{ selected | tojson }}">
+
+  {% else %}
+    <p class="empty-state">Ningún elemento seleccionado</p>
+    <input type="hidden" name="context" value="">
+  {% endif %}
+
+</div>

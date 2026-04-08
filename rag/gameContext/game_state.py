@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 from typing import List
-#Clase para guardar el estado de la partida que indica el jugador y pasarla como contexto más tarde.
+# Clase para guardar el estado de la partida que indica el jugador y pasarla como contexto más tarde.
 @dataclass
 class GameState:
     phase: str # Fase de la partida en la que se encuentra.
