@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import glob
 from flask import Flask, render_template, session, request, send_from_directory
@@ -6,37 +7,58 @@ from flask import Flask, render_template, session, request, send_from_directory
 app = Flask(__name__)
 app.secret_key = 'tft-set16-secret-key-2024'
 
-DATA_DIR = os.path.join(os.path.dirname(__file__), '..', 'scrapping', 'data')
+DATA_DIR   = os.path.join(os.path.dirname(__file__), '..', 'scrapping', 'data')
+IMAGES_DIR = os.path.join(os.path.dirname(__file__), 'static', 'images')
 
 
-def load_json_dir(subdir):
+def normalize(text):
+    return re.sub(r'[_\-&\s]', '', text).lower()
+
+
+def resolve_image(slug, folder, prefix):
+    filename = f'{prefix}{normalize(slug)}.png'
+    full = os.path.join(IMAGES_DIR, folder, filename)
+    if os.path.exists(full):
+        return f'/static/images/{folder}/{filename}'
+    return ''
+
+
+def load_json_dir(subdir, img_folder, img_prefix):
     pattern = os.path.join(DATA_DIR, subdir, '*.json')
-    items = []
+    result = []
     for filepath in sorted(glob.glob(pattern)):
         with open(filepath, 'r', encoding='utf-8') as f:
             data = json.load(f)
         stem = os.path.splitext(os.path.basename(filepath))[0]
-        data['image_path'] = f'/scrapping-data/{subdir}/{stem}.png'
         data['slug'] = stem
-        items.append(data)
-    return items
+        data['image_path'] = resolve_image(stem, img_folder, img_prefix)
+        result.append(data)
+    return result
 
 
-champions = load_json_dir('champions')
-items     = load_json_dir('items')
-comps     = load_json_dir('comps')
+def load_components():
+    pattern = os.path.join(IMAGES_DIR, 'COMPONENTS', 'tft_item_*.png')
+    result = []
+    for filepath in sorted(glob.glob(pattern)):
+        filename = os.path.basename(filepath)
+        slug = filename.replace('tft_item_', '').replace('.png', '')
+        result.append({
+            'name': slug.capitalize(),
+            'slug': slug,
+            'image_path': f'/static/images/COMPONENTS/{filename}',
+        })
+    return result
+
+
+champions  = load_json_dir('champions', 'CHAMPS',  'tft16_')
+items      = load_json_dir('items',     'ITEMS',   'tft_item_')
+components = load_components()
 
 DATASETS = {
-    'champions': champions,
-    'items':     items,
-    'comps':     comps,
+    'champions':  champions,
+    'items':      items,
+    'components': components,
 }
-
-app.add_url_rule(
-    '/scrapping-data/<path:filename>',
-    endpoint='scrapping_data',
-    view_func=lambda filename: send_from_directory(DATA_DIR, filename),
-)
 
 
 @app.route('/')
@@ -44,7 +66,7 @@ def index():
     return render_template('index.html',
                            champions=champions,
                            items=items,
-                           comps=comps)
+                           components=components)
 
 
 @app.route('/api/grid/<tipo>')
@@ -61,11 +83,9 @@ def select():
     name  = request.form.get('name', '').strip()
     tipo  = request.form.get('type', '')
     image = request.form.get('image', '')
-
     if not name:
         selected = session.get('selected', {})
         return render_template('partials/selected_zone.html', selected=selected)
-
     selected = session.get('selected', {})
     if name in selected:
         if selected[name]['qty'] < 3:
@@ -112,18 +132,13 @@ def chat():
     # import sys
     # sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
     # from rag.search import classify_query
-    #
     # full_query = message
     # if context:
     #     ctx_dict = json.loads(context)
-    #     ctx_str = ", ".join(
-    #         f"{k} (x{v['qty']}, {v['type']})" for k, v in ctx_dict.items()
-    #     )
+    #     ctx_str = ", ".join(f"{k} (x{v['qty']}, {v['type']})" for k, v in ctx_dict.items())
     #     full_query = f"Contexto actual: {ctx_str}. Pregunta: {message}"
-    #
     # collections = classify_query(full_query)
-    # # ... inicializar embeddings, db y LLM igual que en search.py main()
-    # # bot_response = llm.invoke(prompt)
+    # bot_response = llm.invoke(prompt)
     # ---
 
     display_message = message if message else "(sin mensaje — contexto enviado)"

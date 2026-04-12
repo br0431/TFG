@@ -105,7 +105,7 @@ def main():
 
         prompt = (
             "You are a TFT expert. The user asked a multi-part question. "
-            "Answer EVERY part using ONLY the documents below.\n"
+            "Answer EVERY part using ONLY the documents below but do not mention them in the answer.\n"
             "Go through each document and use it if it is relevant to any part of the question.\n"
             "If a part of the answer is not in the documents, say: I don't have that information.\n\n"
             f"Question: {query}\n\n"

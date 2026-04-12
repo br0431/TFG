@@ -3,7 +3,7 @@
   {% set is_selected = item.name in selected %}
   <button class="icon-btn{% if is_selected %} selected{% endif %}"
           hx-post="/select"
-          hx-vals="{{ {'name': item.name, 'type': tipo, 'image': item.image_path} | tojson }}"
+          hx-vals='{{ {"name": item.name, "type": tipo, "image": item.image_path} | tojson }}'
           hx-target="#selected-zone"
           hx-swap="outerHTML">
 
