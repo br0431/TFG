@@ -39,7 +39,7 @@
       {% if item.variants and item.variants[0] %}
         {% for key, val in item.variants[0].items() %}
           {% if val is mapping and val.champions is defined %}
-            <span class="comp-count">{{ val.champions | length }} campeones</span>
+            <span class="comp-count">{{ val.champions | length }} champions</span>
           {% endif %}
         {% endfor %}
       {% endif %}

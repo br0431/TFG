@@ -1,8 +1,13 @@
 import os
 import re
+import sys
 import json
 import glob
 from flask import Flask, render_template, session, request, send_from_directory
+
+# Añadimos la raíz del proyecto al path para poder importar rag/
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+from rag.search import ask
 
 app = Flask(__name__)
 app.secret_key = 'tft-set16-secret-key-2024'
@@ -119,29 +124,29 @@ def chat():
     message = request.form.get('message', '').strip()
     context = request.form.get('context', '').strip()
 
-    if message and context:
-        bot_response = f"[MOCK] Pregunta: «{message}» con contexto de {len(json.loads(context) if context else {})} elementos seleccionados."
-    elif message:
-        bot_response = f"[MOCK] Pregunta recibida: «{message}». Aquí iría la respuesta del modelo local."
-    elif context:
-        bot_response = "[MOCK] He analizado tu selección actual. Aquí iría el consejo del asistente TFT."
+    # Construir la query combinando contexto seleccionado + pregunta del usuario
+    full_query = message
+    if context:
+        try:
+            ctx_dict = json.loads(context)
+            if ctx_dict:
+                ctx_str = ", ".join(
+                    f"{name} (x{v['qty']}, {v['type']})"
+                    for name, v in ctx_dict.items()
+                )
+                full_query = f"Current board context: {ctx_str}. Question: {message}"
+        except (json.JSONDecodeError, KeyError):
+            pass
+
+    if not full_query:
+        bot_response = "Please write a question or select something from the board first."
     else:
-        bot_response = "[MOCK] No he recibido ni pregunta ni contexto. ¡Selecciona algo o escribe una pregunta!"
+        try:
+            bot_response = ask(full_query)
+        except Exception as e:
+            bot_response = f"Error connecting to the RAG system: {e}"
 
-    # --- Integración RAG (descomenta para activar) ---
-    # import sys
-    # sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-    # from rag.search import classify_query
-    # full_query = message
-    # if context:
-    #     ctx_dict = json.loads(context)
-    #     ctx_str = ", ".join(f"{k} (x{v['qty']}, {v['type']})" for k, v in ctx_dict.items())
-    #     full_query = f"Contexto actual: {ctx_str}. Pregunta: {message}"
-    # collections = classify_query(full_query)
-    # bot_response = llm.invoke(prompt)
-    # ---
-
-    display_message = message if message else "(sin mensaje — contexto enviado)"
+    display_message = message if message else "(no message — context sent)"
     return render_template('partials/chat_message.html',
                            user_message=display_message,
                            bot_response=bot_response)

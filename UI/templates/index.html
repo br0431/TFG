@@ -15,11 +15,11 @@
                hx-target="#grid-champions"
                hx-swap="innerHTML">
         <summary class="accordion-summary">
-          <span class="summary-label">Campeones</span>
+          <span class="summary-label">Champions</span>
           <span class="arrow">▼</span>
         </summary>
         <div id="grid-champions" class="grid-container">
-          <p class="loading-text">Cargando campeones…</p>
+          <p class="loading-text">Loading champions…</p>
         </div>
       </details>
 
@@ -29,11 +29,11 @@
                hx-target="#grid-items"
                hx-swap="innerHTML">
         <summary class="accordion-summary">
-          <span class="summary-label">Objetos</span>
+          <span class="summary-label">Objects</span>
           <span class="arrow">▼</span>
         </summary>
         <div id="grid-items" class="grid-container">
-          <p class="loading-text">Cargando objetos…</p>
+          <p class="loading-text">Loading objects…</p>
         </div>
       </details>
 
@@ -43,11 +43,11 @@
                hx-target="#grid-components"
                hx-swap="innerHTML">
         <summary class="accordion-summary">
-          <span class="summary-label">Componentes</span>
+          <span class="summary-label">Components</span>
           <span class="arrow">▼</span>
         </summary>
         <div id="grid-components" class="grid-container">
-          <p class="loading-text">Cargando componentes…</p>
+          <p class="loading-text">Loading components…</p>
         </div>
       </details>
 
@@ -63,13 +63,13 @@
               hx-include="#selected-zone"
               hx-target="#chat-messages"
               hx-swap="beforeend scroll:#chat-messages:bottom">
-        ⚔ ENVIAR CONTEXTO AL CHAT
+        ⚔ SEND CONTEXT TO CHAT
       </button>
       <button class="btn btn-secondary"
               hx-post="/clear"
               hx-target="#selected-zone"
               hx-swap="outerHTML">
-        ✕ LIMPIAR
+        ✕ CLEAN
       </button>
     </div>
 
@@ -78,15 +78,15 @@
   <!-- PANEL DERECHO -->
   <main class="panel panel-right">
 
-    <h2 class="panel-title">Asistente <span class="accent">TFT</span></h2>
+    <h2 class="panel-title">TFT <span class="accent">Assistant</span></h2>
 
     <div id="chat-messages" class="chat-messages">
       <div class="chat-bubble bot">
-        <div class="bubble-label">ASISTENTE</div>
+        <div class="bubble-label">ASSISTANT</div>
         <div class="bubble-content">
-          ¡Bienvenido al asistente TFT Set 16! Selecciona campeones, objetos o componentes
-          en el panel izquierdo y pulsa <strong>Enviar contexto al chat</strong>, o escribe
-          directamente tu pregunta abajo.
+          Welcome to the TFT Set 16 Assistant! Select champions, items, or components
+          in the left panel and press <strong>Send  context to chat</strong>, or Write
+          your question directly below.
         </div>
       </div>
     </div>
@@ -99,7 +99,7 @@
       <input type="text"
              name="message"
              class="chat-input"
-             placeholder="Pregunta sobre el Set 16…"
+             placeholder="Ask about Set 16…"
              autocomplete="off"
              required>
       <button type="submit" class="btn btn-send">▶</button>
