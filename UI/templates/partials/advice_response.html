@@ -1,19 +1,18 @@
 {% if error %}
-  <p class="advice-error">{{ error }}</p>
+  <div class="advice-output">
+    <p class="advice-error">{{ error }}</p>
+  </div>
 
 {% else %}
-  <div class="advice-rules">
-    <h3>Acciones recomendadas</h3>
-    <ul>
+  <div class="advice-output">
+    <p class="advice-rules-title">Recommended Actions</p>
+    <ul class="advice-rules-list">
       {% for rule in rules %}
         <li>{{ rule }}</li>
       {% endfor %}
     </ul>
-  </div>
 
-  <div class="advice-comp">
-    <h3>Composición sugerida</h3>
-    <p>{{ bot_response }}</p>
+    <p class="advice-comp-title">Suggested Composition</p>
+    <p class="advice-comp-text">{{ bot_response }}</p>
   </div>
-
 {% endif %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="layout">
+<div class="layout" xmlns:hx-on="http://www.w3.org/1999/xhtml">
 
   <!-- PANEL IZQUIERDO -->
   <aside class="panel panel-left">
@@ -57,53 +57,42 @@
       {% include 'partials/selected_zone.html' %}
     {% endwith %}
 
-    <div class="action-buttons">
-      <button class="btn btn-primary"
-              hx-post="/chat"
-              hx-include="#selected-zone"
-              hx-target="#chat-messages"
-              hx-swap="beforeend scroll:#chat-messages:bottom">
-        ⚔ SEND CONTEXT TO CHAT
-      </button>
-      <button class="btn btn-secondary"
-              hx-post="/clear"
-              hx-target="#selected-zone"
-              hx-swap="outerHTML">
-        ✕ CLEAN
-      </button>
-    </div>
-
     <form hx-post="/advice"
       hx-target="#advice-output"
       hx-swap="innerHTML">
 
-  <div class="advice-fields">
-    <label>
-      Phase
-      <input type="text" name="phase" placeholder="ej. 3-2" required>
-    </label>
-    <label>
-      Level
-      <input type="number" name="level" min="1" max="9" placeholder="1-9" required>
-    </label>
-    <label>
-      Gold
-      <input type="number" name="gold" min="0" placeholder="0" required>
-    </label>
-    <label>
-      HP
-      <input type="number" name="hp" min="0" max="100" placeholder="100" required>
-    </label>
+  <div class="advice-section">
+    <span class="advice-section-title">⚔ Game State</span>
+
+    <div class="advice-fields">
+      <label class="advice-label">Phase
+        <input class="advice-input" type="text" name="phase" placeholder="e.g. 3-2" required>
+      </label>
+      <label class="advice-label">Level
+        <input class="advice-input" type="number" name="level" min="1" max="9" placeholder="1-9" required>
+      </label>
+      <label class="advice-label">Gold
+        <input class="advice-input" type="number" name="gold" min="0" placeholder="0" required>
+      </label>
+      <label class="advice-label">HP
+        <input class="advice-input" type="number" name="hp" min="0" max="100" placeholder="100" required>
+      </label>
+    </div>
+
+    <div class="advice-buttons">
+      <button type="submit" class="btn btn-primary">⚔ SEND CONTEXT</button>
+      <button type="button"
+              class="btn btn-secondary"
+              hx-post="/clear"
+              hx-target="#selected-zone"
+              hx-swap="outerHTML">
+        ✕ CLEAR
+      </button>
+    </div>
   </div>
+    </form>
 
-  <p class="advice-hint">
-    Los campeones e ítems se recogen del tablero que tengas seleccionado.
-  </p>
-
-  <button type="submit">¿Qué hago ahora?</button>
-</form>
-
-<div id="advice-output"></div>
+    <div id="advice-output"></div>
 
   </aside>
 
@@ -116,9 +105,9 @@
       <div class="chat-bubble bot">
         <div class="bubble-label">ASSISTANT</div>
         <div class="bubble-content">
-          Welcome to the TFT Set 16 Assistant! Select champions, items, or components
-          in the left panel and press <strong>Send  context to chat</strong>, or Write
-          your question directly below.
+          Welcome to the TFT Set 16 Assistant! Select your champions and items,
+          fill in your current game state and press <strong>Send Context</strong>
+          to get a recommendation, or ask a question directly below.
         </div>
       </div>
     </div>

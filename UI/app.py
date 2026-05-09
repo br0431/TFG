@@ -5,10 +5,10 @@ import json
 import glob
 from flask import Flask, render_template, session, request, send_from_directory
 
-from rag.gameContext.decision_engine import get_decisions
-
 # Añadimos la raíz del proyecto al path para poder importar rag/
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
+from rag.gameContext.decision_engine import get_decisions
 from rag.search import ask
 
 app = Flask(__name__)
