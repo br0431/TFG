@@ -73,6 +73,38 @@
       </button>
     </div>
 
+    <form hx-post="/advice"
+      hx-target="#advice-output"
+      hx-swap="innerHTML">
+
+  <div class="advice-fields">
+    <label>
+      Phase
+      <input type="text" name="phase" placeholder="ej. 3-2" required>
+    </label>
+    <label>
+      Level
+      <input type="number" name="level" min="1" max="9" placeholder="1-9" required>
+    </label>
+    <label>
+      Gold
+      <input type="number" name="gold" min="0" placeholder="0" required>
+    </label>
+    <label>
+      HP
+      <input type="number" name="hp" min="0" max="100" placeholder="100" required>
+    </label>
+  </div>
+
+  <p class="advice-hint">
+    Los campeones e ítems se recogen del tablero que tengas seleccionado.
+  </p>
+
+  <button type="submit">¿Qué hago ahora?</button>
+</form>
+
+<div id="advice-output"></div>
+
   </aside>
 
   <!-- PANEL DERECHO -->

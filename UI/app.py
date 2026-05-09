@@ -5,6 +5,8 @@ import json
 import glob
 from flask import Flask, render_template, session, request, send_from_directory
 
+from rag.gameContext.decision_engine import get_decisions
+
 # Añadimos la raíz del proyecto al path para poder importar rag/
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from rag.search import ask
@@ -150,6 +152,43 @@ def chat():
     return render_template('partials/chat_message.html',
                            user_message=display_message,
                            bot_response=bot_response)
+
+
+@app.route('/advice', methods=['POST'])
+def advice():
+    # Datos del formulario de situación
+    phase = request.form.get('phase', '').strip()
+    level = request.form.get('level', '0').strip()
+    gold  = request.form.get('gold',  '0').strip()
+    hp    = request.form.get('hp',    '100').strip()
+
+    # Validación básica de fase
+    if not re.match(r'^[1-7]-[1-7]$', phase):
+        return render_template('partials/advice_response.html',
+                               error="Formato de fase incorrecto. Usa el formato X-Y (ej. 3-2).")
+
+    level = int(level) if level.isdigit() else 0
+    gold  = int(gold)  if gold.isdigit()  else 0
+    hp    = int(hp)    if hp.isdigit()    else 100
+
+    # Campeones e ítems vienen del tablero seleccionado en la sesión
+    selected   = session.get('selected', {})
+    champions  = [name for name, v in selected.items() if v['type'] == 'champions']
+    items      = [name for name, v in selected.items() if v['type'] in ('items', 'components')]
+
+    # Motor de decisiones
+    result = get_decisions(phase, level, gold, hp, champions, items)
+
+    # El prompt enriquecido va al RAG
+    try:
+        bot_response = ask(result['prompt'])
+    except Exception as e:
+        bot_response = f"Error conectando con el sistema RAG: {e}"
+
+    return render_template('partials/advice_response.html',
+                           rules=result['rules'],
+                           bot_response=bot_response,
+                           error=None)
 
 
 if __name__ == '__main__':

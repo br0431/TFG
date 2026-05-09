@@ -1,0 +1,19 @@
+{% if error %}
+  <p class="advice-error">{{ error }}</p>
+
+{% else %}
+  <div class="advice-rules">
+    <h3>Acciones recomendadas</h3>
+    <ul>
+      {% for rule in rules %}
+        <li>{{ rule }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="advice-comp">
+    <h3>Composición sugerida</h3>
+    <p>{{ bot_response }}</p>
+  </div>
+
+{% endif %}
