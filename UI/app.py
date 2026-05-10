@@ -3,13 +3,13 @@ import re
 import sys
 import json
 import glob
-from flask import Flask, render_template, session, request, send_from_directory
+from flask import Flask, render_template, session, request
 
 # Añadimos la raíz del proyecto al path para poder importar rag/
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 from rag.gameContext.decision_engine import get_decisions
-from rag.search import ask
+from rag.search import ask, ask_advice
 
 app = Flask(__name__)
 app.secret_key = 'tft-set16-secret-key-2024'
@@ -66,6 +66,8 @@ DATASETS = {
     'items':      items,
     'components': components,
 }
+
+
 
 
 @app.route('/')
@@ -181,13 +183,17 @@ def advice():
 
     # El prompt enriquecido va al RAG
     try:
-        bot_response = ask(result['prompt'])
+        bot_response = ask_advice(result['prompt'], champions)
     except Exception as e:
         bot_response = f"Error conectando con el sistema RAG: {e}"
 
     return render_template('partials/advice_response.html',
                            rules=result['rules'],
                            bot_response=bot_response,
+                           phase=phase,
+                           level=level,
+                           gold=gold,
+                           hp=hp,
                            error=None)
 
 

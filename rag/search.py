@@ -5,7 +5,7 @@ from langchain_ollama import OllamaLLM
 from langchain_huggingface import HuggingFaceEmbeddings
 
 # Configuración de variables estáticas para las rutas y el modelo elegido.
-ROOT = Path(__file__).resolve().parent.parent
+ROOT       = Path(__file__).resolve().parent.parent
 CHROMA_DIR = ROOT / "rag" / "chroma_db"
 # Modelo de embedding.
 EMBED_MODEL = "BAAI/bge-base-en-v1.5"
@@ -15,8 +15,9 @@ LLM_MODEL = "llama3.1:8b"
 MAX_DOCS = 4
 # Máximo de caractéres por documento para no tener problemas de memoria.
 MAX_CHARS_PER_DOC = 450
-# # Estado global del RAG. Se inicializa una sola vez en la primera llamada a ask() para evitar cargar los modelos y las colecciones en cada petición HTTP.
-_rag= None
+# Estado global del RAG. Se inicializa una sola vez en la primera llamada a ask()
+# para evitar cargar los modelos y las colecciones en cada petición HTTP.
+_rag = None
 
 
 def classify_query(query: str) -> list[str]:
@@ -29,7 +30,6 @@ def classify_query(query: str) -> list[str]:
     item_keywords     = {"item", "items", "component", "components", "bonus", "bonuses", "equip", "build", "bis", "best in slot"}
     champion_keywords = {"item", "items", "champion", "champions", "who", "cost", "trait", "traits", "ability", "stats"}
     comp_keywords     = {"comp", "composition", "compositions", "team", "synergy", "synergies", "play", "lineup", "board"}
-    # Palabras que indican una query de crafteo/receta: la info está en tft_items, no en tft_champions.
     recipe_keywords   = {"component", "components", "built from", "made from", "craft", "combine", "recipe"}
 
     detected = []
@@ -40,9 +40,7 @@ def classify_query(query: str) -> list[str]:
     if any(k in q for k in comp_keywords):
         detected.append("comp")
 
-    # Si la query mezcla items y campeones, decidimos la colección por contexto:
-    # - query de crafteo entonces tft_items tiene la info de componentes.
-    # - query de recomendación entonces tft_champions tiene los mejores items por campeón.
+    # Si la query mezcla items y campeones, decidimos la colección por contexto.
     if "item" in detected and "champion" in detected:
         if any(k in q for k in recipe_keywords):
             detected.remove("champion")
@@ -50,16 +48,7 @@ def classify_query(query: str) -> list[str]:
             detected.remove("item")
 
     return detected if detected else ["item", "champion", "comp"]
-# main simplificado que usa la función ask.
-def main():
-    print("Escribe tu pregunta sobre el set 16 del TFT. ENTER vacío para salir.")
-    while True:
-        query = input("\n> ").strip()
-        if not query:
-            break
-        collections = classify_query(query)
-        print(f"[Colecciones detectadas: {', '.join(collections)}]")
-        print("\nRespuesta generada por el LLM:\n", ask(query))
+
 
 def _init_rag():
     """
@@ -70,48 +59,40 @@ def _init_rag():
     if _rag is not None:
         return _rag
 
-    # Cargamos el modelo de embeddings.
     embeddings = HuggingFaceEmbeddings(
         model_name=EMBED_MODEL,
         encode_kwargs={"normalize_embeddings": True},
     )
 
-    # Conectamos con las tres colecciones ya indexadas en Chroma.
     db_items  = Chroma("tft_items",     persist_directory=str(CHROMA_DIR), embedding_function=embeddings)
     db_champs = Chroma("tft_champions", persist_directory=str(CHROMA_DIR), embedding_function=embeddings)
     db_comps  = Chroma("tft_comps",     persist_directory=str(CHROMA_DIR), embedding_function=embeddings)
 
-    # Inicializamos el LLM.
     llm = OllamaLLM(model=LLM_MODEL, temperature=0, num_ctx=2048)
-    # Asignamos a la variable que se va a devolver el contenido, en este caso las colecciones y el llm.
+
     _rag = {
         "collection_map": {"item": db_items, "champion": db_champs, "comp": db_comps},
         "llm": llm,
     }
     return _rag
 
-
 def ask(query: str) -> str:
     """
-    Punto de entrada para la interfaz web. Recibe la query completa
+    Punto de entrada para el chat libre. Recibe la query completa
     (incluyendo el contexto del tablero si lo hay) y devuelve la respuesta
     del LLM como string, lista para mostrar en el chat.
     """
-    # Inicializamos el RAG y asignamos valores a las variables a tratar.
     rag = _init_rag()
     collection_map = rag["collection_map"]
     llm = rag["llm"]
 
-    # Clasificación automática de las colecciones a tratar, puede devolver una o varias colecciones.
     collections = classify_query(query)
 
-    # Buscamos en todas las colecciones identificadas y fusionamos los documentos. Se divide el máximo de k documentos entre el número de colecciones buscadas.
     k_per_col = max(1, MAX_DOCS // len(collections))
     docs = []
     for col in collections:
         docs.extend(collection_map[col].similarity_search("query: " + query, k=k_per_col))
 
-    # Construimos un contexto enumerado (D1, D2, D3...) para que el LLM pueda referenciar cada documento recuperado.
     docs_block = []
     for i, d in enumerate(docs, 1):
         content = d.page_content[:MAX_CHARS_PER_DOC]
@@ -120,7 +101,6 @@ def ask(query: str) -> str:
             f"{content}"
         )
 
-    # Unimos los documentos con separadores claros.
     context = "\n\n---\n\n".join(docs_block)
 
     prompt = (
@@ -134,8 +114,68 @@ def ask(query: str) -> str:
         "Answer:"
     )
 
-    # Invocamos el LLM y devolvemos la respuesta como string.
     return llm.invoke(prompt)
+
+
+def ask_advice(prompt: str, champions: list[str]) -> str:
+    """
+    Punto de entrada específico para el motor de decisiones.
+    Busca composiciones y detalles de campeones via vector search,
+    usando los nombres de campeones como query para mayor precisión.
+    """
+    rag = _init_rag()
+    collection_map = rag["collection_map"]
+    llm = rag["llm"]
+
+    # La query de búsqueda son solo los nombres de campeones, no el prompt completo.
+    # Así el vector search compara directamente contra los nombres en los documentos.
+    search_query = "champions: " + ", ".join(champions) if champions else prompt
+
+    k_per_col = max(1, MAX_DOCS // 2)
+    comp_docs  = collection_map["comp"].similarity_search("query: " + search_query, k=k_per_col)
+    champ_docs = collection_map["champion"].similarity_search("query: " + search_query, k=k_per_col)
+
+    comp_block = []
+    for i, d in enumerate(comp_docs, 1):
+        comp_block.append(f"[COMP{i}] {d.page_content[:MAX_CHARS_PER_DOC]}")
+
+    champ_block = []
+    for i, d in enumerate(champ_docs, 1):
+        champ_block.append(f"[CHAMP{i}] {d.page_content[:MAX_CHARS_PER_DOC]}")
+
+    comp_context  = "\n\n".join(comp_block)
+    champ_context = "\n\n".join(champ_block)
+
+    system_prompt = (
+        "You are a TFT Set 16 expert coach.\n"
+        "The player has shared their current game state.\n"
+        "Do not reference document labels like [COMP1] or [CHAMP1] in your answer.\n"
+        f"Player situation:\n{prompt}\n\n"
+        f"Available compositions:\n{comp_context}\n\n"
+        f"Champion details:\n{champ_context}\n\n"
+        "Instructions:\n"
+        "1. Recommend the composition that best matches the player's current champions.\n"
+        "2. List the units they still need to find to complete it.\n"
+        "3. Tell them which of their current units are NOT in this comp and can be sold.\n"
+        "4. If they have items, say which champion should hold them.\n"
+        "5. If no composition matches their current units, say so honestly.\n"
+        "Be specific and concise.\n\n"
+        "Recommendation:"
+    )
+
+    return llm.invoke(system_prompt)
+
+
+def main():
+    print("Escribe tu pregunta sobre el set 16 del TFT. ENTER vacío para salir.")
+    while True:
+        query = input("\n> ").strip()
+        if not query:
+            break
+        collections = classify_query(query)
+        print(f"[Colecciones detectadas: {', '.join(collections)}]")
+        print("\nRespuesta generada por el LLM:\n", ask(query))
+
 
 if __name__ == "__main__":
     main()

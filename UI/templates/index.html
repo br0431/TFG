@@ -58,8 +58,8 @@
     {% endwith %}
 
     <form hx-post="/advice"
-      hx-target="#advice-output"
-      hx-swap="innerHTML">
+      hx-target="#chat-messages"
+      hx-swap="beforeend scroll:#chat-messages:bottom">
 
   <div class="advice-section">
     <span class="advice-section-title">⚔ Game State</span>
@@ -91,8 +91,6 @@
     </div>
   </div>
     </form>
-
-    <div id="advice-output"></div>
 
   </aside>
 

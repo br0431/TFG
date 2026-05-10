@@ -49,8 +49,8 @@ def get_decisions(phase: str, level: int, gold: int, hp: int, champions: list, i
 
     # REGLAS CENTRADAS EN ORO HARDCODEADAS
 
-    if gold >= 50:
-        actions.append(f"You have {gold} gold: good passive interest. Use it only if the board urgently needs it or if you can upgrade a unit.")
+    if gold >= 50 and stage <4:
+        actions.append(f"You have {gold} gold: good passive interest. Use it only if the board urgently needs it or if you can upgrade a unit. If not, wait for stage 4 to push level and build your final board.")
     elif gold < 50:
         actions.append("Right now you are not making the highest interest. If you are not in a delicate stage (3-2,4-2 or stage 5) focus on making 50 gold.")
     elif gold < 10 and stage >= 4:

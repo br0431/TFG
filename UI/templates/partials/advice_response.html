@@ -1,18 +1,31 @@
 {% if error %}
-  <div class="advice-output">
-    <p class="advice-error">{{ error }}</p>
+  <div class="chat-bubble bot">
+    <div class="bubble-label">ASSISTANT</div>
+    <div class="bubble-content advice-error">{{ error }}</div>
   </div>
 
 {% else %}
-  <div class="advice-output">
-    <p class="advice-rules-title">Recommended Actions</p>
-    <ul class="advice-rules-list">
-      {% for rule in rules %}
-        <li>{{ rule }}</li>
-      {% endfor %}
-    </ul>
+  <div class="chat-bubble user">
+    <div class="bubble-label">YOU</div>
+    <div class="bubble-content">
+      Phase {{ phase }} · Level {{ level }} · Gold {{ gold }} · HP {{ hp }}
+    </div>
+  </div>
 
-    <p class="advice-comp-title">Suggested Composition</p>
-    <p class="advice-comp-text">{{ bot_response }}</p>
+  <div class="chat-bubble bot">
+    <div class="bubble-label">ASSISTANT</div>
+    <div class="bubble-content">
+
+      <p class="advice-rules-title">Recommended Actions</p>
+      <ul class="advice-rules-list">
+        {% for rule in rules %}
+          <li>{{ rule }}</li>
+        {% endfor %}
+      </ul>
+
+      <p class="advice-comp-title" style="margin-top: 10px;">Suggested Composition</p>
+      <p class="advice-comp-text">{{ bot_response }}</p>
+
+    </div>
   </div>
 {% endif %}
