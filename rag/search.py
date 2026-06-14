@@ -78,9 +78,9 @@ def _init_rag():
 
 def ask(query: str) -> str:
     """
-    Punto de entrada para el chat libre. Recibe la query completa
-    (incluyendo el contexto del tablero si lo hay) y devuelve la respuesta
-    del LLM como string, lista para mostrar en el chat.
+    Función para el chat libre (el que no es en base a contexto de partida).
+    Recibe la query completa y devuelve la respuesta del LLM como string, lista para mostrar en el chat.
+
     """
     rag = _init_rag()
     collection_map = rag["collection_map"]
@@ -117,48 +117,57 @@ def ask(query: str) -> str:
     return llm.invoke(prompt)
 
 
-def ask_advice(prompt: str, champions: list[str]) -> str:
-    """
-    Punto de entrada específico para el motor de decisiones.
-    Busca composiciones y detalles de campeones via vector search,
-    usando los nombres de campeones como query para mayor precisión.
-    """
+def ask_advice(prompt: str, champions: list[str], items: list[str], components: list[str]) -> str:
+
     rag = _init_rag()
     collection_map = rag["collection_map"]
     llm = rag["llm"]
 
-    # La query de búsqueda son solo los nombres de campeones, no el prompt completo.
-    # Así el vector search compara directamente contra los nombres en los documentos.
-    search_query = "champions: " + ", ".join(champions) if champions else prompt
-
     k_per_col = max(1, MAX_DOCS // 2)
-    comp_docs  = collection_map["comp"].similarity_search("query: " + search_query, k=k_per_col)
-    champ_docs = collection_map["champion"].similarity_search("query: " + search_query, k=k_per_col)
 
-    comp_block = []
-    for i, d in enumerate(comp_docs, 1):
-        comp_block.append(f"[COMP{i}] {d.page_content[:MAX_CHARS_PER_DOC]}")
+    # Búsqueda de composiciones y campeones por nombres de campeones
+    champ_query = "champions: " + ", ".join(champions) if champions else prompt
+    comp_docs  = collection_map["comp"].similarity_search("query: " + champ_query, k=k_per_col)
+    champ_docs = collection_map["champion"].similarity_search("query: " + champ_query, k=k_per_col)
 
-    champ_block = []
-    for i, d in enumerate(champ_docs, 1):
-        champ_block.append(f"[CHAMP{i}] {d.page_content[:MAX_CHARS_PER_DOC]}")
+    # Búsqueda de detalles de ítems completos que tiene el jugador
+    item_docs = []
+    if items:
+        item_query = "items: " + ", ".join(items)
+        item_docs = collection_map["item"].similarity_search("query: " + item_query, k=k_per_col)
 
-    comp_context  = "\n\n".join(comp_block)
-    champ_context = "\n\n".join(champ_block)
+    # Búsqueda de qué ítems se pueden craftear con los componentes del jugador
+    # El campo COMPONENTS de cada ítem es la clave para saber que componentes necesita para poder crearse
+    craft_docs = []
+    if components:
+        craft_query = "components: " + ", ".join(components)
+        craft_docs = collection_map["item"].similarity_search("query: " + craft_query, k=k_per_col)
+
+    def fmt(docs, label):
+        return "\n\n".join(f"[{label}{i}] {d.page_content[:MAX_CHARS_PER_DOC]}"
+                           for i, d in enumerate(docs, 1))
+
+    comp_context  = fmt(comp_docs,  "COMP")
+    champ_context = fmt(champ_docs, "CHAMP")
+    item_context  = fmt(item_docs,  "ITEM")  if item_docs  else "No completed items provided."
+    craft_context = fmt(craft_docs, "CRAFT") if craft_docs else "No components provided."
 
     system_prompt = (
         "You are a TFT Set 16 expert coach.\n"
         "The player has shared their current game state.\n"
-        "Do not reference document labels like [COMP1] or [CHAMP1] in your answer.\n"
+        "Do not reference document labels in your answer.\n"
         f"Player situation:\n{prompt}\n\n"
         f"Available compositions:\n{comp_context}\n\n"
         f"Champion details:\n{champ_context}\n\n"
+        f"Completed items the player has:\n{item_context}\n\n"
+        f"Items that can be crafted from the player's components:\n{craft_context}\n\n"
         "Instructions:\n"
         "1. Recommend the composition that best matches the player's current champions.\n"
         "2. List the units they still need to find to complete it.\n"
         "3. Tell them which of their current units are NOT in this comp and can be sold.\n"
-        "4. If they have items, say which champion should hold them.\n"
-        "5. If no composition matches their current units, say so honestly.\n"
+        "4. For completed items, say which champion in the recommended comp should hold each one.\n"
+        "5. For components, suggest which items to craft and who should hold them.\n"
+        "6. If no composition matches their current units, say so honestly.\n"
         "Be specific and concise.\n\n"
         "Recommendation:"
     )

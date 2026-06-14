@@ -173,17 +173,16 @@ def advice():
     gold  = int(gold)  if gold.isdigit()  else 0
     hp    = int(hp)    if hp.isdigit()    else 100
 
-    # Campeones e ítems vienen del tablero seleccionado en la sesión
-    selected   = session.get('selected', {})
-    champions  = [name for name, v in selected.items() if v['type'] == 'champions']
-    items      = [name for name, v in selected.items() if v['type'] in ('items', 'components')]
+    # Campeones, ítems y componentes vienen del tablero seleccionado en la sesión
+    selected = session.get('selected', {})
+    champions = [name for name, v in selected.items() if v['type'] == 'champions']
+    items = [name for name, v in selected.items() if v['type'] == 'items']
+    components = [name for name, v in selected.items() if v['type'] == 'components']
 
-    # Motor de decisiones
-    result = get_decisions(phase, level, gold, hp, champions, items)
+    result = get_decisions(phase, level, gold, hp, champions, items + components)
 
-    # El prompt enriquecido va al RAG
     try:
-        bot_response = ask_advice(result['prompt'], champions)
+        bot_response = ask_advice(result['prompt'], champions, items, components)
     except Exception as e:
         bot_response = f"Error conectando con el sistema RAG: {e}"
 
