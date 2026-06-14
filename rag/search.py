@@ -122,7 +122,6 @@ def ask(query: str) -> str:
 def ask_advice(prompt: str, champions: list[str], items: list[str], components: list[str]) -> str:
 
     prompt = traducir_query(prompt)
-    # añadimos también lo seleccionado en la UI
     items = [traducir_query(i) for i in items]
     components = [traducir_query(c) for c in components]
     rag = _init_rag()
