@@ -4,6 +4,8 @@ from langchain_chroma import Chroma
 from langchain_ollama import OllamaLLM
 from langchain_huggingface import HuggingFaceEmbeddings
 
+from translations import traducir_query
+
 # Configuración de variables estáticas para las rutas y el modelo elegido.
 ROOT       = Path(__file__).resolve().parent.parent
 CHROMA_DIR = ROOT / "rag" / "chroma_db"
@@ -82,10 +84,10 @@ def ask(query: str) -> str:
     Recibe la query completa y devuelve la respuesta del LLM como string, lista para mostrar en el chat.
 
     """
+    query = traducir_query(query)
     rag = _init_rag()
     collection_map = rag["collection_map"]
     llm = rag["llm"]
-
     collections = classify_query(query)
 
     k_per_col = max(1, MAX_DOCS // len(collections))
@@ -119,6 +121,10 @@ def ask(query: str) -> str:
 
 def ask_advice(prompt: str, champions: list[str], items: list[str], components: list[str]) -> str:
 
+    prompt = traducir_query(prompt)
+    # añadimos también lo seleccionado en la UI
+    items = [traducir_query(i) for i in items]
+    components = [traducir_query(c) for c in components]
     rag = _init_rag()
     collection_map = rag["collection_map"]
     llm = rag["llm"]
