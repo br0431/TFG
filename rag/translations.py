@@ -50,6 +50,41 @@ ITEMS_ES = {
     "Armadura de Warmog":               "Warmog's Armor",
 }
 
+# Terminología general de TFT para que classify_query y ChromaDB trabajen correctamente cuando el usuario escribe en castellano y no falle.
+TERMS_ES = {
+    "objetos":                          "items",
+    "objeto":                           "item",
+    "campeones":                        "champions",
+    "campeón":                          "champion",
+    "composiciones":                    "compositions",
+    "composición":                      "composition",
+    "componentes":                      "components",
+    "componente":                       "component",
+    "sinergias":                        "synergies",
+    "sinergia":                         "synergy",
+    "equipo":                           "team",
+    "equipar":                          "equip",
+    "rasgos":                           "traits",
+    "rasgo":                            "trait",
+    "habilidad":                        "ability",
+    "coste":                            "cost",
+    "jugar":                            "play",
+    "tablero":                          "board",
+    "mesa":                             "board",
+    "receta":                           "recipe",
+    "combinar":                         "combine",
+    "bonificación":                     "bonus",
+    "bonificaciones":                   "bonuses",
+    "quién":                            "who",
+    "estadísticas":                     "stats",
+    "alineación":                       "lineup",
+    "fabricar":                         "craft",
+    "se hace con":                      "made from",
+    "se fabrica con":                   "built from",
+    "se construye con":                 "built from",
+    "construye":                        "build"
+}
+
 
 # Función para traducir la query del usuario en caso de que esté en castellano
 
@@ -58,13 +93,13 @@ def traducir_query(query: str) -> str:
     Reemplaza nombres en español por sus equivalentes en inglés si la query se realiza en español.
     Matchea primero las cadenas más largas para evitar reemplazos parciales si existiera algún caso a futuro.
     """
-    # Combinar ambos diccionarios
-    traducciones = {**COMPONENTS_ES, **ITEMS_ES}
+    # Combinar los tres diccionarios
+    traducciones = {**COMPONENTS_ES, **ITEMS_ES, **TERMS_ES}
 
     # Ordenar por longitud descendente (más largo primero)
     query_lower = query.lower()
     for es, en in sorted(traducciones.items(), key=lambda x: len(x[0]), reverse=True):
-        if not es:  # Saltar claves vacías sin rellenar
+        if not es:
             continue
         if es.lower() in query_lower:
             query_lower = query_lower.replace(es.lower(), en)

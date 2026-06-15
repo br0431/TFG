@@ -4,7 +4,13 @@ from langchain_chroma import Chroma
 from langchain_ollama import OllamaLLM
 from langchain_huggingface import HuggingFaceEmbeddings
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+# Traducción de nombres de objetos y componentes del castellano al inglés para que ChromaDB los encuentre.
 from translations import traducir_query
+
+import logging
 
 # Configuración de variables estáticas para las rutas y el modelo elegido.
 ROOT       = Path(__file__).resolve().parent.parent
@@ -20,6 +26,13 @@ MAX_CHARS_PER_DOC = 450
 # Estado global del RAG. Se inicializa una sola vez en la primera llamada a ask()
 # para evitar cargar los modelos y las colecciones en cada petición HTTP.
 _rag = None
+
+# Configuración de logging para registrar qué documentos devuelve ChromaDB en cada consulta. Se almacena en rag/rag.log y se acumula entre ejecuciones sin sobrescribir.
+logger = logging.getLogger("rag")
+logger.setLevel(logging.INFO)
+_handler = logging.FileHandler(ROOT / "rag" / "rag.log", encoding="utf-8")
+_handler.setFormatter(logging.Formatter("%(asctime)s | %(message)s", datefmt="%Y-%m-%d %H:%M:%S"))
+logger.addHandler(_handler)
 
 
 def classify_query(query: str) -> list[str]:
@@ -48,8 +61,8 @@ def classify_query(query: str) -> list[str]:
             detected.remove("champion")
         else:
             detected.remove("item")
-
-    return detected if detected else ["item", "champion", "comp"]
+    # No añadimos comp ya que sólo mete ruido, se devuelve una composición únicamente cuándo se pregunta por ella.
+    return detected if detected else ["item", "champion"]
 
 
 def _init_rag():
@@ -70,7 +83,8 @@ def _init_rag():
     db_champs = Chroma("tft_champions", persist_directory=str(CHROMA_DIR), embedding_function=embeddings)
     db_comps  = Chroma("tft_comps",     persist_directory=str(CHROMA_DIR), embedding_function=embeddings)
 
-    llm = OllamaLLM(model=LLM_MODEL, temperature=0, num_ctx=2048)
+    # añadimos 300 tokens consumidos como máximo para respuestas no muy largas.
+    llm = OllamaLLM(model=LLM_MODEL, temperature=0, num_ctx=2048, num_predict=300)
 
     _rag = {
         "collection_map": {"item": db_items, "champion": db_champs, "comp": db_comps},
@@ -84,7 +98,9 @@ def ask(query: str) -> str:
     Recibe la query completa y devuelve la respuesta del LLM como string, lista para mostrar en el chat.
 
     """
+    # Si la query contiene nombres de objetos en castellano, los reemplaza por su equivalente en inglés.
     query = traducir_query(query)
+
     rag = _init_rag()
     collection_map = rag["collection_map"]
     llm = rag["llm"]
@@ -105,8 +121,16 @@ def ask(query: str) -> str:
 
     context = "\n\n---\n\n".join(docs_block)
 
+    # Registro en log de la query procesada y los documentos recuperados para depuración.
+    logger.info(f"QUERY: {query}")
+    logger.info(f"COLECCIONES: {collections}")
+    for i, d in enumerate(docs, 1):
+        logger.info(f"  DOC[{i}] type={d.metadata.get('type')} name={d.metadata.get('name')}")
+    logger.info("---")
+
     prompt = (
         "You are a TFT Set 16 expert assistant. "
+        "Always answer in the same language as the question."
         "Answer the user's question using ONLY the information in the documents below. "
         "Go through each document and use it if it is relevant to the question. "
         "Do not mention the documents in your answer. "
@@ -121,6 +145,7 @@ def ask(query: str) -> str:
 
 def ask_advice(prompt: str, champions: list[str], items: list[str], components: list[str]) -> str:
 
+    # Traducimos solo el prompt que escribe el usuario. Los items y componentes ya vienen en inglés desde la UI cuando se seleccionan.
     prompt = traducir_query(prompt)
     rag = _init_rag()
     collection_map = rag["collection_map"]
@@ -155,8 +180,16 @@ def ask_advice(prompt: str, champions: list[str], items: list[str], components: 
     item_context  = fmt(item_docs,  "ITEM")  if item_docs  else "No completed items provided."
     craft_context = fmt(craft_docs, "CRAFT") if craft_docs else "No components provided."
 
+    # Registro en el log de los documentos recuperados en cada categoría para depuración.
+    logger.info(f"ADVICE QUERY: {prompt}")
+    for label, doc_list in [("COMP", comp_docs), ("CHAMP", champ_docs), ("ITEM", item_docs), ("CRAFT", craft_docs)]:
+        for i, d in enumerate(doc_list, 1):
+            logger.info(f"  {label}[{i}] type={d.metadata.get('type')} name={d.metadata.get('name')}")
+    logger.info("---")
+
     system_prompt = (
         "You are a TFT Set 16 expert coach.\n"
+        "Always answer in the same language as the user's question."
         "The player has shared their current game state.\n"
         "Do not reference document labels in your answer.\n"
         f"Player situation:\n{prompt}\n\n"

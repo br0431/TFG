@@ -1,0 +1,56 @@
+2026-06-15 14:03:48 | QUERY: what item is built from the components bfsword and negatroncloak
+2026-06-15 14:03:48 | COLECCIONES: ['item', 'comp']
+2026-06-15 14:03:48 |   DOC[1] type=item name=Bloodthirster
+2026-06-15 14:03:48 |   DOC[2] type=item name=Kraken's Fury
+2026-06-15 14:03:48 |   DOC[3] type=comp name=Warden Kalista
+2026-06-15 14:03:48 |   DOC[4] type=comp name=Bilgewater Missfortune
+2026-06-15 14:03:48 | ---
+2026-06-15 14:06:13 | QUERY: composición con el campeón missfortune y ornn
+2026-06-15 14:06:13 | COLECCIONES: ['comp']
+2026-06-15 14:06:13 |   DOC[1] type=comp name=Bilgewater Missfortune
+2026-06-15 14:06:13 |   DOC[2] type=comp name=Demacia Lux
+2026-06-15 14:06:13 |   DOC[3] type=comp name=Ionia Yunara
+2026-06-15 14:06:13 |   DOC[4] type=comp name=Demacia Kaisa
+2026-06-15 14:06:13 | ---
+2026-06-15 14:06:58 | QUERY: qué campeones tiene esa composición
+2026-06-15 14:06:58 | COLECCIONES: ['comp']
+2026-06-15 14:06:58 |   DOC[1] type=comp name=Zaun Ekko
+2026-06-15 14:06:58 |   DOC[2] type=comp name=Demacia Lux
+2026-06-15 14:06:58 |   DOC[3] type=comp name=Ionia Yunara
+2026-06-15 14:06:58 |   DOC[4] type=comp name=Demacia Kaisa
+2026-06-15 14:06:58 | ---
+2026-06-15 14:09:39 | QUERY: qué composición incluye sona y poppy
+2026-06-15 14:09:39 | COLECCIONES: ['comp']
+2026-06-15 14:09:39 |   DOC[1] type=comp name=Demacia Lux
+2026-06-15 14:09:39 |   DOC[2] type=comp name=Demacia Kaisa
+2026-06-15 14:09:39 |   DOC[3] type=comp name=Zaun Ekko
+2026-06-15 14:09:39 |   DOC[4] type=comp name=Ionia Yunara
+2026-06-15 14:09:39 | ---
+2026-06-15 14:10:32 | QUERY: cuáles son los mejores objetos para missfortune y qué composición puedo jugar con ella
+2026-06-15 14:10:32 | COLECCIONES: ['comp']
+2026-06-15 14:10:32 |   DOC[1] type=comp name=Bilgewater Missfortune
+2026-06-15 14:10:32 |   DOC[2] type=comp name=Demacia Lux
+2026-06-15 14:10:32 |   DOC[3] type=comp name=Demacia Kaisa
+2026-06-15 14:10:32 |   DOC[4] type=comp name=Zaun Ekko
+2026-06-15 14:10:32 | ---
+2026-06-15 14:16:33 | QUERY: what are the best items for miss fortune and what composition can i play with her
+2026-06-15 14:16:33 | COLECCIONES: ['champion', 'comp']
+2026-06-15 14:16:33 |   DOC[1] type=champion name=Miss Fortune
+2026-06-15 14:16:33 |   DOC[2] type=champion name=Diana
+2026-06-15 14:16:33 |   DOC[3] type=comp name=Bilgewater Missfortune
+2026-06-15 14:16:33 |   DOC[4] type=comp name=Demacia Lux
+2026-06-15 14:16:33 | ---
+2026-06-15 14:33:04 | QUERY: que item built from un Bfsword y una Negatroncloak
+2026-06-15 14:33:04 | COLECCIONES: ['item']
+2026-06-15 14:33:04 |   DOC[1] type=item name=Deathblade
+2026-06-15 14:33:04 |   DOC[2] type=item name=Bloodthirster
+2026-06-15 14:33:04 |   DOC[3] type=item name=Kraken's Fury
+2026-06-15 14:33:04 |   DOC[4] type=item name=Gargoyle Stoneplate
+2026-06-15 14:33:04 | ---
+2026-06-15 14:35:01 | QUERY: qué items son los mejores para missfortune y qué composition puedo play con ella
+2026-06-15 14:35:01 | COLECCIONES: ['champion', 'comp']
+2026-06-15 14:35:01 |   DOC[1] type=champion name=Milio
+2026-06-15 14:35:01 |   DOC[2] type=champion name=Miss Fortune
+2026-06-15 14:35:01 |   DOC[3] type=comp name=Bilgewater Missfortune
+2026-06-15 14:35:01 |   DOC[4] type=comp name=Demacia Lux
+2026-06-15 14:35:01 | ---
