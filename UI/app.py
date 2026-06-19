@@ -128,6 +128,10 @@ def chat():
     message = request.form.get('message', '').strip()
     context = request.form.get('context', '').strip()
 
+    # Inicializar historial de sesión si no existe
+    if "history" not in session:
+        session["history"] = []
+
     # Construir la query combinando contexto seleccionado + pregunta del usuario
     full_query = message
     if context:
@@ -146,9 +150,14 @@ def chat():
         bot_response = "Please write a question or select something from the board first."
     else:
         try:
-            bot_response = ask(full_query)
+            bot_response = ask(full_query, history=session["history"])
         except Exception as e:
             bot_response = f"Error connecting to the RAG system: {e}"
+
+    # Guardar el intercambio en el historial de sesión
+    session["history"].append({"role": "user", "content": message})
+    session["history"].append({"role": "assistant", "content": bot_response})
+    session.modified = True
 
     display_message = message if message else "(no message — context sent)"
     return render_template('partials/chat_message.html',

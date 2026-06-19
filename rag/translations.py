@@ -60,8 +60,8 @@ TERMS_ES = {
     "composición":                      "composition",
     "componentes":                      "components",
     "componente":                       "component",
-    "sinergias":                        "synergies",
-    "sinergia":                         "synergy",
+    "sinergias":                        "traits",
+    "sinergia":                         "trait",
     "equipo":                           "team",
     "equipar":                          "equip",
     "rasgos":                           "traits",
@@ -93,11 +93,13 @@ def traducir_query(query: str) -> str:
     Reemplaza nombres en español por sus equivalentes en inglés si la query se realiza en español.
     Matchea primero las cadenas más largas para evitar reemplazos parciales si existiera algún caso a futuro.
     """
+
+
     # Combinar los tres diccionarios
     traducciones = {**COMPONENTS_ES, **ITEMS_ES, **TERMS_ES}
 
     # Ordenar por longitud descendente (más largo primero)
-    query_lower = query.lower()
+    query_lower = query.lower().replace("¿", "").replace("¡", "")
     for es, en in sorted(traducciones.items(), key=lambda x: len(x[0]), reverse=True):
         if not es:
             continue

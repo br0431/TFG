@@ -11,6 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from translations import traducir_query
 
 import logging
+import json
 
 # Configuración de variables estáticas para las rutas y el modelo elegido.
 ROOT       = Path(__file__).resolve().parent.parent
@@ -34,6 +35,15 @@ _handler = logging.FileHandler(ROOT / "rag" / "rag.log", encoding="utf-8")
 _handler.setFormatter(logging.Formatter("%(asctime)s | %(message)s", datefmt="%Y-%m-%d %H:%M:%S"))
 logger.addHandler(_handler)
 
+# Lista de nombres de campeones para resolver conflictos en classify_query.
+_champs_json = ROOT / "scrapping" / "data" / "champions"
+CHAMPION_NAMES = []
+for f in _champs_json.glob("*.json"):
+    with open(f, encoding="utf-8") as fh:
+        data = json.load(fh)
+        if "name" in data:
+            CHAMPION_NAMES.append(data["name"].lower())
+
 
 def classify_query(query: str) -> list[str]:
     """
@@ -45,7 +55,6 @@ def classify_query(query: str) -> list[str]:
     item_keywords     = {"item", "items", "component", "components", "bonus", "bonuses", "equip", "build", "bis", "best in slot"}
     champion_keywords = {"item", "items", "champion", "champions", "who", "cost", "trait", "traits", "ability", "stats"}
     comp_keywords     = {"comp", "composition", "compositions", "team", "synergy", "synergies", "play", "lineup", "board"}
-    recipe_keywords   = {"component", "components", "built from", "made from", "craft", "combine", "recipe"}
 
     detected = []
     if any(k in q for k in item_keywords):
@@ -55,12 +64,10 @@ def classify_query(query: str) -> list[str]:
     if any(k in q for k in comp_keywords):
         detected.append("comp")
 
-    # Si la query mezcla items y campeones, decidimos la colección por contexto.
+    # Si se detectan ambas colecciones, solo mantenemos champion si la query menciona un campeón por su nombre.
     if "item" in detected and "champion" in detected:
-        if any(k in q for k in recipe_keywords):
+        if not any(name in q for name in CHAMPION_NAMES):
             detected.remove("champion")
-        else:
-            detected.remove("item")
     # No añadimos comp ya que sólo mete ruido, se devuelve una composición únicamente cuándo se pregunta por ella.
     return detected if detected else ["item", "champion"]
 
@@ -92,7 +99,7 @@ def _init_rag():
     }
     return _rag
 
-def ask(query: str) -> str:
+def ask(query: str, history: list = None) -> str:
     """
     Función para el chat libre (el que no es en base a contexto de partida).
     Recibe la query completa y devuelve la respuesta del LLM como string, lista para mostrar en el chat.
@@ -128,13 +135,20 @@ def ask(query: str) -> str:
         logger.info(f"  DOC[{i}] type={d.metadata.get('type')} name={d.metadata.get('name')}")
     logger.info("---")
 
+    history_block = ""
+    if history:
+        for msg in history[-6:]:  # últimos 3 intercambios (3 usuario + 3 asistente)
+            role = "User" if msg["role"] == "user" else "Assistant"
+            history_block += f"{role}: {msg['content']}\n"
+
     prompt = (
         "You are a TFT Set 16 expert assistant. "
-        "Always answer in the same language as the question."
+        "Always answer in the same language as the question. "
         "Answer the user's question using ONLY the information in the documents below. "
         "Go through each document and use it if it is relevant to the question. "
         "Do not mention the documents in your answer. "
         "If the information is not in any document, say so briefly.\n\n"
+        f"Conversation history:\n{history_block}\n"
         f"Question: {query}\n\n"
         f"Documents:\n{context}\n\n"
         "Answer:"
@@ -189,7 +203,7 @@ def ask_advice(prompt: str, champions: list[str], items: list[str], components: 
 
     system_prompt = (
         "You are a TFT Set 16 expert coach.\n"
-        "Always answer in the same language as the user's question."
+        "Always answer in the same language as the user's question. "
         "The player has shared their current game state.\n"
         "Do not reference document labels in your answer.\n"
         f"Player situation:\n{prompt}\n\n"

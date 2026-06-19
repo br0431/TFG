@@ -54,3 +54,319 @@
 2026-06-15 14:35:01 |   DOC[3] type=comp name=Bilgewater Missfortune
 2026-06-15 14:35:01 |   DOC[4] type=comp name=Demacia Lux
 2026-06-15 14:35:01 | ---
+2026-06-16 13:29:41 | QUERY: ¿qué hace el item Infinity Edge?
+2026-06-16 13:29:41 | COLECCIONES: ['champion']
+2026-06-16 13:29:41 |   DOC[1] type=champion name=T-Hex
+2026-06-16 13:29:41 |   DOC[2] type=champion name=Milio
+2026-06-16 13:29:41 |   DOC[3] type=champion name=Tryndamere
+2026-06-16 13:29:41 |   DOC[4] type=champion name=Graves
+2026-06-16 13:29:41 | ---
+2026-06-16 13:31:38 | QUERY: ¿qué hace el item Infinity Edge?
+2026-06-16 13:31:38 | COLECCIONES: ['champion']
+2026-06-16 13:31:38 |   DOC[1] type=champion name=T-Hex
+2026-06-16 13:31:38 |   DOC[2] type=champion name=Milio
+2026-06-16 13:31:38 |   DOC[3] type=champion name=Tryndamere
+2026-06-16 13:31:38 |   DOC[4] type=champion name=Graves
+2026-06-16 13:31:38 | ---
+2026-06-16 13:33:34 | QUERY: que hace el Infinity Edge
+2026-06-16 13:33:34 | COLECCIONES: ['item', 'champion']
+2026-06-16 13:33:34 |   DOC[1] type=item name=Infinity Edge
+2026-06-16 13:33:34 |   DOC[2] type=item name=Edge of Night
+2026-06-16 13:33:34 |   DOC[3] type=champion name=T-Hex
+2026-06-16 13:33:34 |   DOC[4] type=champion name=Milio
+2026-06-16 13:33:34 | ---
+2026-06-16 13:38:04 | QUERY: qué hace el item Infinity Edge?
+2026-06-16 13:38:04 | COLECCIONES: ['champion']
+2026-06-16 13:38:04 |   DOC[1] type=champion name=T-Hex
+2026-06-16 13:38:04 |   DOC[2] type=champion name=Milio
+2026-06-16 13:38:04 |   DOC[3] type=champion name=Graves
+2026-06-16 13:38:04 |   DOC[4] type=champion name=Tryndamere
+2026-06-16 13:38:04 | ---
+2026-06-16 13:39:23 | QUERY: qué hace el item Infinity Edge?
+2026-06-16 13:39:23 | COLECCIONES: ['champion']
+2026-06-16 13:39:23 |   DOC[1] type=champion name=T-Hex
+2026-06-16 13:39:23 |   DOC[2] type=champion name=Milio
+2026-06-16 13:39:23 |   DOC[3] type=champion name=Graves
+2026-06-16 13:39:23 |   DOC[4] type=champion name=Tryndamere
+2026-06-16 13:39:23 | ---
+2026-06-16 13:49:44 | QUERY: qué hace el item Infinity Edge?
+2026-06-16 13:49:44 | COLECCIONES: ['item']
+2026-06-16 13:49:44 |   DOC[1] type=item name=Infinity Edge
+2026-06-16 13:49:44 |   DOC[2] type=item name=Edge of Night
+2026-06-16 13:49:44 |   DOC[3] type=item name=Morellonomicon
+2026-06-16 13:49:44 |   DOC[4] type=item name=Guinsoo's Rageblade
+2026-06-16 13:49:44 | ---
+2026-06-16 13:51:51 | QUERY: cuáles son los las synergies de aatrox?
+2026-06-16 13:51:51 | COLECCIONES: ['comp']
+2026-06-16 13:51:51 |   DOC[1] type=comp name=Zaun Ekko
+2026-06-16 13:51:51 |   DOC[2] type=comp name=Demacia Kaisa
+2026-06-16 13:51:51 |   DOC[3] type=comp name=Demacia Lux
+2026-06-16 13:51:51 |   DOC[4] type=comp name=Warden Kalista
+2026-06-16 13:51:51 | ---
+2026-06-16 13:53:24 | QUERY: cuáles son los las traits de aatrox?
+2026-06-16 13:53:24 | COLECCIONES: ['champion']
+2026-06-16 13:53:24 |   DOC[1] type=champion name=Aatrox
+2026-06-16 13:53:24 |   DOC[2] type=champion name=Aurelion Sol
+2026-06-16 13:53:24 |   DOC[3] type=champion name=Sylas
+2026-06-16 13:53:24 |   DOC[4] type=champion name=Galio
+2026-06-16 13:53:24 | ---
+2026-06-16 13:55:10 | QUERY: con qué components se build la Bloodthirster?
+2026-06-16 13:55:10 | COLECCIONES: ['item', 'comp']
+2026-06-16 13:55:10 |   DOC[1] type=item name=Bloodthirster
+2026-06-16 13:55:10 |   DOC[2] type=item name=Hextech Gunblade
+2026-06-16 13:55:10 |   DOC[3] type=comp name=Bilgewater Missfortune
+2026-06-16 13:55:10 |   DOC[4] type=comp name=Warden Kalista
+2026-06-16 13:55:10 | ---
+2026-06-16 13:57:45 | QUERY: de qué cost es fiddlesticks?
+2026-06-16 13:57:45 | COLECCIONES: ['champion']
+2026-06-16 13:57:45 |   DOC[1] type=champion name=Fiddlesticks
+2026-06-16 13:57:45 |   DOC[2] type=champion name=Milio
+2026-06-16 13:57:45 |   DOC[3] type=champion name=Seraphine
+2026-06-16 13:57:45 |   DOC[4] type=champion name=Sylas
+2026-06-16 13:57:45 | ---
+2026-06-16 14:05:39 | QUERY: qué bonuses da la Blue Buff?
+2026-06-16 14:05:39 | COLECCIONES: ['item']
+2026-06-16 14:05:39 |   DOC[1] type=item name=Blue Buff
+2026-06-16 14:05:39 |   DOC[2] type=item name=Red Buff
+2026-06-16 14:05:39 |   DOC[3] type=item name=Spear of Shojin
+2026-06-16 14:05:39 |   DOC[4] type=item name=Hextech Gunblade
+2026-06-16 14:05:39 | ---
+2026-06-16 14:14:39 | QUERY: qué items le van mejor a miss fortune?
+2026-06-16 14:14:39 | COLECCIONES: ['item', 'champion']
+2026-06-16 14:14:39 |   DOC[1] type=item name=Thief's Gloves
+2026-06-16 14:14:39 |   DOC[2] type=item name=Morellonomicon
+2026-06-16 14:14:39 |   DOC[3] type=champion name=Miss Fortune
+2026-06-16 14:14:39 |   DOC[4] type=champion name=Milio
+2026-06-16 14:14:39 | ---
+2026-06-16 14:16:03 | QUERY: qué items son los mejores para miss fortune?
+2026-06-16 14:16:03 | COLECCIONES: ['item', 'champion']
+2026-06-16 14:16:03 |   DOC[1] type=item name=Thief's Gloves
+2026-06-16 14:16:03 |   DOC[2] type=item name=Hextech Gunblade
+2026-06-16 14:16:03 |   DOC[3] type=champion name=Miss Fortune
+2026-06-16 14:16:03 |   DOC[4] type=champion name=Milio
+2026-06-16 14:16:03 | ---
+2026-06-16 16:59:47 | ADVICE QUERY: the player is at stage 4-1, level 7, with 100 gold and 65 hp. current board/bench: graves, miss fortune, nautilus. available items: bramble vest, deathblade. tactical situation: don't level up or roll yet. save your gold for the rolldown at 4-2.. what composition should they play with what they have? what units should they look for and which ones are expendable?
+2026-06-16 16:59:47 |   COMP[1] type=comp name=Bilgewater Missfortune
+2026-06-16 16:59:47 |   COMP[2] type=comp name=Demacia Lux
+2026-06-16 16:59:47 |   CHAMP[1] type=champion name=Miss Fortune
+2026-06-16 16:59:47 |   CHAMP[2] type=champion name=Graves
+2026-06-16 16:59:47 |   ITEM[1] type=item name=Deathblade
+2026-06-16 16:59:47 |   ITEM[2] type=item name=Bramble Vest
+2026-06-16 16:59:47 | ---
+2026-06-19 19:56:52 | QUERY: qué composition incluye a sona y poppy?
+2026-06-19 19:56:52 | COLECCIONES: ['comp']
+2026-06-19 19:56:52 |   DOC[1] type=comp name=Demacia Lux
+2026-06-19 19:56:52 |   DOC[2] type=comp name=Demacia Kaisa
+2026-06-19 19:56:52 |   DOC[3] type=comp name=Ionia Yunara
+2026-06-19 19:56:52 |   DOC[4] type=comp name=Zaun Ekko
+2026-06-19 19:56:52 | ---
+2026-06-19 19:58:18 | QUERY: qué más champions incluye la composition
+2026-06-19 19:58:18 | COLECCIONES: ['champion', 'comp']
+2026-06-19 19:58:18 |   DOC[1] type=champion name=Milio
+2026-06-19 19:58:18 |   DOC[2] type=champion name=Sett
+2026-06-19 19:58:18 |   DOC[3] type=comp name=Demacia Lux
+2026-06-19 19:58:18 |   DOC[4] type=comp name=Zaun Ekko
+2026-06-19 19:58:18 | ---
+2026-06-19 20:00:53 | QUERY: qué diferencia hay entre Deathblade y Infinity Edge?
+2026-06-19 20:00:53 | COLECCIONES: ['item', 'champion']
+2026-06-19 20:00:53 |   DOC[1] type=item name=Deathblade
+2026-06-19 20:00:53 |   DOC[2] type=item name=Infinity Edge
+2026-06-19 20:00:53 |   DOC[3] type=champion name=T-Hex
+2026-06-19 20:00:53 |   DOC[4] type=champion name=Graves
+2026-06-19 20:00:53 | ---
+2026-06-19 20:04:48 | QUERY: tengo un Bfsword y una Tearofthegoddess, qué item me fabrico y a who se lo pongo?
+2026-06-19 20:04:48 | COLECCIONES: ['item']
+2026-06-19 20:04:48 |   DOC[1] type=item name=Deathblade
+2026-06-19 20:04:48 |   DOC[2] type=item name=Spear of Shojin
+2026-06-19 20:04:48 |   DOC[3] type=item name=Blue Buff
+2026-06-19 20:04:48 |   DOC[4] type=item name=Morellonomicon
+2026-06-19 20:04:48 | ---
+2026-06-19 20:06:53 | QUERY: qué composition me recomiendas si tengo a garen, lux y poppy en board?
+2026-06-19 20:06:53 | COLECCIONES: ['comp']
+2026-06-19 20:06:53 |   DOC[1] type=comp name=Demacia Lux
+2026-06-19 20:06:53 |   DOC[2] type=comp name=Demacia Kaisa
+2026-06-19 20:06:53 |   DOC[3] type=comp name=Zaun Ekko
+2026-06-19 20:06:53 |   DOC[4] type=comp name=Bilgewater Missfortune
+2026-06-19 20:06:53 | ---
+2026-06-19 20:07:50 | QUERY: tengo Blue Buff y Jeweled Gauntlet, a qué champion le viene mejor en una composition de demacia?
+2026-06-19 20:07:50 | COLECCIONES: ['champion', 'comp']
+2026-06-19 20:07:50 |   DOC[1] type=champion name=Sett
+2026-06-19 20:07:50 |   DOC[2] type=champion name=Lux
+2026-06-19 20:07:50 |   DOC[3] type=comp name=Demacia Lux
+2026-06-19 20:07:50 |   DOC[4] type=comp name=Demacia Kaisa
+2026-06-19 20:07:50 | ---
+2026-06-19 20:08:50 | QUERY: si mi rival lleva mucho daño mágico, qué items son defensivos para este tipo de daño?
+2026-06-19 20:08:50 | COLECCIONES: ['item']
+2026-06-19 20:08:50 |   DOC[1] type=item name=Morellonomicon
+2026-06-19 20:08:50 |   DOC[2] type=item name=Deathblade
+2026-06-19 20:08:50 |   DOC[3] type=item name=Thief's Gloves
+2026-06-19 20:08:50 |   DOC[4] type=item name=Hextech Gunblade
+2026-06-19 20:08:50 | ---
+2026-06-19 20:13:14 | QUERY: qué rol tiene el champion nautilus y el champion graves?
+2026-06-19 20:13:14 | COLECCIONES: ['champion']
+2026-06-19 20:13:14 |   DOC[1] type=champion name=Graves
+2026-06-19 20:13:14 |   DOC[2] type=champion name=Nautilus
+2026-06-19 20:13:14 |   DOC[3] type=champion name=Milio
+2026-06-19 20:13:14 |   DOC[4] type=champion name=T-Hex
+2026-06-19 20:13:14 | ---
+2026-06-19 20:15:38 | QUERY: el item bramble vest es bueno para un tanque?
+2026-06-19 20:15:38 | COLECCIONES: ['item']
+2026-06-19 20:15:38 |   DOC[1] type=item name=Bramble Vest
+2026-06-19 20:15:38 |   DOC[2] type=item name=Sunfire Cape
+2026-06-19 20:15:38 |   DOC[3] type=item name=Morellonomicon
+2026-06-19 20:15:38 |   DOC[4] type=item name=Warmog's Armor
+2026-06-19 20:15:38 | ---
+2026-06-19 20:19:20 | QUERY: si quiero que mi tanque tenga mucha vida, es mejor el item Sunfire Cape o Steadfast Heart?
+2026-06-19 20:19:20 | COLECCIONES: ['item']
+2026-06-19 20:19:20 |   DOC[1] type=item name=Sunfire Cape
+2026-06-19 20:19:20 |   DOC[2] type=item name=Steadfast Heart
+2026-06-19 20:19:20 |   DOC[3] type=item name=Morellonomicon
+2026-06-19 20:19:20 |   DOC[4] type=item name=Last Whisper
+2026-06-19 20:19:20 | ---
+2026-06-19 20:31:49 | QUERY: what does the item infinity edge do?
+2026-06-19 20:31:49 | COLECCIONES: ['item']
+2026-06-19 20:31:49 |   DOC[1] type=item name=Infinity Edge
+2026-06-19 20:31:49 |   DOC[2] type=item name=Edge of Night
+2026-06-19 20:31:49 |   DOC[3] type=item name=Jeweled Gauntlet
+2026-06-19 20:31:49 |   DOC[4] type=item name=Giant Slayer
+2026-06-19 20:31:49 | ---
+2026-06-19 20:32:50 | QUERY: what does the item infinity edge do?
+2026-06-19 20:32:50 | COLECCIONES: ['item']
+2026-06-19 20:32:50 |   DOC[1] type=item name=Infinity Edge
+2026-06-19 20:32:50 |   DOC[2] type=item name=Edge of Night
+2026-06-19 20:32:50 |   DOC[3] type=item name=Jeweled Gauntlet
+2026-06-19 20:32:50 |   DOC[4] type=item name=Giant Slayer
+2026-06-19 20:32:50 | ---
+2026-06-19 20:35:17 | QUERY: what does the item infinity edge do?
+2026-06-19 20:35:17 | COLECCIONES: ['item']
+2026-06-19 20:35:17 |   DOC[1] type=item name=Infinity Edge
+2026-06-19 20:35:17 |   DOC[2] type=item name=Edge of Night
+2026-06-19 20:35:17 |   DOC[3] type=item name=Jeweled Gauntlet
+2026-06-19 20:35:17 |   DOC[4] type=item name=Giant Slayer
+2026-06-19 20:35:17 | ---
+2026-06-19 20:35:50 | QUERY: what are aatrox's synergies?
+2026-06-19 20:35:50 | COLECCIONES: ['comp']
+2026-06-19 20:35:50 |   DOC[1] type=comp name=Zaun Ekko
+2026-06-19 20:35:50 |   DOC[2] type=comp name=Yordle Veigar
+2026-06-19 20:35:50 |   DOC[3] type=comp name=Zaun Warwick
+2026-06-19 20:35:50 |   DOC[4] type=comp name=Warden Kalista
+2026-06-19 20:35:50 | ---
+2026-06-19 20:36:17 | QUERY: what are aatrox's traits?
+2026-06-19 20:36:17 | COLECCIONES: ['champion']
+2026-06-19 20:36:17 |   DOC[1] type=champion name=Aatrox
+2026-06-19 20:36:17 |   DOC[2] type=champion name=Skarner
+2026-06-19 20:36:17 |   DOC[3] type=champion name=Aurelion Sol
+2026-06-19 20:36:17 |   DOC[4] type=champion name=Taric
+2026-06-19 20:36:17 | ---
+2026-06-19 20:36:53 | QUERY: what components is bloodthirster built from?
+2026-06-19 20:36:53 | COLECCIONES: ['item', 'comp']
+2026-06-19 20:36:53 |   DOC[1] type=item name=Bloodthirster
+2026-06-19 20:36:53 |   DOC[2] type=item name=Giant Slayer
+2026-06-19 20:36:53 |   DOC[3] type=comp name=Bilgewater Missfortune
+2026-06-19 20:36:53 |   DOC[4] type=comp name=Warden Kalista
+2026-06-19 20:36:53 | ---
+2026-06-19 20:37:17 | QUERY: what cost is fiddlesticks?
+2026-06-19 20:37:17 | COLECCIONES: ['champion']
+2026-06-19 20:37:17 |   DOC[1] type=champion name=Fiddlesticks
+2026-06-19 20:37:17 |   DOC[2] type=champion name=Seraphine
+2026-06-19 20:37:17 |   DOC[3] type=champion name=Milio
+2026-06-19 20:37:17 |   DOC[4] type=champion name=Thresh
+2026-06-19 20:37:17 | ---
+2026-06-19 20:37:54 | QUERY: what bonuses does blue buff give?
+2026-06-19 20:37:54 | COLECCIONES: ['item']
+2026-06-19 20:37:54 |   DOC[1] type=item name=Blue Buff
+2026-06-19 20:37:54 |   DOC[2] type=item name=Bloodthirster
+2026-06-19 20:37:54 |   DOC[3] type=item name=Spear of Shojin
+2026-06-19 20:37:54 |   DOC[4] type=item name=Hextech Gunblade
+2026-06-19 20:37:54 | ---
+2026-06-19 20:39:28 | QUERY: what are the best items for miss fortune?
+2026-06-19 20:39:28 | COLECCIONES: ['item', 'champion']
+2026-06-19 20:39:28 |   DOC[1] type=item name=Thief's Gloves
+2026-06-19 20:39:28 |   DOC[2] type=item name=Spirit Visage
+2026-06-19 20:39:28 |   DOC[3] type=champion name=Miss Fortune
+2026-06-19 20:39:28 |   DOC[4] type=champion name=Diana
+2026-06-19 20:39:28 | ---
+2026-06-19 20:40:11 | QUERY: what composition includes sona and poppy?
+2026-06-19 20:40:11 | COLECCIONES: ['comp']
+2026-06-19 20:40:11 |   DOC[1] type=comp name=Demacia Kaisa
+2026-06-19 20:40:11 |   DOC[2] type=comp name=Demacia Lux
+2026-06-19 20:40:11 |   DOC[3] type=comp name=Ionia Yunara
+2026-06-19 20:40:11 |   DOC[4] type=comp name=Zaun Ekko
+2026-06-19 20:40:11 | ---
+2026-06-19 20:40:35 | QUERY: what's the difference between deathblade and infinity edge?
+2026-06-19 20:40:35 | COLECCIONES: ['item', 'champion']
+2026-06-19 20:40:35 |   DOC[1] type=item name=Infinity Edge
+2026-06-19 20:40:35 |   DOC[2] type=item name=Deathblade
+2026-06-19 20:40:35 |   DOC[3] type=champion name=Graves
+2026-06-19 20:40:35 |   DOC[4] type=champion name=T-Hex
+2026-06-19 20:40:35 | ---
+2026-06-19 20:41:13 | QUERY: is bramble vest good for a tank?
+2026-06-19 20:41:13 | COLECCIONES: ['item', 'champion']
+2026-06-19 20:41:13 |   DOC[1] type=item name=Bramble Vest
+2026-06-19 20:41:13 |   DOC[2] type=item name=Warmog's Armor
+2026-06-19 20:41:13 |   DOC[3] type=champion name=Braum
+2026-06-19 20:41:13 |   DOC[4] type=champion name=Nautilus
+2026-06-19 20:41:13 | ---
+2026-06-19 20:43:05 | QUERY: what role does nautilus and graves have?
+2026-06-19 20:43:05 | COLECCIONES: ['item', 'champion']
+2026-06-19 20:43:05 |   DOC[1] type=item name=Kraken's Fury
+2026-06-19 20:43:05 |   DOC[2] type=item name=Nashor's Tooth
+2026-06-19 20:43:05 |   DOC[3] type=champion name=Nautilus
+2026-06-19 20:43:05 |   DOC[4] type=champion name=Graves
+2026-06-19 20:43:05 | ---
+2026-06-19 20:45:20 | QUERY: i have a bfsword and a tearofthegoddess, what item should i craft and who should hold it?
+2026-06-19 20:45:20 | COLECCIONES: ['item']
+2026-06-19 20:45:20 |   DOC[1] type=item name=Deathblade
+2026-06-19 20:45:20 |   DOC[2] type=item name=Spear of Shojin
+2026-06-19 20:45:20 |   DOC[3] type=item name=Infinity Edge
+2026-06-19 20:45:20 |   DOC[4] type=item name=Void Staff
+2026-06-19 20:45:20 | ---
+2026-06-19 20:46:40 | QUERY: i have a bfsword and a tearofthegoddess, what item should i craft and who should hold it?
+2026-06-19 20:46:40 | COLECCIONES: ['item']
+2026-06-19 20:46:40 |   DOC[1] type=item name=Deathblade
+2026-06-19 20:46:40 |   DOC[2] type=item name=Spear of Shojin
+2026-06-19 20:46:40 |   DOC[3] type=item name=Infinity Edge
+2026-06-19 20:46:40 |   DOC[4] type=item name=Void Staff
+2026-06-19 20:46:40 | ---
+2026-06-19 20:48:01 | QUERY: i have a bfsword and a tearofthegoddess, what item should i craft and who should hold it?
+2026-06-19 20:48:01 | COLECCIONES: ['item']
+2026-06-19 20:48:01 |   DOC[1] type=item name=Deathblade
+2026-06-19 20:48:01 |   DOC[2] type=item name=Spear of Shojin
+2026-06-19 20:48:01 |   DOC[3] type=item name=Infinity Edge
+2026-06-19 20:48:01 |   DOC[4] type=item name=Void Staff
+2026-06-19 20:48:01 | ---
+2026-06-19 20:50:07 | QUERY: i have a bfsword and a tearofthegoddess, what item should i craft and who should hold it?
+2026-06-19 20:50:07 | COLECCIONES: ['item']
+2026-06-19 20:50:07 |   DOC[1] type=item name=Deathblade
+2026-06-19 20:50:07 |   DOC[2] type=item name=Spear of Shojin
+2026-06-19 20:50:07 |   DOC[3] type=item name=Infinity Edge
+2026-06-19 20:50:07 |   DOC[4] type=item name=Void Staff
+2026-06-19 20:50:07 | ---
+2026-06-19 20:51:07 | QUERY: what composition do you recommend if i have garen, lux and poppy on board?
+2026-06-19 20:51:07 | COLECCIONES: ['comp']
+2026-06-19 20:51:07 |   DOC[1] type=comp name=Demacia Lux
+2026-06-19 20:51:07 |   DOC[2] type=comp name=Demacia Kaisa
+2026-06-19 20:51:07 |   DOC[3] type=comp name=Zaun Ekko
+2026-06-19 20:51:07 |   DOC[4] type=comp name=Yordle Veigar
+2026-06-19 20:51:07 | ---
+2026-06-19 20:52:22 | QUERY: i have blue buff and jeweled gauntlet, which champion benefits the most in a demacia comp?
+2026-06-19 20:52:22 | COLECCIONES: ['champion', 'comp']
+2026-06-19 20:52:22 |   DOC[1] type=champion name=Lux
+2026-06-19 20:52:22 |   DOC[2] type=champion name=Diana
+2026-06-19 20:52:22 |   DOC[3] type=comp name=Demacia Lux
+2026-06-19 20:52:22 |   DOC[4] type=comp name=Demacia Kaisa
+2026-06-19 20:52:22 | ---
+2026-06-19 20:53:33 | QUERY: if my opponent is dealing heavy magic damage, what items are defensive against that type of damage?
+2026-06-19 20:53:33 | COLECCIONES: ['item']
+2026-06-19 20:53:33 |   DOC[1] type=item name=Morellonomicon
+2026-06-19 20:53:33 |   DOC[2] type=item name=Jeweled Gauntlet
+2026-06-19 20:53:33 |   DOC[3] type=item name=Protector's Vow
+2026-06-19 20:53:33 |   DOC[4] type=item name=Evenshroud
+2026-06-19 20:53:33 | ---
+2026-06-19 21:00:01 | QUERY: if i want my tank to have high health, is sunfire cape or steadfast heart better?
+2026-06-19 21:00:01 | COLECCIONES: ['item', 'champion']
+2026-06-19 21:00:01 |   DOC[1] type=item name=Sunfire Cape
+2026-06-19 21:00:01 |   DOC[2] type=item name=Steadfast Heart
+2026-06-19 21:00:01 |   DOC[3] type=champion name=Nautilus
+2026-06-19 21:00:01 |   DOC[4] type=champion name=Skarner
+2026-06-19 21:00:01 | ---
