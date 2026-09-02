@@ -370,3 +370,106 @@
 2026-06-19 21:00:01 |   DOC[3] type=champion name=Nautilus
 2026-06-19 21:00:01 |   DOC[4] type=champion name=Skarner
 2026-06-19 21:00:01 | ---
+2026-08-31 10:00:08 | QUERY: what does the item infinity edge do?
+2026-08-31 10:00:08 | COLECCIONES: ['item']
+2026-08-31 10:00:08 |   DOC[1] type=item name=Infinity Edge
+2026-08-31 10:00:08 |   DOC[2] type=item name=Edge of Night
+2026-08-31 10:00:08 |   DOC[3] type=item name=Jeweled Gauntlet
+2026-08-31 10:00:08 |   DOC[4] type=item name=Giant Slayer
+2026-08-31 10:00:08 | ---
+2026-08-31 10:01:36 | QUERY: what are aatrox's traits?
+2026-08-31 10:01:36 | COLECCIONES: ['champion']
+2026-08-31 10:01:36 |   DOC[1] type=champion name=Aatrox
+2026-08-31 10:01:36 |   DOC[2] type=champion name=Skarner
+2026-08-31 10:01:36 |   DOC[3] type=champion name=Aurelion Sol
+2026-08-31 10:01:36 |   DOC[4] type=champion name=Taric
+2026-08-31 10:01:36 | ---
+2026-08-31 10:02:00 | QUERY: what are the best items for miss fortune?
+2026-08-31 10:02:00 | COLECCIONES: ['item', 'champion']
+2026-08-31 10:02:00 |   DOC[1] type=item name=Thief's Gloves
+2026-08-31 10:02:00 |   DOC[2] type=item name=Spirit Visage
+2026-08-31 10:02:00 |   DOC[3] type=champion name=Miss Fortune
+2026-08-31 10:02:00 |   DOC[4] type=champion name=Diana
+2026-08-31 10:02:00 | ---
+2026-08-31 10:02:28 | QUERY: what composition includes sona and poppy?
+2026-08-31 10:02:28 | COLECCIONES: ['comp']
+2026-08-31 10:02:28 |   DOC[1] type=comp name=Demacia Kaisa
+2026-08-31 10:02:28 |   DOC[2] type=comp name=Demacia Lux
+2026-08-31 10:02:28 |   DOC[3] type=comp name=Ionia Yunara
+2026-08-31 10:02:28 |   DOC[4] type=comp name=Zaun Ekko
+2026-08-31 10:02:28 | ---
+2026-08-31 10:03:00 | QUERY: i have a bfsword and a tearofthegoddess, what item should i craft and who should hold it?
+2026-08-31 10:03:00 | COLECCIONES: ['item']
+2026-08-31 10:03:00 |   DOC[1] type=item name=Deathblade
+2026-08-31 10:03:00 |   DOC[2] type=item name=Spear of Shojin
+2026-08-31 10:03:00 |   DOC[3] type=item name=Infinity Edge
+2026-08-31 10:03:00 |   DOC[4] type=item name=Void Staff
+2026-08-31 10:03:00 | ---
+2026-08-31 10:04:31 | QUERY: if i want my tank to have high health, is sunfire cape or steadfast heart better?
+2026-08-31 10:04:31 | COLECCIONES: ['item', 'champion']
+2026-08-31 10:04:31 |   DOC[1] type=item name=Sunfire Cape
+2026-08-31 10:04:31 |   DOC[2] type=item name=Steadfast Heart
+2026-08-31 10:04:31 |   DOC[3] type=champion name=Nautilus
+2026-08-31 10:04:31 |   DOC[4] type=champion name=Skarner
+2026-08-31 10:04:31 | ---
+2026-08-31 10:06:20 | QUERY: con qué components se build la Bloodthirster?
+2026-08-31 10:06:20 | COLECCIONES: ['item', 'comp']
+2026-08-31 10:06:20 |   DOC[1] type=item name=Bloodthirster
+2026-08-31 10:06:20 |   DOC[2] type=item name=Hextech Gunblade
+2026-08-31 10:06:20 |   DOC[3] type=comp name=Bilgewater Missfortune
+2026-08-31 10:06:20 |   DOC[4] type=comp name=Warden Kalista
+2026-08-31 10:06:20 | ---
+2026-08-31 10:06:40 | QUERY: qué diferencia hay entre Deathblade y Infinity Edge?
+2026-08-31 10:06:40 | COLECCIONES: ['item', 'champion']
+2026-08-31 10:06:40 |   DOC[1] type=item name=Deathblade
+2026-08-31 10:06:40 |   DOC[2] type=item name=Infinity Edge
+2026-08-31 10:06:40 |   DOC[3] type=champion name=T-Hex
+2026-08-31 10:06:40 |   DOC[4] type=champion name=Graves
+2026-08-31 10:06:40 | ---
+2026-08-31 10:07:29 | QUERY: tengo un Bfsword y una Tearofthegoddess, qué item me fabrico y a who se lo pongo?
+2026-08-31 10:07:29 | COLECCIONES: ['item']
+2026-08-31 10:07:29 |   DOC[1] type=item name=Deathblade
+2026-08-31 10:07:29 |   DOC[2] type=item name=Spear of Shojin
+2026-08-31 10:07:29 |   DOC[3] type=item name=Blue Buff
+2026-08-31 10:07:29 |   DOC[4] type=item name=Morellonomicon
+2026-08-31 10:07:29 | ---
+2026-08-31 10:08:04 | QUERY: qué items son los mejores para miss fortune?
+2026-08-31 10:08:04 | COLECCIONES: ['item', 'champion']
+2026-08-31 10:08:04 |   DOC[1] type=item name=Thief's Gloves
+2026-08-31 10:08:04 |   DOC[2] type=item name=Hextech Gunblade
+2026-08-31 10:08:04 |   DOC[3] type=champion name=Miss Fortune
+2026-08-31 10:08:04 |   DOC[4] type=champion name=Milio
+2026-08-31 10:08:04 | ---
+2026-08-31 10:10:38 | QUERY: cuáles son los las traits de aatrox?
+2026-08-31 10:10:38 | COLECCIONES: ['champion']
+2026-08-31 10:10:38 |   DOC[1] type=champion name=Aatrox
+2026-08-31 10:10:38 |   DOC[2] type=champion name=Aurelion Sol
+2026-08-31 10:10:38 |   DOC[3] type=champion name=Sylas
+2026-08-31 10:10:38 |   DOC[4] type=champion name=Galio
+2026-08-31 10:10:38 | ---
+2026-08-31 10:11:29 | QUERY: si quiero que mi tanque tenga mucha vida, es mejor el item Sunfire Cape o Steadfast Heart?
+2026-08-31 10:11:29 | COLECCIONES: ['item']
+2026-08-31 10:11:29 |   DOC[1] type=item name=Sunfire Cape
+2026-08-31 10:11:29 |   DOC[2] type=item name=Steadfast Heart
+2026-08-31 10:11:29 |   DOC[3] type=item name=Morellonomicon
+2026-08-31 10:11:29 |   DOC[4] type=item name=Last Whisper
+2026-08-31 10:11:29 | ---
+2026-08-31 10:13:16 | ADVICE QUERY: the player is at stage 4-2, level 8, with 60 gold and 76 hp. current board/bench: fizz, graves, miss fortune, nautilus, tahm kench. available items: none indicated. tactical situation: level up to level 8.; roll down until you find all your key composition units.. what composition should they play with what they have? what units should they look for and which ones are expendable?
+2026-08-31 10:13:16 |   COMP[1] type=comp name=Bilgewater Missfortune
+2026-08-31 10:13:16 |   COMP[2] type=comp name=Demacia Kaisa
+2026-08-31 10:13:16 |   CHAMP[1] type=champion name=Miss Fortune
+2026-08-31 10:13:16 |   CHAMP[2] type=champion name=Fizz
+2026-08-31 10:13:16 | ---
+2026-08-31 10:14:50 | ADVICE QUERY: the player is at stage 4-1, level 7, with 56 gold and 30 hp. current board/bench: galio, garen, lux, vayne. available items: none indicated. tactical situation: don't level up or roll yet. save your gold for the rolldown at 4-2.. what composition should they play with what they have? what units should they look for and which ones are expendable?
+2026-08-31 10:14:50 |   COMP[1] type=comp name=Demacia Lux
+2026-08-31 10:14:50 |   COMP[2] type=comp name=Demacia Kaisa
+2026-08-31 10:14:50 |   CHAMP[1] type=champion name=Garen
+2026-08-31 10:14:50 |   CHAMP[2] type=champion name=Sylas
+2026-08-31 10:14:50 | ---
+2026-08-31 10:35:17 | QUERY: o que o fio infinito faz?
+2026-08-31 10:35:17 | COLECCIONES: ['item', 'champion']
+2026-08-31 10:35:17 |   DOC[1] type=item name=Infinity Edge
+2026-08-31 10:35:17 |   DOC[2] type=item name=Ionic Spark
+2026-08-31 10:35:17 |   DOC[3] type=champion name=Milio
+2026-08-31 10:35:17 |   DOC[4] type=champion name=Sett
+2026-08-31 10:35:17 | ---
