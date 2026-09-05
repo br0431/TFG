@@ -555,3 +555,33 @@
 2026-09-05 14:24:35 |   DOC[3] type=champion name=Sett
 2026-09-05 14:24:35 |   DOC[4] type=champion name=Mel
 2026-09-05 14:24:35 | ---
+2026-09-05 19:31:43 | ADVICE QUERY: the player is at stage 4-2, level 8, with 65 gold and 75 hp. current board/bench: fiddlesticks, graves, lucian & senna. available items: bramble vest, deathblade, chainvest, giantsbelt. tactical situation: level up to level 8.; roll down until you find all your key composition units.; you have 65 gold at stage 4: this is the moment to spend it. push level and roll to complete your final board.. what composition should they play with what they have? what units should they look for and which ones are expendable?
+2026-09-05 19:31:43 |   COMP[1] type=comp name=Warden Kalista
+2026-09-05 19:31:43 |   COMP[2] type=comp name=Bilgewater Missfortune
+2026-09-05 19:31:43 |   CHAMP[1] type=champion name=Lucian & Senna
+2026-09-05 19:31:43 |   CHAMP[2] type=champion name=Fiddlesticks
+2026-09-05 19:31:43 |   ITEM[1] type=item name=Bramble Vest
+2026-09-05 19:31:43 |   ITEM[2] type=item name=Deathblade
+2026-09-05 19:31:43 |   CRAFT[1] type=item name=Sunfire Cape
+2026-09-05 19:31:43 |   CRAFT[2] type=item name=Crownguard
+2026-09-05 19:31:43 | ---
+2026-09-05 19:33:51 | ADVICE QUERY: the player is at stage 4-2, level 8, with 65 gold and 75 hp. current board/bench: fiddlesticks, graves, lucian & senna, nautilus. available items: bramble vest, deathblade, chainvest, giantsbelt. tactical situation: level up to level 8.; roll down until you find all your key composition units.; you have 65 gold at stage 4: this is the moment to spend it. push level and roll to complete your final board.. what composition should they play with what they have? what units should they look for and which ones are expendable?
+2026-09-05 19:33:51 |   COMP[1] type=comp name=Warden Kalista
+2026-09-05 19:33:51 |   COMP[2] type=comp name=Bilgewater Missfortune
+2026-09-05 19:33:51 |   CHAMP[1] type=champion name=Lucian & Senna
+2026-09-05 19:33:51 |   CHAMP[2] type=champion name=Fiddlesticks
+2026-09-05 19:33:51 |   ITEM[1] type=item name=Bramble Vest
+2026-09-05 19:33:51 |   ITEM[2] type=item name=Deathblade
+2026-09-05 19:33:51 |   CRAFT[1] type=item name=Sunfire Cape
+2026-09-05 19:33:51 |   CRAFT[2] type=item name=Crownguard
+2026-09-05 19:33:51 | ---
+2026-09-05 19:46:48 | ADVICE QUERY: the player is at stage 4-2, level 8, with 65 gold and 75 hp. current board/bench: fiddlesticks, graves, lucian & senna. available items: bramble vest, deathblade, chainvest, giantsbelt. tactical situation: level up to level 8.; roll down until you find all your key composition units.; you have 65 gold at stage 4: this is the moment to spend it. push level and roll to complete your final board.. what composition should they play with what they have? what units should they look for and which ones are expendable?
+2026-09-05 19:46:48 |   COMP[1] type=comp name=Warden Kalista
+2026-09-05 19:46:48 |   COMP[2] type=comp name=Bilgewater Missfortune
+2026-09-05 19:46:48 |   CHAMP[1] type=champion name=Lucian & Senna
+2026-09-05 19:46:48 |   CHAMP[2] type=champion name=Fiddlesticks
+2026-09-05 19:46:48 |   ITEM[1] type=item name=Bramble Vest
+2026-09-05 19:46:48 |   ITEM[2] type=item name=Deathblade
+2026-09-05 19:46:48 |   CRAFT[1] type=item name=Sunfire Cape
+2026-09-05 19:46:48 |   CRAFT[2] type=item name=Crownguard
+2026-09-05 19:46:48 | ---

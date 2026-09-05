@@ -97,7 +97,7 @@ def select():
         return render_template('partials/selected_zone.html', selected=selected)
     selected = session.get('selected', {})
     if name in selected:
-        if selected[name]['qty'] < 3:
+        if selected[name]['qty'] < 2:
             selected[name]['qty'] += 1
     else:
         selected[name] = {'qty': 1, 'type': tipo, 'image': image}
