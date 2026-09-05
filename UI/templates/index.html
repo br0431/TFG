@@ -81,11 +81,12 @@
 
     <div class="advice-buttons">
       <button type="submit" class="btn btn-primary">⚔ SEND CONTEXT</button>
-      <button type="reset"
+      <button type="button"
               class="btn btn-secondary"
               hx-post="/clear"
               hx-target="#selected-zone"
-              hx-swap="outerHTML">
+              hx-swap="outerHTML"
+              hx-on::after-request="this.closest('form').reset()">
         ✕ CLEAR
       </button>
     </div>
