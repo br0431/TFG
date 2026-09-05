@@ -116,7 +116,7 @@ def ask(query: str, history: list = None) -> str:
     k_per_col = max(1, MAX_DOCS // len(collections))
     docs = []
     for col in collections:
-        docs.extend(collection_map[col].similarity_search("query: " + query, k=k_per_col))
+        docs.extend(collection_map[col].similarity_search(query, k=k_per_col))
 
     docs_block = []
     for i, d in enumerate(docs, 1):
@@ -169,21 +169,21 @@ def ask_advice(prompt: str, champions: list[str], items: list[str], components: 
 
     # Búsqueda de composiciones y campeones por nombres de campeones
     champ_query = "champions: " + ", ".join(champions) if champions else prompt
-    comp_docs  = collection_map["comp"].similarity_search("query: " + champ_query, k=k_per_col)
-    champ_docs = collection_map["champion"].similarity_search("query: " + champ_query, k=k_per_col)
+    comp_docs  = collection_map["comp"].similarity_search(champ_query, k=k_per_col)
+    champ_docs = collection_map["champion"].similarity_search(champ_query, k=k_per_col)
 
     # Búsqueda de detalles de ítems completos que tiene el jugador
     item_docs = []
     if items:
         item_query = "items: " + ", ".join(items)
-        item_docs = collection_map["item"].similarity_search("query: " + item_query, k=k_per_col)
+        item_docs = collection_map["item"].similarity_search(item_query, k=k_per_col)
 
     # Búsqueda de qué ítems se pueden craftear con los componentes del jugador
     # El campo COMPONENTS de cada ítem es la clave para saber que componentes necesita para poder crearse
     craft_docs = []
     if components:
         craft_query = "components: " + ", ".join(components)
-        craft_docs = collection_map["item"].similarity_search("query: " + craft_query, k=k_per_col)
+        craft_docs = collection_map["item"].similarity_search(craft_query, k=k_per_col)
 
     def fmt(docs, label):
         return "\n\n".join(f"[{label}{i}] {d.page_content[:MAX_CHARS_PER_DOC]}"

@@ -473,3 +473,24 @@
 2026-08-31 10:35:17 |   DOC[3] type=champion name=Milio
 2026-08-31 10:35:17 |   DOC[4] type=champion name=Sett
 2026-08-31 10:35:17 | ---
+2026-09-05 11:01:39 | QUERY: si quiero que mi tanque tenga mucha vida, es mejor el item sunfire cape o steadfast heart?
+2026-09-05 11:01:39 | COLECCIONES: ['item']
+2026-09-05 11:01:39 |   DOC[1] type=item name=Sunfire Cape
+2026-09-05 11:01:39 |   DOC[2] type=item name=Steadfast Heart
+2026-09-05 11:01:39 |   DOC[3] type=item name=Morellonomicon
+2026-09-05 11:01:39 |   DOC[4] type=item name=Last Whisper
+2026-09-05 11:01:39 | ---
+2026-09-05 11:02:29 | QUERY: cuáles son los las traits de aatrox?
+2026-09-05 11:02:29 | COLECCIONES: ['champion']
+2026-09-05 11:02:29 |   DOC[1] type=champion name=Aatrox
+2026-09-05 11:02:29 |   DOC[2] type=champion name=Aurelion Sol
+2026-09-05 11:02:29 |   DOC[3] type=champion name=Galio
+2026-09-05 11:02:29 |   DOC[4] type=champion name=Sylas
+2026-09-05 11:02:29 | ---
+2026-09-05 11:02:46 | QUERY: i have a bfsword and a tearofthegoddess, what item should i craft and who should hold it?
+2026-09-05 11:02:46 | COLECCIONES: ['item']
+2026-09-05 11:02:46 |   DOC[1] type=item name=Spear of Shojin
+2026-09-05 11:02:46 |   DOC[2] type=item name=Deathblade
+2026-09-05 11:02:46 |   DOC[3] type=item name=Infinity Edge
+2026-09-05 11:02:46 |   DOC[4] type=item name=Void Staff
+2026-09-05 11:02:46 | ---
