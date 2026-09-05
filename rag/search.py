@@ -64,11 +64,12 @@ def classify_query(query: str) -> list[str]:
     if any(k in q for k in comp_keywords):
         detected.append("comp")
 
-    # Si se detectan ambas colecciones, solo mantenemos champion si la query menciona un campeón por su nombre.
+    # Ante un conflicto entre objetos y campeones, solo se mantiene campeones
+    # si la consulta menciona el nombre de alguna unidad.
     if "item" in detected and "champion" in detected:
         if not any(name in q for name in CHAMPION_NAMES):
             detected.remove("champion")
-    # No añadimos comp ya que sólo mete ruido, se devuelve una composición únicamente cuándo se pregunta por ella.
+    # Por defecto se consultan objetos y campeones, quedando excluidas las composiciones.
     return detected if detected else ["item", "champion"]
 
 
@@ -113,6 +114,7 @@ def ask(query: str, history: list = None) -> str:
     llm = rag["llm"]
     collections = classify_query(query)
 
+    # El presupuesto de documentos se reparte a partes iguales entre las colecciones detectadas.
     k_per_col = max(1, MAX_DOCS // len(collections))
     docs = []
     for col in collections:
@@ -201,23 +203,29 @@ def ask_advice(prompt: str, champions: list[str], items: list[str], components: 
             logger.info(f"  {label}[{i}] type={d.metadata.get('type')} name={d.metadata.get('name')}")
     logger.info("---")
 
+    # Lista explícita de las unidades del jugador para acotar las recomendaciones.
+    player_champs = ", ".join(champions) if champions else "none selected"
+
     system_prompt = (
         "You are a TFT Set 16 expert coach.\n"
         "Always answer in the same language as the user's question. "
         "The player has shared their current game state.\n"
         "Do not reference document labels in your answer.\n"
         f"Player situation:\n{prompt}\n\n"
+        f"Champions the player currently has:\n{player_champs}\n\n"
         f"Available compositions:\n{comp_context}\n\n"
         f"Champion details:\n{champ_context}\n\n"
         f"Completed items the player has:\n{item_context}\n\n"
         f"Items that can be crafted from the player's components:\n{craft_context}\n\n"
         "Instructions:\n"
-        "1. Recommend the composition that best matches the player's current champions.\n"
-        "2. List the units they still need to find to complete it.\n"
-        "3. Tell them which of their current units are NOT in this comp and can be sold.\n"
+        "1. Recommend the composition that best matches the champions the player currently has.\n"
+        "2. List the units from that composition that the player does not have yet.\n"
+        "3. From the list of champions the player currently has, name only those that do "
+        "not belong to the recommended composition and can therefore be sold. "
+        "Never mention any champion that is not in that list.\n"
         "4. For completed items, say which champion in the recommended comp should hold each one.\n"
         "5. For components, suggest which items to craft and who should hold them.\n"
-        "6. If no composition matches their current units, say so honestly.\n"
+        "6. If no composition matches the champions the player currently has, say so honestly.\n"
         "Be specific and concise.\n\n"
         "Recommendation:"
     )
