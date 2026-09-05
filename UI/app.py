@@ -126,42 +126,30 @@ def clear():
 @app.route('/chat', methods=['POST'])
 def chat():
     message = request.form.get('message', '').strip()
-    context = request.form.get('context', '').strip()
+
+    # El campo del chat es obligatorio en el formulario, esta comprobación
+    # actúa como salvaguarda ante peticiones construidas manualmente.
+    if not message:
+        return render_template('partials/chat_message.html',
+                               user_message='',
+                               bot_response="Please write a question first.")
 
     # Inicializar historial de sesión si no existe
     if "history" not in session:
         session["history"] = []
 
-    # Construir la query combinando contexto seleccionado + pregunta del usuario
-    full_query = message
-    if context:
-        try:
-            ctx_dict = json.loads(context)
-            if ctx_dict:
-                ctx_str = ", ".join(
-                    f"{name} (x{v['qty']}, {v['type']})"
-                    for name, v in ctx_dict.items()
-                )
-                full_query = f"Current board context: {ctx_str}. Question: {message}"
-        except (json.JSONDecodeError, KeyError):
-            pass
-
-    if not full_query:
-        bot_response = "Please write a question or select something from the board first."
-    else:
-        try:
-            bot_response = ask(full_query, history=session["history"])
-        except Exception as e:
-            bot_response = f"Error connecting to the RAG system: {e}"
+    try:
+        bot_response = ask(message, history=session["history"])
+    except Exception as e:
+        bot_response = f"Error connecting to the RAG system: {e}"
 
     # Guardar el intercambio en el historial de sesión
     session["history"].append({"role": "user", "content": message})
     session["history"].append({"role": "assistant", "content": bot_response})
     session.modified = True
 
-    display_message = message if message else "(no message — context sent)"
     return render_template('partials/chat_message.html',
-                           user_message=display_message,
+                           user_message=message,
                            bot_response=bot_response)
 
 
@@ -176,7 +164,7 @@ def advice():
     # Validación básica de fase
     if not re.match(r'^[1-7]-[1-7]$', phase):
         return render_template('partials/advice_response.html',
-                               error="Formato de fase incorrecto. Usa el formato X-Y (ej. 3-2).")
+                               error="Invalid phase format. Use the X-Y format (e.g. 3-2).")
 
     level = int(level) if level.isdigit() else 0
     gold  = int(gold)  if gold.isdigit()  else 0
@@ -193,7 +181,7 @@ def advice():
     try:
         bot_response = ask_advice(result['prompt'], champions, items, components)
     except Exception as e:
-        bot_response = f"Error conectando con el sistema RAG: {e}"
+        bot_response = f"Error connecting to the RAG system: {e}"
 
     return render_template('partials/advice_response.html',
                            rules=result['rules'],

@@ -23,11 +23,9 @@
       </div>
       {% endfor %}
     </div>
-    <input type="hidden" name="context" value="{{ selected | tojson }}">
 
   {% else %}
-    <p class="empty-state">Ningún elemento seleccionado</p>
-    <input type="hidden" name="context" value="">
+    <p class="empty-state">No elements selected</p>
   {% endif %}
 
 </div>
