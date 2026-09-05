@@ -530,3 +530,28 @@
 2026-09-05 14:04:15 |   CRAFT[1] type=item name=Infinity Edge
 2026-09-05 14:04:15 |   CRAFT[2] type=item name=Deathblade
 2026-09-05 14:04:15 | ---
+2026-09-05 14:20:54 | ADVICE QUERY: the player is at stage 4-2, level 8, with 66 gold and 56 hp. current board/bench: graves, miss fortune, nautilus. available items: archangels staff, bramble vest. tactical situation: level up to level 8.; roll down until you find all your key composition units.; you have 66 gold at stage 4: this is the moment to spend it. push level and roll to complete your final board.. what composition should they play with what they have? what units should they look for and which ones are expendable?
+2026-09-05 14:20:54 |   COMP[1] type=comp name=Bilgewater Missfortune
+2026-09-05 14:20:54 |   COMP[2] type=comp name=Demacia Lux
+2026-09-05 14:20:54 |   CHAMP[1] type=champion name=Miss Fortune
+2026-09-05 14:20:54 |   CHAMP[2] type=champion name=Graves
+2026-09-05 14:20:54 |   ITEM[1] type=item name=Bramble Vest
+2026-09-05 14:20:54 |   ITEM[2] type=item name=Archangels Staff
+2026-09-05 14:20:54 | ---
+2026-09-05 14:22:50 | ADVICE QUERY: the player is at stage 4-2, level 8, with 66 gold and 56 hp. current board/bench: graves, lucian & senna, miss fortune, nautilus. available items: archangels staff, bramble vest, deathblade, infinity edge, chainvest, giantsbelt. tactical situation: level up to level 8.; roll down until you find all your key composition units.; you have 66 gold at stage 4: this is the moment to spend it. push level and roll to complete your final board.. what composition should they play with what they have? what units should they look for and which ones are expendable?
+2026-09-05 14:22:50 |   COMP[1] type=comp name=Bilgewater Missfortune
+2026-09-05 14:22:50 |   COMP[2] type=comp name=Ionia Yunara
+2026-09-05 14:22:50 |   CHAMP[1] type=champion name=Lucian & Senna
+2026-09-05 14:22:50 |   CHAMP[2] type=champion name=Miss Fortune
+2026-09-05 14:22:50 |   ITEM[1] type=item name=Deathblade
+2026-09-05 14:22:50 |   ITEM[2] type=item name=Archangels Staff
+2026-09-05 14:22:50 |   CRAFT[1] type=item name=Sunfire Cape
+2026-09-05 14:22:50 |   CRAFT[2] type=item name=Crownguard
+2026-09-05 14:22:50 | ---
+2026-09-05 14:24:35 | QUERY: what units am i missing
+2026-09-05 14:24:35 | COLECCIONES: ['item', 'champion']
+2026-09-05 14:24:35 |   DOC[1] type=item name=Ionic Spark
+2026-09-05 14:24:35 |   DOC[2] type=item name=Sterak's Gage
+2026-09-05 14:24:35 |   DOC[3] type=champion name=Sett
+2026-09-05 14:24:35 |   DOC[4] type=champion name=Mel
+2026-09-05 14:24:35 | ---
