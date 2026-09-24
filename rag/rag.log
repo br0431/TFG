@@ -585,3 +585,131 @@
 2026-09-05 19:46:48 |   CRAFT[1] type=item name=Sunfire Cape
 2026-09-05 19:46:48 |   CRAFT[2] type=item name=Crownguard
 2026-09-05 19:46:48 | ---
+2026-09-24 15:32:47 | QUERY: what does the item infinity edge do?
+2026-09-24 15:32:47 | COLECCIONES: ['item']
+2026-09-24 15:32:47 |   DOC[1] type=item name=Infinity Edge
+2026-09-24 15:32:47 |   DOC[2] type=item name=Edge of Night
+2026-09-24 15:32:47 |   DOC[3] type=item name=Jeweled Gauntlet
+2026-09-24 15:32:47 |   DOC[4] type=item name=Giant Slayer
+2026-09-24 15:32:47 | ---
+2026-09-24 15:34:40 | QUERY: what does the item infinity edge do?
+2026-09-24 15:34:40 | COLECCIONES: ['item']
+2026-09-24 15:34:40 |   DOC[1] type=item name=Infinity Edge
+2026-09-24 15:34:40 |   DOC[2] type=item name=Edge of Night
+2026-09-24 15:34:40 |   DOC[3] type=item name=Jeweled Gauntlet
+2026-09-24 15:34:40 |   DOC[4] type=item name=Giant Slayer
+2026-09-24 15:34:40 | ---
+2026-09-24 15:36:26 | QUERY: what does the item infinity edge do?
+2026-09-24 15:36:26 | COLECCIONES: ['item']
+2026-09-24 15:36:26 |   DOC[1] type=item name=Infinity Edge
+2026-09-24 15:36:26 |   DOC[2] type=item name=Edge of Night
+2026-09-24 15:36:26 |   DOC[3] type=item name=Jeweled Gauntlet
+2026-09-24 15:36:26 |   DOC[4] type=item name=Giant Slayer
+2026-09-24 15:36:26 | ---
+2026-09-24 15:36:58 | QUERY: what are aatrox's traits?
+2026-09-24 15:36:58 | COLECCIONES: ['champion']
+2026-09-24 15:36:58 |   DOC[1] type=champion name=Aatrox
+2026-09-24 15:36:58 |   DOC[2] type=champion name=Skarner
+2026-09-24 15:36:58 |   DOC[3] type=champion name=Aurelion Sol
+2026-09-24 15:36:58 |   DOC[4] type=champion name=Taric
+2026-09-24 15:36:58 | ---
+2026-09-24 15:37:18 | QUERY: what are the best items for miss fortune?
+2026-09-24 15:37:18 | COLECCIONES: ['item', 'champion']
+2026-09-24 15:37:18 |   DOC[1] type=item name=Spirit Visage
+2026-09-24 15:37:18 |   DOC[2] type=item name=Hextech Gunblade
+2026-09-24 15:37:18 |   DOC[3] type=champion name=Miss Fortune
+2026-09-24 15:37:18 |   DOC[4] type=champion name=Diana
+2026-09-24 15:37:18 | ---
+2026-09-24 15:38:00 | QUERY: i have a bfsword and a tearofthegoddess, what item should i craft and who should hold it?
+2026-09-24 15:38:00 | COLECCIONES: ['item']
+2026-09-24 15:38:00 |   DOC[1] type=item name=Spear of Shojin
+2026-09-24 15:38:00 |   DOC[2] type=item name=Deathblade
+2026-09-24 15:38:00 |   DOC[3] type=item name=Infinity Edge
+2026-09-24 15:38:00 |   DOC[4] type=item name=Void Staff
+2026-09-24 15:38:00 | ---
+2026-09-24 15:39:13 | QUERY: con qué components se build la Bloodthirster?
+2026-09-24 15:39:13 | COLECCIONES: ['item', 'comp']
+2026-09-24 15:39:13 |   DOC[1] type=item name=Bloodthirster
+2026-09-24 15:39:13 |   DOC[2] type=item name=Hextech Gunblade
+2026-09-24 15:39:13 |   DOC[3] type=comp name=Bilgewater Missfortune
+2026-09-24 15:39:13 |   DOC[4] type=comp name=Warden Kalista
+2026-09-24 15:39:13 | ---
+2026-09-24 15:39:58 | QUERY: qué composition incluye a sona y poppy?
+2026-09-24 15:39:58 | COLECCIONES: ['comp']
+2026-09-24 15:39:58 |   DOC[1] type=comp name=Demacia Lux
+2026-09-24 15:39:58 |   DOC[2] type=comp name=Demacia Kaisa
+2026-09-24 15:39:58 |   DOC[3] type=comp name=Ionia Yunara
+2026-09-24 15:39:58 |   DOC[4] type=comp name=Zaun Ekko
+2026-09-24 15:39:58 | ---
+2026-09-24 15:40:22 | QUERY: qué composition me recomiendas si tengo a garen, lux y poppy en board?
+2026-09-24 15:40:22 | COLECCIONES: ['comp']
+2026-09-24 15:40:22 |   DOC[1] type=comp name=Demacia Lux
+2026-09-24 15:40:22 |   DOC[2] type=comp name=Demacia Kaisa
+2026-09-24 15:40:22 |   DOC[3] type=comp name=Zaun Ekko
+2026-09-24 15:40:22 |   DOC[4] type=comp name=Bilgewater Missfortune
+2026-09-24 15:40:22 | ---
+2026-09-24 15:44:40 | QUERY: what does the item infinity edge do?
+2026-09-24 15:44:40 | COLECCIONES: ['item']
+2026-09-24 15:44:40 |   DOC[1] type=item name=Infinity Edge
+2026-09-24 15:44:40 |   DOC[2] type=item name=Edge of Night
+2026-09-24 15:44:40 |   DOC[3] type=item name=Jeweled Gauntlet
+2026-09-24 15:44:40 |   DOC[4] type=item name=Giant Slayer
+2026-09-24 15:44:40 | ---
+2026-09-24 15:45:44 | QUERY: what are aatrox's traits?
+2026-09-24 15:45:44 | COLECCIONES: ['champion']
+2026-09-24 15:45:44 |   DOC[1] type=champion name=Aatrox
+2026-09-24 15:45:44 |   DOC[2] type=champion name=Skarner
+2026-09-24 15:45:44 |   DOC[3] type=champion name=Aurelion Sol
+2026-09-24 15:45:44 |   DOC[4] type=champion name=Taric
+2026-09-24 15:45:44 | ---
+2026-09-24 15:46:09 | QUERY: what are the best items for miss fortune?
+2026-09-24 15:46:09 | COLECCIONES: ['item', 'champion']
+2026-09-24 15:46:09 |   DOC[1] type=item name=Spirit Visage
+2026-09-24 15:46:09 |   DOC[2] type=item name=Hextech Gunblade
+2026-09-24 15:46:09 |   DOC[3] type=champion name=Miss Fortune
+2026-09-24 15:46:09 |   DOC[4] type=champion name=Diana
+2026-09-24 15:46:09 | ---
+2026-09-24 15:46:29 | QUERY: i have a bfsword and a tearofthegoddess, what item should i craft and who should hold it?
+2026-09-24 15:46:29 | COLECCIONES: ['item']
+2026-09-24 15:46:29 |   DOC[1] type=item name=Spear of Shojin
+2026-09-24 15:46:29 |   DOC[2] type=item name=Deathblade
+2026-09-24 15:46:29 |   DOC[3] type=item name=Infinity Edge
+2026-09-24 15:46:29 |   DOC[4] type=item name=Void Staff
+2026-09-24 15:46:29 | ---
+2026-09-24 15:47:34 | QUERY: cuáles son los las traits de aatrox?
+2026-09-24 15:47:34 | COLECCIONES: ['champion']
+2026-09-24 15:47:34 |   DOC[1] type=champion name=Aatrox
+2026-09-24 15:47:34 |   DOC[2] type=champion name=Aurelion Sol
+2026-09-24 15:47:34 |   DOC[3] type=champion name=Galio
+2026-09-24 15:47:34 |   DOC[4] type=champion name=Sylas
+2026-09-24 15:47:34 | ---
+2026-09-24 15:48:05 | QUERY: qué items son los mejores para miss fortune?
+2026-09-24 15:48:05 | COLECCIONES: ['item', 'champion']
+2026-09-24 15:48:05 |   DOC[1] type=item name=Thief's Gloves
+2026-09-24 15:48:05 |   DOC[2] type=item name=Spirit Visage
+2026-09-24 15:48:05 |   DOC[3] type=champion name=Miss Fortune
+2026-09-24 15:48:05 |   DOC[4] type=champion name=Milio
+2026-09-24 15:48:05 | ---
+2026-09-24 15:48:32 | QUERY: tengo un Bfsword y una Tearofthegoddess, qué item me fabrico y a who se lo pongo?
+2026-09-24 15:48:32 | COLECCIONES: ['item']
+2026-09-24 15:48:32 |   DOC[1] type=item name=Spear of Shojin
+2026-09-24 15:48:32 |   DOC[2] type=item name=Deathblade
+2026-09-24 15:48:32 |   DOC[3] type=item name=Blue Buff
+2026-09-24 15:48:32 |   DOC[4] type=item name=Void Staff
+2026-09-24 15:48:32 | ---
+2026-09-24 15:49:30 | ADVICE QUERY: the player is at stage 4-2, level 8, with 77 gold and 66 hp. current board/bench: graves, lucian & senna, nautilus. available items: bramble vest, deathblade, evenshroud. tactical situation: level up to level 8.; roll down until you find all your key composition units.; you have 77 gold at stage 4: this is the moment to spend it. push level and roll to complete your final board.. what composition should they play with what they have? what units should they look for and which ones are expendable?
+2026-09-24 15:49:30 |   COMP[1] type=comp name=Ionia Yunara
+2026-09-24 15:49:30 |   COMP[2] type=comp name=Warden Kalista
+2026-09-24 15:49:30 |   CHAMP[1] type=champion name=Lucian & Senna
+2026-09-24 15:49:30 |   CHAMP[2] type=champion name=Graves
+2026-09-24 15:49:30 |   ITEM[1] type=item name=Bramble Vest
+2026-09-24 15:49:30 |   ITEM[2] type=item name=Evenshroud
+2026-09-24 15:49:30 | ---
+2026-09-24 15:50:32 | ADVICE QUERY: the player is at stage 3-6, level 7, with 44 gold and 54 hp. current board/bench: galio, garen, lux. available items: blue buff, dragon's claw, gargoyle stoneplate, jeweled gauntlet. tactical situation: start preparing your economy for the phase 4-2 rolldown. aim to reach 50+ gold to level up to 8 and roll.; right now you are not making the highest interest. if you are not in a delicate stage (3-2, 4-2 or stage 5) focus on making 50 gold.. what composition should they play with what they have? what units should they look for and which ones are expendable?
+2026-09-24 15:50:32 |   COMP[1] type=comp name=Demacia Lux
+2026-09-24 15:50:32 |   COMP[2] type=comp name=Demacia Kaisa
+2026-09-24 15:50:32 |   CHAMP[1] type=champion name=Garen
+2026-09-24 15:50:32 |   CHAMP[2] type=champion name=Sylas
+2026-09-24 15:50:32 |   ITEM[1] type=item name=Gargoyle Stoneplate
+2026-09-24 15:50:32 |   ITEM[2] type=item name=Dragon's Claw
+2026-09-24 15:50:32 | ---
