@@ -1,3 +1,9 @@
+"""
+scrapping_champions.py - Recopilación de los datos de un campeón desde MetaTFT.
+Extrae el nombre, el coste, las sinergias, los objetos recomendados y la condición
+de desbloqueo de la unidad indicada, y guarda el resultado en un fichero JSON
+independiente dentro de data/champions.
+"""
 import json
 import os
 from selenium import webdriver
@@ -9,6 +15,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 def scrape_champion(url: str):
+    """
+    Abre la ficha del campeón indicado y devuelve sus datos ya guardados en disco.
+    La espera explícita evita leer la página antes de que el contenido dinámico
+    se haya cargado.
+    """
 
     # Setup del driver
     service = Service(ChromeDriverManager().install())
@@ -58,11 +69,15 @@ def scrape_champion(url: str):
             By.CSS_SELECTOR, "img.TableItemImg"
         )
 
+        # La fuente ordena los objetos recomendados por rendimiento, de manera
+        # que basta con los tres primeros.
         for img in item_imgs[:3]:
             alt = img.get_attribute("alt")
             if alt:
                 items.append(alt)
 
+    # No todos los campeones tienen objetos recomendados publicados, de modo que
+    # su ausencia no debe interrumpir la recopilación del resto de campos.
     except Exception as e:
         print("⚠️ No se han podido scrappear los items:", e)
         items = []
@@ -83,10 +98,16 @@ def scrape_champion(url: str):
 
 
 def save_champion(champion: dict):
+    """
+    Guarda el campeón en un fichero JSON nombrado a partir de su denominación.
+    """
     base_dir = os.path.dirname(os.path.abspath(__file__))
     data_dir = os.path.join(base_dir, "data", "champions")
     os.makedirs(data_dir, exist_ok=True)
 
+    # El nombre se normaliza a minúsculas y sin caracteres conflictivos para que
+    # sirva como nombre de fichero y permita reemplazar un elemento concreto sin
+    # regenerar el conjunto.
     safe_name = (
         champion["name"]
         .lower()

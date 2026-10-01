@@ -1,3 +1,10 @@
+"""
+search.py - Núcleo de recuperación y generación del asistente.
+Clasifica cada consulta para dirigirla a las colecciones pertinentes, recupera de
+ChromaDB los documentos más próximos y compone con ellos el prompt que se entrega al
+modelo de lenguaje. Expone los dos modos del sistema: la consulta directa del chat y
+el asesoramiento estratégico a partir del estado de partida.
+"""
 from pathlib import Path
 
 from langchain_chroma import Chroma
@@ -160,6 +167,11 @@ def ask(query: str, history: list = None) -> str:
 
 
 def ask_advice(prompt: str, champions: list[str], items: list[str], components: list[str]) -> str:
+    """
+    Elabora una recomendación a partir del estado de partida y de los elementos que el
+    jugador ha seleccionado. A diferencia del chat, ejecuta cuatro búsquedas dirigidas
+    en lugar de una, cada una destinada a un propósito distinto.
+    """
 
     # Traducimos solo el prompt que escribe el usuario. Los items y componentes ya vienen en inglés desde la UI cuando se seleccionan.
     prompt = traducir_query(prompt)
@@ -167,6 +179,8 @@ def ask_advice(prompt: str, champions: list[str], items: list[str], components: 
     collection_map = rag["collection_map"]
     llm = rag["llm"]
 
+    # El presupuesto se reparte entre las dos primeras búsquedas, que son las que
+    # determinan la composición recomendada.
     k_per_col = max(1, MAX_DOCS // 2)
 
     # Búsqueda de composiciones y campeones por nombres de campeones
@@ -175,6 +189,8 @@ def ask_advice(prompt: str, champions: list[str], items: list[str], components: 
     champ_docs = collection_map["champion"].similarity_search(champ_query, k=k_per_col)
 
     # Búsqueda de detalles de ítems completos que tiene el jugador
+    # Objetos completos que el jugador ya tiene, necesarios para decidir a qué unidad
+    # conviene asignarlos.
     item_docs = []
     if items:
         item_query = "items: " + ", ".join(items)
@@ -182,11 +198,15 @@ def ask_advice(prompt: str, champions: list[str], items: list[str], components: 
 
     # Búsqueda de qué ítems se pueden craftear con los componentes del jugador
     # El campo COMPONENTS de cada ítem es la clave para saber que componentes necesita para poder crearse
+    # Cada objeto registra los componentes con los que se construye, de manera que la
+    # búsqueda por componentes permite averiguar qué puede fabricarse.
     craft_docs = []
     if components:
         craft_query = "components: " + ", ".join(components)
         craft_docs = collection_map["item"].similarity_search(craft_query, k=k_per_col)
 
+    # Cada conjunto de documentos se presenta etiquetado para que el modelo distinga
+    # su procedencia dentro del prompt.
     def fmt(docs, label):
         return "\n\n".join(f"[{label}{i}] {d.page_content[:MAX_CHARS_PER_DOC]}"
                            for i, d in enumerate(docs, 1))
@@ -234,6 +254,10 @@ def ask_advice(prompt: str, champions: list[str], items: list[str], components: 
 
 
 def main():
+    """
+    Interfaz por consola empleada durante el desarrollo para probar el sistema sin
+    necesidad de levantar la aplicación web.
+    """
     print("Escribe tu pregunta sobre el set 16 del TFT. ENTER vacío para salir.")
     while True:
         query = input("\n> ").strip()

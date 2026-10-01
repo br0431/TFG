@@ -1,3 +1,9 @@
+"""
+app.py - Aplicación web local que da acceso al asistente.
+Sirve la interfaz, gestiona la selección de elementos y el estado de partida en la
+sesión del servidor, y encamina cada petición al modo correspondiente del sistema:
+la consulta directa del chat o el asesoramiento estratégico.
+"""
 import os
 import re
 import sys
@@ -11,17 +17,24 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from rag.gameContext.decision_engine import get_decisions
 from rag.search import ask, ask_advice
 
+# La clave de sesión se fija en el código al tratarse de una aplicación local que no
+# se expone fuera del equipo del usuario.
 app = Flask(__name__)
 app.secret_key = 'tft-set16-secret-key-2024'
 
+# Rutas a la base documental y a las imágenes de los elementos.
 DATA_DIR   = os.path.join(os.path.dirname(__file__), '..', 'scrapping', 'data')
 IMAGES_DIR = os.path.join(os.path.dirname(__file__), 'static', 'images')
 
 
+# Las imágenes se nombran sin separadores, de modo que el nombre del elemento se
+# normaliza antes de componer el nombre del fichero.
 def normalize(text):
     return re.sub(r'[_\-&\s]', '', text).lower()
 
 
+# Devuelve la ruta de la imagen del elemento, o una cadena vacía si no existe, para
+# que la plantilla muestre en su lugar las iniciales del nombre.
 def resolve_image(slug, folder, prefix):
     filename = f'{prefix}{normalize(slug)}.png'
     full = os.path.join(IMAGES_DIR, folder, filename)
@@ -31,6 +44,9 @@ def resolve_image(slug, folder, prefix):
 
 
 def load_json_dir(subdir, img_folder, img_prefix):
+    """
+    Carga los ficheros JSON de una categoría y les añade la ruta de su imagen.
+    """
     pattern = os.path.join(DATA_DIR, subdir, '*.json')
     result = []
     for filepath in sorted(glob.glob(pattern)):
@@ -44,6 +60,10 @@ def load_json_dir(subdir, img_folder, img_prefix):
 
 
 def load_components():
+    """
+    Compone la lista de componentes básicos a partir de sus imágenes.
+    Al tratarse de un conjunto fijo y reducido, no requiere fichero de datos propio.
+    """
     pattern = os.path.join(IMAGES_DIR, 'COMPONENTS', 'tft_item_*.png')
     result = []
     for filepath in sorted(glob.glob(pattern)):
@@ -57,6 +77,8 @@ def load_components():
     return result
 
 
+# Los tres conjuntos se cargan una sola vez al arrancar la aplicación, ya que su
+# contenido no varía durante la ejecución.
 champions  = load_json_dir('champions', 'CHAMPS',  'tft16_')
 items      = load_json_dir('items',     'ITEMS',   'tft_item_')
 components = load_components()
@@ -78,6 +100,8 @@ def index():
                            components=components)
 
 
+# Las secciones del panel izquierdo se cargan de forma diferida, solo cuando el
+# usuario las despliega por primera vez, para reducir el tiempo de carga inicial.
 @app.route('/api/grid/<tipo>')
 def api_grid(tipo):
     selected = session.get('selected', {})
@@ -87,6 +111,8 @@ def api_grid(tipo):
                            selected=selected)
 
 
+# La selección se conserva en la sesión del servidor, de modo que la interfaz no
+# necesita mantener una representación paralela en el navegador.
 @app.route('/select', methods=['POST'])
 def select():
     name  = request.form.get('name', '').strip()
@@ -96,6 +122,8 @@ def select():
         selected = session.get('selected', {})
         return render_template('partials/selected_zone.html', selected=selected)
     selected = session.get('selected', {})
+    # Se admiten como máximo dos ejemplares del mismo campeón, ya que la reunión de
+    # tres copias produce su fusión en una única unidad mejorada.
     if name in selected:
         if selected[name]['qty'] < 2:
             selected[name]['qty'] += 1
@@ -153,6 +181,8 @@ def chat():
                            bot_response=bot_response)
 
 
+# Modo de asesoramiento estratégico: combina el estado de partida introducido por el
+# usuario con los elementos seleccionados y delega en el motor de reglas y en el RAG.
 @app.route('/advice', methods=['POST'])
 def advice():
     # Datos del formulario de situación
@@ -162,6 +192,8 @@ def advice():
     hp    = request.form.get('hp',    '100').strip()
 
     # Validación básica de fase
+    # La fase es el único campo cuya notación admite errores de escritura, por lo que
+    # se valida antes de procesar la solicitud.
     if not re.match(r'^[1-7]-[1-7]$', phase):
         return render_template('partials/advice_response.html',
                                error="Invalid phase format. Use the X-Y format (e.g. 3-2).")
@@ -176,6 +208,8 @@ def advice():
     items = [name for name, v in selected.items() if v['type'] == 'items']
     components = [name for name, v in selected.items() if v['type'] == 'components']
 
+    # El motor de reglas devuelve las acciones recomendadas y un texto que describe la
+    # situación, que se emplea después como consulta para la recuperación.
     result = get_decisions(phase, level, gold, hp, champions, items + components)
 
     try:
@@ -193,5 +227,6 @@ def advice():
                            error=None)
 
 
+# Servidor de desarrollo de Flask, suficiente para un uso local.
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

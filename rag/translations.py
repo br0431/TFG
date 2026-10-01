@@ -1,5 +1,12 @@
-# Script para traducir los objetos y componentes al castellano.
+"""
+translations.py - Traducción de la terminología del videojuego del castellano al inglés.
+La base de conocimiento se almacena íntegramente en inglés, de modo que las consultas
+formuladas en castellano se reescriben antes de la clasificación y de la búsqueda
+semántica para que los nombres y los términos coincidan con el contenido indexado.
+"""
 
+# Los ocho componentes básicos, cuyos nombres en inglés se escriben sin espacios
+# por ser así como aparecen en la fuente de datos.
 COMPONENTS_ES = {
     "Espadón":                          "Bfsword",
     "Chaleco de Cadenas":               "Chainvest",
@@ -11,6 +18,8 @@ COMPONENTS_ES = {
     "Lágrima de la Diosa":              "Tearofthegoddess",
 }
 
+# Los objetos completos, traducidos a partir de la denominación oficial que el
+# videojuego emplea en su versión en castellano.
 ITEMS_ES = {
     "Yelmo Adaptable":                  "Adaptive Helm",
     "Bastón del Arcángel":              "Archangels Staff",
@@ -91,15 +100,17 @@ TERMS_ES = {
 def traducir_query(query: str) -> str:
     """
     Reemplaza nombres en español por sus equivalentes en inglés si la query se realiza en español.
-    Matchea primero las cadenas más largas para evitar reemplazos parciales si existiera algún caso a futuro.
+    Compara primero las cadenas más largas para evitar reemplazos parciales.
     """
-
 
     # Combinar los tres diccionarios
     traducciones = {**COMPONENTS_ES, **ITEMS_ES, **TERMS_ES}
 
-    # Ordenar por longitud descendente (más largo primero)
+    # Se retiran los signos de apertura propios del castellano, que no aparecen en
+    # los documentos indexados.
     query_lower = query.lower().replace("¿", "").replace("¡", "")
+    # El recorrido va de la cadena más larga a la más corta para que una expresión
+    # compuesta se sustituya antes que cualquiera de sus palabras por separado.
     for es, en in sorted(traducciones.items(), key=lambda x: len(x[0]), reverse=True):
         if not es:
             continue

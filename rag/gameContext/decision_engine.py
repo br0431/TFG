@@ -1,3 +1,10 @@
+"""
+decision_engine.py - Motor de reglas deterministas sobre el estado de la partida.
+A partir de la fase, el nivel, el oro y los puntos de vida del jugador devuelve las
+acciones recomendadas y un texto que describe su situación, empleado después como
+consulta en el modo de asesoramiento. Las reglas recogen el criterio del autor como
+jugador y no intervienen en ellas el modelo de lenguaje ni la base documental.
+"""
 def get_decisions(phase: str, level: int, gold: int, hp: int, champions: list, items: list) -> dict:
     """
     Recibe el estado de partida del jugador y devuelve:
@@ -10,6 +17,8 @@ def get_decisions(phase: str, level: int, gold: int, hp: int, champions: list, i
 
     # REGLAS CENTRADAS EN LA FASE HARDCODEADAS
 
+    # Las dos primeras fases determinan la economía de la partida, mientras que las
+    # posteriores concentran las decisiones que deciden el resultado.
     if stage == 2:
         if round_num <= 3:
             actions.append("If you've won the first two rounds and are unsure if you can win the third, level up. If you can't make interest, try a pre-level.")
@@ -49,6 +58,8 @@ def get_decisions(phase: str, level: int, gold: int, hp: int, champions: list, i
 
     # REGLAS CENTRADAS EN ORO HARDCODEADAS
 
+    # La cadena se evalúa de la condición más específica a la más general, de modo que
+    # el caso crítico de oro insuficiente en fase avanzada se atienda antes que el resto.
     if gold < 10 and stage >= 4:
         actions.append(
             "Your gold is very low for this stage of the game. If you have more than 50 health and your board is strong enough, try to save more gold, otherwise, roll through every round until you stabilize.")
@@ -65,6 +76,8 @@ def get_decisions(phase: str, level: int, gold: int, hp: int, champions: list, i
 
     # REGLAS CENTRADAS EN VIDA HARDCODEADAS
 
+    # La vida baja prevalece sobre cualquier consideración económica, ya que la
+    # eliminación del jugador cancela cualquier plan a medio plazo.
     if hp < 20:
         actions.append("Critical life (<20 HP): You need to stabilize NOW. Prioritize winning the next round over any economic strategy.")
 

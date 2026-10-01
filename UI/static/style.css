@@ -1,7 +1,14 @@
 /* ═══════════════════════════════════════════════════════════
    TFT SET 16 ASSISTANT  —  style.css
+
+   Hoja de estilos de la interfaz. La paleta y la tipografía reproducen la
+   identidad visual del videojuego para que el usuario reconozca el entorno,
+   y los colores de coste siguen la convención de rarezas del propio juego.
+   Su desarrollo se apoyó en herramientas de IA generativa, según se detalla
+   en la memoria.
    ═══════════════════════════════════════════════════════════ */
 
+/* Variables de color, tipografía y medidas compartidas por toda la interfaz. */
 :root {
   --bg:          #07070d;
   --panel-a:     #0e0e18;
@@ -21,6 +28,7 @@
   --transition:  0.2s ease;
 }
 
+/* Normalización y barras de desplazamiento. */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; overflow: hidden; }
 
@@ -44,6 +52,7 @@ body {
     );
 }
 
+/* Estructura general: panel izquierdo de anchura fija y panel derecho flexible. */
 .layout {
   display: grid;
   grid-template-columns: 380px 1fr;
@@ -100,6 +109,7 @@ body {
 
 .accent { color: var(--gold); }
 
+/* Secciones desplegables de campeones, objetos y componentes. */
 .accordions {
   display: flex;
   flex-direction: column;
@@ -158,6 +168,7 @@ details[open] .arrow { transform: rotate(180deg); }
   font-size: 13px;
 }
 
+/* Rejilla de iconos seleccionables. */
 .icon-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
@@ -235,6 +246,7 @@ details[open] .arrow { transform: rotate(180deg); }
   max-width: 100%;
 }
 
+/* Colores de coste según la rareza establecida por el videojuego. */
 .cost-stars { font-size: 9px; letter-spacing: 1px; }
 .cost-1 { color: var(--cost1); }
 .cost-2 { color: var(--cost2); }
@@ -281,6 +293,7 @@ details[open] .arrow { transform: rotate(180deg); }
   justify-content: center;
 }
 
+/* Zona de elementos seleccionados. */
 .selected-zone {
   flex-shrink: 0;
   border: 1px solid var(--border);
@@ -389,6 +402,7 @@ details[open] .arrow { transform: rotate(180deg); }
 
 .action-buttons { display: flex; gap: 8px; flex-shrink: 0; }
 
+/* Botones de la interfaz. */
 .btn {
   font-family: 'Rajdhani', sans-serif;
   font-size: 12px;
@@ -428,6 +442,7 @@ details[open] .arrow { transform: rotate(180deg); }
   box-shadow: 0 0 8px rgba(224, 80, 80, 0.3);
 }
 
+/* Conversación: burbujas del usuario y del asistente. */
 .chat-messages {
   flex: 1;
   overflow-y: auto;
@@ -480,6 +495,7 @@ details[open] .arrow { transform: rotate(180deg); }
   color: var(--text);
 }
 
+/* Campo de entrada del chat. */
 .chat-form {
   display: flex;
   gap: 8px;
@@ -522,6 +538,7 @@ details[open] .arrow { transform: rotate(180deg); }
   box-shadow: 0 0 12px var(--gold-glow);
 }
 
+/* Formulario del estado de partida y presentación del asesoramiento. */
 .advice-section {
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -650,5 +667,6 @@ details[open] .arrow { transform: rotate(180deg); }
   border-radius: var(--radius);
 }
 
+/* Indicador de carga que HTMX muestra mientras se resuelve una petición. */
 .htmx-indicator { opacity: 0; transition: opacity 0.2s; }
 .htmx-request .htmx-indicator { opacity: 1; }

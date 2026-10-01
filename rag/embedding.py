@@ -1,3 +1,10 @@
+"""
+embedding.py - Serialización e indexación de la base documental en ChromaDB.
+Convierte cada fichero JSON en un texto plano de estructura fija, obtiene su
+representación vectorial con el modelo de embeddings y lo almacena en la colección
+que le corresponde. Debe ejecutarse antes del primer arranque del sistema y cada vez
+que se renueve el contenido del set.
+"""
 import json
 from pathlib import Path
 
@@ -75,6 +82,9 @@ def load_json_files(folder: Path):
 
 
 def main():
+    """
+    Construye las tres colecciones vectoriales a partir de los ficheros JSON.
+    """
     # Garantizamos que existe el directorio del índice en disco.
     CHROMA_DIR.mkdir(parents=True, exist_ok=True)
 

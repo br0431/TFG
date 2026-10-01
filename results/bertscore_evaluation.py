@@ -1,16 +1,21 @@
 """
-bertscore_eval.py - Calcula BERTScore F1 entre respuesta esperada y respuesta del sistema.
-Ejecuta la evaluacion sobre los pares de respuestas del Excel de resultados y muestra
-el score individual por pregunta, por nivel y la media global.
+bertscore_evaluation.py - Cálculo del valor F1 de BERTScore sobre el conjunto de evaluación.
+Compara cada respuesta generada por el sistema con su respuesta de referencia y muestra
+el valor individual por pregunta, la media por nivel de dificultad y la media global.
 """
 
 from bert_score import score as bert_score
 
+# Un modelo común para ambos idiomas permite que los valores obtenidos en castellano
+# y en inglés resulten comparables entre sí.
 # Modelo multilingue para evaluar tanto castellano como ingles.
 MODEL = "bert-base-multilingual-cased"
 
 # PARES CASTELLANO
 
+# Los treinta pares reproducen el conjunto de evaluación recogido en los anexos de la
+# memoria: la respuesta de referencia elaborada por el autor y la devuelta por el
+# sistema para cada pregunta, agrupadas por nivel de dificultad.
 PAIRS_ES = [
     # Nivel 1
     {
@@ -263,6 +268,9 @@ def print_results(pairs, scores, label):
 
 
 def main():
+    """
+    Ejecuta el cálculo sobre los dos idiomas y presenta el resumen comparado.
+    """
     print("Calculando BERTScore F1...")
     print(f"Modelo: {MODEL}\n")
 
