@@ -29,7 +29,7 @@ EMBED_MODEL = "BAAI/bge-base-en-v1.5"
 LLM_MODEL = "llama3.1:8b"
 # Número máximo de documentos recuperados tras la búsqueda semántica.
 MAX_DOCS = 4
-# Máximo de caractéres por documento para no tener problemas de memoria.
+# Máximo de caractéres por documento para no tener problemas de ventana de contexto.
 MAX_CHARS_PER_DOC = 450
 # Estado global del RAG. Se inicializa una sola vez en la primera llamada a ask()
 # para evitar cargar los modelos y las colecciones en cada petición HTTP.
